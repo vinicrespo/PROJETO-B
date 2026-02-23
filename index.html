@@ -436,11 +436,11 @@
     </footer>
 
     <!-- SCRIPT INLINE CRÍTICO, MÍNIMO E ASSÍNCRONO -->
-    <!-- API de geolocalização rápida (ipapi o freeipapi) -->
+    <!-- API de geolocalização rápida e livre de CORS/limites -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Buscando cidade do usuário de forma assíncrona para não travar renderização
-            fetch('https://ipapi.co/json/')
+            fetch('https://get.geojs.io/v1/ip/geo.json')
                 .then(response => response.json())
                 .then(data => {
                     if (data && data.city) {
@@ -448,7 +448,7 @@
                         cityElements.forEach(el => el.innerText = data.city);
                     }
                 })
-                .catch(error => console.warn('Geo falhou, fallback ativado.'));
+                .catch(error => console.warn('Geo falhou, fallback mantido.'));
 
             // Smooth Scroll para o Botão (Comportamento de clique)
             document.getElementById('cta-button').addEventListener('click', function (e) {
