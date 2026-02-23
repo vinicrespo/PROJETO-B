@@ -98,23 +98,8 @@
             position: relative;
             width: 100%;
             max-width: 400px;
-            /* Limite para não ficar gigante no desktop */
             margin: 0 auto;
-            /* 9:16 VSL Vertical Aspect ratio placeholder para evitar CLS */
-            padding-bottom: 177.77%;
-            background-color: #000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            border-radius: 4px;
-            overflow: hidden;
-            border: 2px solid #000;
-        }
-
-        vturb-smartplayer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100% !important;
-            height: 100% !important;
+            background-color: transparent;
         }
 
         #vsl-player {
@@ -325,8 +310,11 @@
     <!-- 3. VSL Container -->
     <main class="vsl-container">
         <div class="vsl-wrapper" id="vsl-anchor">
-            <!-- Embed VTurb Smartplayer Vertical -->
-            <vturb-smartplayer id="vid-699c6196f5e86dda40b16da5"></vturb-smartplayer>
+            <!-- Embed VTurb Smartplayer Vertical fornecido pelo usuario -->
+            <vturb-smartplayer id="vid-699c6196f5e86dda40b16da5"
+                style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+            <script
+                type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/699c6196f5e86dda40b16da5/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
         </div>
 
         <!-- 3.1 Botão CTA -->
