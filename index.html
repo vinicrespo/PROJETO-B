@@ -319,7 +319,8 @@
 
         <!-- 3.1 Botão CTA -->
         <div class="cta-container hide">
-            <a href="#vsl-anchor" class="cta-btn" id="cta-button">
+            <a href="https://pay.mycheckoutt.com/019c8b38-4ab2-7258-a044-1ef9654e1345?ref=" class="cta-btn"
+                id="cta-button">
                 Quiero acceder al método ahora
             </a>
         </div>
@@ -449,20 +450,8 @@
                     }
                 })
                 .catch(error => console.warn('Geo falhou, fallback mantido.'));
-
-            // Smooth Scroll para o Botão (Comportamento de clique)
-            document.getElementById('cta-button').addEventListener('click', function (e) {
-                // Se o link do botão for redirecionamento de checkout, remova esse bloco.
-                // Como ele tem "href='#vsl-anchor'", este código faz o scroll suave pro video.
-                e.preventDefault();
-                const target = document.getElementById('vsl-anchor');
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
         });
     </script>
-
 </body>
 
 </html>
