@@ -103,6 +103,60 @@
             height: 100%;
         }
 
+        /* 3.1 Botão CTA */
+        .cta-container {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            width: 90%;
+            max-width: 400px;
+            /* Alinhar com o vídeo no desktop */
+            height: 60px;
+            line-height: 60px;
+            border-radius: 30px;
+            /* Estilo Pílula */
+            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
+            animation: pulse-soft 1.5s infinite ease-in-out;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .cta-btn:hover {
+            background-color: #27ae60;
+        }
+
+        .cta-btn:active {
+            transform: scale(0.96);
+        }
+
+        @keyframes pulse-soft {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Classes auxiliares ocultas (para o delay de CTA) */
+        .d-none {
+            display: none !important;
+        }
+
         /* 5. Comentários Facebook */
         .fb-comments {
             max-width: 600px;
@@ -248,9 +302,17 @@
 
     <!-- 3. VSL Container -->
     <main class="vsl-container">
-        <div class="vsl-wrapper">
+        <div class="vsl-wrapper" id="vsl-anchor">
             <!-- Espaço reservado para o player Veturb (Adicione o script do Veturb dentro desta div) -->
             <div id="vsl-player"></div>
+        </div>
+
+        <!-- 3.1 Botão CTA -->
+        <!-- NOTA: Coloquei a classe 'd-none' comentada caso queira usar delay de script. Por enquanto ele aparece junto com a página -->
+        <div class="cta-container">
+            <a href="#vsl-anchor" class="cta-btn" id="cta-button">
+                Quiero acceder al método ahora
+            </a>
         </div>
     </main>
 
@@ -365,7 +427,7 @@
     </footer>
 
     <!-- SCRIPT INLINE CRÍTICO, MÍNIMO E ASSÍNCRONO -->
-    <!-- API de geolocalização rápida (ipapi ou freeipapi) -->
+    <!-- API de geolocalização rápida (ipapi o freeipapi) -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Buscando cidade do usuário de forma assíncrona para não travar renderização
@@ -378,6 +440,17 @@
                     }
                 })
                 .catch(error => console.warn('Geo falhou, fallback ativado.'));
+
+            // Smooth Scroll para o Botão (Comportamento de clique)
+            document.getElementById('cta-button').addEventListener('click', function (e) {
+                // Se o link do botão for redirecionamento de checkout, remova esse bloco.
+                // Como ele tem "href='#vsl-anchor'", este código faz o scroll suave pro video.
+                e.preventDefault();
+                const target = document.getElementById('vsl-anchor');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         });
     </script>
 
