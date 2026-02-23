@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urgent: El Truco de la Gelatina</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://ipapi.co">
+    
+    <style>
+        /* CSS Crítico Inline (Performance Máxima) */
+        :root {
+            --red: #d60000;
+            --blue: #385898;
+            --bg: #ffffff;
+            --text-main: #1d2129;
+            --text-light: #90949c;
+            --bg-light: #f2f3f5;
+        }
+
+        /* Reset Básico */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* 1. Barra Superior */
+        .top-bar {
+            background-color: var(--red);
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        /* 2. Headline */
+        .headline-section {
+            padding: 24px 15px 16px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .urgente {
+            color: var(--red);
+            font-weight: 800;
+            font-size: 24px;
+            display: block;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        h1.headline {
+            font-weight: 800;
+            font-size: 22px;
+            line-height: 1.25;
+            color: #000;
+        }
+
+        /* 3. VSL Container */
+        .vsl-container {
+            max-width: 720px;
+            margin: 0 auto 24px;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        .vsl-wrapper {
+            position: relative;
+            width: 100%;
+            /* 16:9 Aspect ratio placeholder para evitar CLS (evita pulos na tela) */
+            padding-bottom: 56.25%; 
+            background-color: #000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 2px solid #000;
+        }
+
+        #vsl-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .vsl-links {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .vsl-links span {
+            color: var(--blue);
+            text-decoration: underline;
+            margin: 0 8px;
+            cursor: default; /* Visuais apenas */
+        }
+
+        /* 4. Linha Divisória */
+        .divider {
+            height: 1px;
+            background-color: var(--red);
+            width: 100%;
+            margin: 30px 0;
+            opacity: 0.8;
+        }
+
+        /* 5. Comentários Facebook */
+        .fb-comments {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px 40px;
+        }
+
+        .comments-header {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 600;
+            border-bottom: 1px solid #e9ebee;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+
+        .comment {
+            display: flex;
+            margin-bottom: 16px;
+            font-family: Helvetica, Arial, sans-serif; /* Aproximar do FB na web */
+        }
+
+        .comment.reply {
+            margin-left: 46px; /* Indentação para respostas */
+            margin-top: -6px;
+            margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
+            background-color: #e9ebee;
+            object-fit: cover;
+        }
+
+        .comment-body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .comment-text-bubble {
+            background-color: var(--bg-light);
+            padding: 8px 12px;
+            border-radius: 18px;
+            font-size: 15px;
+            color: #050505;
+            display: inline-block;
+        }
+
+        .comment-name {
+            color: var(--blue);
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        .comment-actions {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+            margin-left: 12px;
+            font-weight: bold;
+        }
+
+        .comment-actions span.action-link {
+            color: #65676b;
+            cursor: pointer;
+        }
+
+        .comment-actions span.action-link:hover {
+            text-decoration: underline;
+        }
+
+        /* 6. Aviso de Login */
+        .login-notice {
+            font-size: 13px;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* 7 e 8. Footer e Disclaimer */
+        footer {
+            background-color: #f0f2f5;
+            padding: 40px 15px 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #65676b;
+            border-top: 1px solid #ccd0d5;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+        }
+
+        .disclaimer {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #8c939d;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        /* Responsividade Tablets e Desktop */
+        @media (min-width: 768px) {
+            .top-bar { font-size: 16px; padding: 10px 15px; }
+            .urgente { font-size: 32px; }
+            h1.headline { font-size: 30px; }
+            .vsl-links { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Barra Superior -->
+    <div class="top-bar">
+        Tú y algunas personas de <strong id="dynamic-city">tu ciudad</strong> fueron seleccionados para ver esta presentación.
+    </div>
+
+    <!-- 2. Headline -->
+    <section class="headline-section">
+        <span class="urgente">URGENTE:</span>
+        <h1 class="headline">Nunca uses este truco de la gelatina a menos que quieras perder peso muchísimo más rápido de lo normal.</h1>
+    </section>
+
+    <!-- 3. VSL Container -->
+    <main class="vsl-container">
+        <div class="vsl-wrapper">
+            <!-- Espaço reservado para o player Veturb (Adicione o script do Veturb dentro desta div) -->
+            <div id="vsl-player"></div>
+        </div>
+        
+        <!-- Links visuais abaixo do vídeo -->
+        <div class="vsl-links">
+            <span>¿Quieres seguir viendo?</span>
+            <span>¿Quieres ver desde el inicio?</span>
+        </div>
+    </main>
+
+    <!-- 4. Divisória -->
+    <div class="divider"></div>
+
+    <!-- 5. Comentários Facebook -->
+    <section class="fb-comments">
+        <div class="comments-header">
+            Mostrando 9 de 322 comentarios
+        </div>
+
+        <!-- Comentário 1 (Positivo) -->
+        <div class="comment">
+            <!-- Placeholder WebP usando randomuser (Lazy load strict + dimensões explicitas para 0 CLS) -->
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de perfil" width="36" height="36" loading="lazy">
+            <div class="comment-body">
+                <div class="comment-text-bubble">
+                    <span class="comment-name">María García</span>
+                    Wow, probé este truco de la gelatina hoy por la mañana y ya me siento mucho más deshinchada! 🙏 Increíble como funciona rápido.
+                </div>
+                <div class="comment-actions">
+                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 42 · 12 m
+                </div>
+            </div>
+        </div>
+
+        <!-- Comentário 2 (Dúvida/Ceticismo) -->
+        <div class="comment">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto de perfil" width="36" height="36" loading="lazy">
+            <div class="comment-body">
+                <div class="comment-text-bubble">
+                    <span class="comment-name">Carmen López</span>
+                    Será que esto de verdad funciona para quien tiene más de 50 años? Ya intenté absolutamente de todo y nada me resulta... 😔
+                </div>
+                <div class="comment-actions">
+                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 15 · 24 m
+                </div>
+            </div>
+        </div>
+
+        <!-- Resposta ao Comentário 2 -->
+        <div class="comment reply">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Foto de perfil" width="36" height="36" loading="lazy">
+            <div class="comment-body">
+                <div class="comment-text-bubble">
+                    <span class="comment-name">Ana Sofía</span>
+                    Sí Carmen!! Yo tengo 54 y en dos semanas ya noto muchísima diferencia en la ropa. Al principio dudaba pero puedes hacerlo sin miedo. 🥰
+                </div>
+                <div class="comment-actions">
+                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 28 · 18 m
+                </div>
+            </div>
+        </div>
+
+        <!-- Comentário 3 (Humor/Orgânico) -->
+        <div class="comment">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/52.jpg" alt="Foto de perfil" width="36" height="36" loading="lazy">
+            <div class="comment-body">
+                <div class="comment-text-bubble">
+                    <span class="comment-name">Rosa Martínez</span>
+                    Mi marido pensó que estaba loca haciendo esta mezcla rara de la gelatina, pero cuando vio la balanza no lo podía creer jajaja 🤣 Ya hasta él quiere tomar ahora.
+                </div>
+                <div class="comment-actions">
+                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 89 · 45 m
+                </div>
+            </div>
+        </div>
+
+        <!-- Comentário 4 (Alivio da objeção) -->
+        <div class="comment">
+            <img class="avatar" src="https://randomuser.me/api/portraits/women/29.jpg" alt="Foto de perfil" width="36" height="36" loading="lazy">
+            <div class="comment-body">
+                <div class="comment-text-bubble">
+                    <span class="comment-name">Elena Valdés</span>
+                    Al principio estaba dudando, parece demasiado simple. Pero la verdad es que me quitó toda la ansiedad por comer dulces y pan por la noche. Vi el video hasta el final y valió cada segundo!
+                </div>
+                <div class="comment-actions">
+                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 104 · 1 h
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Aviso de Login -->
+        <div class="login-notice">
+            Necesitas iniciar sesión para comentar.
+        </div>
+    </section>
+
+    <!-- 7 e 8. Footer -->
+    <footer>
+        <p>Copyright &copy; 2026 - El Truco de la Gelatina. Todos los derechos reservados.</p>
+        
+        <div class="disclaimer">
+            <strong>Descargo de responsabilidad:</strong> Los testimonios representados en esta página son resultados reales, pero los resultados pueden variar de persona a persona. Esta información tiene fines estrictamente educativos y no sustituye en ningún caso el consejo o tratamiento de un profesional médico. Consulte siempre a su médico antes de iniciar cualquier cambio en su dieta o rutina.
+        </div>
+    </footer>
+
+    <!-- SCRIPT INLINE CRÍTICO, MÍNIMO E ASSÍNCRONO -->
+    <!-- API de geolocalização rápida (ipapi ou freeipapi) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Buscando cidade do usuário de forma assíncrona para não travar renderização
+            fetch('https://ipapi.co/json/')
+                .then(response => response.json())
+                .then(data => {
+                    if(data && data.city) {
+                        const cityElements = document.querySelectorAll('#dynamic-city');
+                        cityElements.forEach(el => el.innerText = data.city);
+                    }
+                })
+                .catch(error => console.warn('Geo falhou, fallback ativado.'));
+        });
+    </script>
+
+</body>
+</html>
