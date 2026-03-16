@@ -319,8 +319,13 @@
     }
 
     .main-card-icon {
-      font-size: 48px;
-      line-height: 1;
+      flex-shrink: 0;
+      width: 80px;
+    }
+
+    .main-card-icon img {
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .main-card-content h3 {
@@ -383,7 +388,16 @@
     }
 
     .bonus-icon {
-      font-size: 24px;
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+    }
+
+    .bonus-icon img {
+      border-radius: 4px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .bonus-title {
@@ -548,10 +562,8 @@
       height: 20px;
       flex-shrink: 0;
       margin-top: 2px;
+      fill: var(--blue-mid);
     }
-
-    .plan-basic .plan-list svg { fill: var(--blue-mid); }
-    .plan-complete .plan-list svg { fill: var(--gold); }
 
 
     /* --- GUARANTEE & TESTIMONIALS --- */
@@ -571,9 +583,15 @@
     }
 
     .guarantee-icon {
-      font-size: 48px;
-      margin-bottom: 16px;
-      line-height: 1;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 16px;
+    }
+
+    .guarantee-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
 
     .guarantee-title {
@@ -948,7 +966,9 @@
       <h2 class="section-title display-font animate-fade-up">Todo lo que recibes</h2>
       
       <div class="main-card animate-fade-up delay-100">
-        <div class="main-card-icon">📱</div>
+        <div class="main-card-icon">
+          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=400&q=80" alt="App Mockup">
+        </div>
         <div class="main-card-content">
           <h3>101 Dinámicas para Jóvenes Cristianos</h3>
           <p>Acceso vitalicio · Organizado por objetivo · Listo para usar hoy</p>
@@ -964,7 +984,7 @@
         <div class="bonus-card animate-fade-up delay-300">
           <div class="bonus-header">
             <div class="bonus-title-wrap">
-              <span class="bonus-icon">🎁</span>
+              <span class="bonus-icon"><img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=100&q=80" alt="Bonus"></span>
               <span class="bonus-title">Guía de Reunión Perfecta</span>
             </div>
             <span class="bonus-price">$17</span>
@@ -976,7 +996,7 @@
         <div class="bonus-card animate-fade-up delay-300">
           <div class="bonus-header">
             <div class="bonus-title-wrap">
-              <span class="bonus-icon">🎁</span>
+              <span class="bonus-icon"><img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=100&q=80" alt="Bonus"></span>
               <span class="bonus-title">20 Icebreakers Rápidos</span>
             </div>
             <span class="bonus-price">$12</span>
@@ -988,7 +1008,7 @@
         <div class="bonus-card animate-fade-up delay-400">
           <div class="bonus-header">
             <div class="bonus-title-wrap">
-              <span class="bonus-icon">🎁</span>
+              <span class="bonus-icon"><img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=100&q=80" alt="Bonus"></span>
               <span class="bonus-title">30 Preguntas Poderosas</span>
             </div>
             <span class="bonus-price">$12</span>
@@ -1000,7 +1020,7 @@
         <div class="bonus-card animate-fade-up delay-400">
           <div class="bonus-header">
             <div class="bonus-title-wrap">
-              <span class="bonus-icon">🎁</span>
+              <span class="bonus-icon"><img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=100&q=80" alt="Bonus"></span>
               <span class="bonus-title">Calendario Anual del Líder</span>
             </div>
             <span class="bonus-price">$17</span>
@@ -1012,7 +1032,7 @@
         <div class="bonus-card animate-fade-up delay-400">
           <div class="bonus-header">
             <div class="bonus-title-wrap">
-              <span class="bonus-icon">🎁</span>
+              <span class="bonus-icon"><img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=100&q=80" alt="Bonus"></span>
               <span class="bonus-title">Dinámicas para Momentos Difíciles</span>
             </div>
             <span class="bonus-price">$12</span>
@@ -1096,7 +1116,7 @@
   <section class="proof-section">
     <div class="container animate-fade-up">
       <div class="guarantee-box">
-        <div class="guarantee-icon">🛡️</div>
+        <div class="guarantee-icon"><img src="https://cdn-icons-png.flaticon.com/512/1055/1055183.png" alt="Garantía de 30 días"></div>
         <h3 class="guarantee-title">Garantía de 30 días sin preguntas</h3>
         <p class="guarantee-text">Si en 30 días no estás 100% satisfecho, te devolvemos tu dinero completo. Sin formularios, sin esperas.</p>
       </div>
@@ -1289,17 +1309,14 @@
       const SESSION_KEY = 'has_seen_upsell';
 
       const showModal = (e) => {
+        // Prevent default only if modal will show or redirecting
+        // if href is set correctly via HTML it would just follow the link if not prevented, 
+        // but here we are controlling the flow
         e.preventDefault();
-        const hasSeen = sessionStorage.getItem(SESSION_KEY);
         
-        if (!hasSeen) {
-          modalOverlay.classList.add('active');
-          document.body.style.overflow = 'hidden'; // stop background scroll
-          sessionStorage.setItem(SESSION_KEY, 'true');
-        } else {
-          // Redirect immediately if already seen
-          window.location.href = "#checkout-basico"; 
-        }
+        // Remove the session check feature to always show the pop up offering a discount when the user attempts the basic plan
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // stop background scroll
       };
 
       const hideModalAndRedirect = () => {
