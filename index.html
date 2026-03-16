@@ -1,463 +1,1074 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urgent: El Truco de la Gelatina</title>
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="preconnect" href="https://ipapi.co">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dinámicas para Jóvenes Cristianos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #1A2E6E;
+      --color-secondary: #2D4FBF;
+      --color-gold: #D4A017;
+      --color-amber: #F5C842;
+      --color-bg: #F8F9FF;
+      --color-white: #FFFFFF;
+      --color-text-main: #1C1C1E;
+      --color-text-sec: #6B7280;
+      
+      --font-body: 'Inter', sans-serif;
+      --font-heading: 'Poppins', sans-serif;
+    }
 
-    <!-- UTMify Script (Hotmart) -->
-    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async defer></script>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <!-- Otimizações de Velocidade VTurb -->
-    <script>!function (i, n) { i._plt = i._plt || (n && n.timeOrigin ? n.timeOrigin + n.now() : Date.now()) }(window, performance);</script>
-    <link rel="preload"
-        href="https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/699c6196f5e86dda40b16da5/v4/player.js"
-        as="script">
-    <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
-    <link rel="preload"
-        href="https://cdn.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/699c614bc21948fd235983cf/main.m3u8"
-        as="fetch">
-    <link rel="dns-prefetch" href="https://cdn.converteai.net">
-    <link rel="dns-prefetch" href="https://scripts.converteai.net">
-    <link rel="dns-prefetch" href="https://images.converteai.net">
-    <link rel="dns-prefetch" href="https://api.vturb.com.br">
+    html {
+      scroll-behavior: smooth;
+    }
 
-    <style>
-        /* CSS Crítico Inline (Performance Máxima) */
-        :root {
-            --red: #d60000;
-            --blue: #385898;
-            --bg: #ffffff;
-            --text-main: #1d2129;
-            --text-light: #90949c;
-            --bg-light: #f2f3f5;
-        }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      line-height: 1.7;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* Reset Básico */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.4;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+    a {
+      text-decoration: none;
+    }
 
-        /* 1. Barra Superior */
-        .top-bar {
-            background-color: var(--red);
-            color: #ffffff;
-            text-align: center;
-            padding: 8px 15px;
-            font-size: 14px;
-            font-weight: 500;
-            width: 100%;
-        }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
 
-        /* 2. Headline */
-        .headline-section {
-            padding: 24px 15px 16px;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        .urgente {
-            color: var(--red);
-            font-weight: 800;
-            font-size: 24px;
-            display: block;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
-        }
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+      text-align: center;
+    }
 
-        h1.headline {
-            font-weight: 800;
-            font-size: 22px;
-            line-height: 1.25;
-            color: #000;
-        }
+    .btn-gold {
+      background-color: var(--color-gold);
+      color: var(--color-white);
+      box-shadow: 0 4px 6px rgba(212, 160, 23, 0.3);
+    }
 
-        /* 3. VSL Container */
-        .vsl-container {
-            max-width: 720px;
-            margin: 0 auto 24px;
-            padding: 0 15px;
-            width: 100%;
-        }
+    .btn-gold:hover {
+      background-color: var(--color-amber);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(212, 160, 23, 0.4);
+    }
 
-        .vsl-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: transparent;
-        }
+    .btn-outline-blue {
+      background-color: transparent;
+      color: var(--color-primary);
+      border: 2px solid var(--color-primary);
+    }
 
-        #vsl-player {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
+    .btn-outline-blue:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
 
-        /* 3.1 Botão CTA */
-        .cta-container {
-            margin-top: 24px;
-            text-align: center;
-        }
+    /* Hero Section */
+    .hero {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
 
-        .cta-btn {
-            display: inline-block;
-            background-color: #2ecc71;
-            color: #ffffff;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            width: 90%;
-            max-width: 400px;
-            /* Alinhar com o vídeo no desktop */
-            height: 60px;
-            line-height: 60px;
-            border-radius: 30px;
-            /* Estilo Pílula */
-            box-shadow: 0 4px 10px rgba(46, 204, 113, 0.4);
-            animation: pulse-soft 1.5s infinite ease-in-out;
-            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-        }
+    .badge-top {
+      display: inline-block;
+      background-color: rgba(212, 160, 23, 0.1);
+      color: var(--color-gold);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
 
-        .cta-btn:hover {
-            background-color: #27ae60;
-        }
+    .hero h1 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
 
-        .cta-btn:active {
-            transform: scale(0.96);
-        }
+    .hero p.subheadline {
+      font-size: 18px;
+      color: var(--color-text-sec);
+      margin-bottom: 32px;
+      font-weight: 600;
+    }
 
-        @keyframes pulse-soft {
-            0% {
-                transform: scale(1);
-            }
+    .vsl-container {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background-color: var(--color-primary);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 25px rgba(26, 46, 110, 0.2);
+    }
 
-            50% {
-                transform: scale(1.03);
-            }
+    .vsl-container svg {
+      width: 64px;
+      height: 64px;
+      fill: var(--color-gold);
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-            100% {
-                transform: scale(1);
-            }
-        }
+    .vsl-container svg:hover {
+      transform: scale(1.1);
+    }
 
-        /* Classes auxiliares ocultas (para o delay de CTA) */
-        .d-none {
-            display: none !important;
-        }
+    .vsl-container span {
+      color: var(--color-white);
+      font-family: var(--font-heading);
+      font-weight: 600;
+    }
 
-        /* 5. Comentários Facebook */
-        .fb-comments {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 0 15px 40px;
-        }
+    .hero-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    .hero-buttons .btn-gold {
+      order: 1;
+      padding: 20px 24px;
+      font-size: 18px;
+    }
+    
+    .hero-buttons .btn-outline-blue {
+      order: 2;
+    }
 
-        .comments-header {
-            font-size: 14px;
-            color: var(--text-light);
-            font-weight: 600;
-            border-bottom: 1px solid #e9ebee;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
-        }
+    /* What you get */
+    .what-you-get {
+      padding: 60px 0;
+      background-color: var(--color-white);
+    }
 
-        .comment {
-            display: flex;
-            margin-bottom: 16px;
-            font-family: Helvetica, Arial, sans-serif;
-            /* Aproximar do FB na web */
-        }
+    .section-title {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
 
-        .comment.reply {
-            margin-left: 46px;
-            /* Indentação para respostas */
-            margin-top: -6px;
-            margin-bottom: 20px;
-        }
+    .main-card {
+      background-color: var(--color-bg);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      border: 1px solid rgba(26, 46, 110, 0.1);
+    }
 
-        .avatar {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            margin-right: 10px;
-            flex-shrink: 0;
-            background-color: #e9ebee;
-            object-fit: cover;
-        }
+    .main-card-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--color-primary);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
 
-        .comment-body {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
+    .main-card-icon svg {
+      width: 32px;
+      height: 32px;
+      fill: var(--color-white);
+    }
 
-        .comment-text-bubble {
-            background-color: var(--bg-light);
-            padding: 8px 12px;
-            border-radius: 18px;
-            font-size: 15px;
-            color: #050505;
-            display: inline-block;
-        }
+    .main-card-content h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
 
-        .comment-name {
-            color: var(--blue);
-            font-weight: 600;
-            font-size: 13px;
-            margin-bottom: 2px;
-            display: block;
-        }
+    .main-card-content p {
+      font-size: 14px;
+      color: var(--color-text-sec);
+    }
 
-        .comment-actions {
-            font-size: 12px;
-            color: var(--text-light);
-            margin-top: 4px;
-            margin-left: 12px;
-            font-weight: bold;
-        }
+    .divider {
+      text-align: center;
+      position: relative;
+      margin: 32px 0;
+    }
 
-        .comment-actions span.action-link {
-            color: #65676b;
-            cursor: pointer;
-        }
+    .divider span {
+      background-color: var(--color-white);
+      padding: 0 16px;
+      color: var(--color-primary);
+      font-weight: 600;
+      font-family: var(--font-heading);
+      position: relative;
+      z-index: 1;
+    }
 
-        .comment-actions span.action-link:hover {
-            text-decoration: underline;
-        }
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: rgba(26, 46, 110, 0.1);
+      z-index: 0;
+    }
 
-        /* 6. Aviso de Login */
-        .login-notice {
-            font-size: 13px;
-            color: var(--text-light);
-            text-align: center;
-            margin-top: 30px;
-        }
+    .bonus-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
 
-        /* 7 e 8. Footer e Disclaimer */
-        footer {
-            background-color: #f0f2f5;
-            padding: 40px 15px 30px;
-            text-align: center;
-            font-size: 12px;
-            color: #65676b;
-            border-top: 1px solid #ccd0d5;
-        }
+    .bonus-card {
+      background-color: var(--color-bg);
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 600;
+    }
 
-        footer p {
-            margin-bottom: 15px;
-        }
+    .bonus-price {
+      margin-left: auto;
+      text-decoration: line-through;
+      color: var(--color-text-sec);
+      font-weight: 400;
+    }
 
-        .disclaimer {
-            max-width: 800px;
-            margin: 0 auto;
-            color: #8c939d;
-            font-size: 11px;
-            line-height: 1.5;
-        }
+    .bonus-total {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 18px;
+      font-weight: 700;
+    }
 
-        /* Responsividade Tablets e Desktop */
-        @media (min-width: 768px) {
-            .top-bar {
-                font-size: 16px;
-                padding: 10px 15px;
-            }
+    .bonus-total span {
+      color: var(--color-gold);
+      text-decoration: line-through;
+      margin-left: 8px;
+    }
 
-            .urgente {
-                font-size: 32px;
-            }
+    /* Pricing */
+    .pricing {
+      padding: 60px 0;
+    }
 
-            h1.headline {
-                font-size: 30px;
-            }
-        }
-    </style>
+    .pricing-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .pricing-card {
+      background-color: var(--color-white);
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+
+    .pricing-card.basic {
+      opacity: 0.85;
+    }
+
+    .pricing-card.complete {
+      border: 2px solid var(--color-gold);
+      box-shadow: 0 10px 30px rgba(212, 160, 23, 0.15);
+    }
+
+    .recommended-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--color-gold);
+      color: var(--color-white);
+      padding: 4px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-heading);
+      white-space: nowrap;
+    }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding-bottom: 24px;
+    }
+
+    .pricing-title {
+      font-size: 20px;
+      color: var(--color-text-main);
+      margin-bottom: 8px;
+    }
+
+    .pricing-price {
+      font-size: 40px;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+
+    .pricing-note {
+      font-size: 13px;
+      color: var(--color-gold);
+      margin-top: 8px;
+      font-weight: 600;
+    }
+
+    .pricing-list {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .pricing-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .pricing-list svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .pricing-card.basic .pricing-list svg {
+      fill: var(--color-primary);
+    }
+
+    .pricing-card.complete .pricing-list svg {
+      fill: var(--color-gold);
+    }
+
+    /* Guarantee & Testimonials */
+    .guarantee-testimonials {
+      background-color: var(--color-white);
+      padding: 60px 0;
+    }
+
+    .guarantee-box {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background-color: rgba(212, 160, 23, 0.05);
+      border: 1px solid rgba(212, 160, 23, 0.2);
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 48px;
+    }
+
+    .guarantee-box svg {
+      width: 48px;
+      height: 48px;
+      fill: var(--color-gold);
+      flex-shrink: 0;
+    }
+
+    .guarantee-text {
+      font-weight: 600;
+      color: var(--color-text-main);
+    }
+
+    .testimonials {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background-color: var(--color-bg);
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #E5E7EB;
+      object-fit: cover;
+    }
+
+    .testimonial-info h4 {
+      font-size: 16px;
+      color: var(--color-text-main);
+      margin-bottom: 2px;
+    }
+
+    .testimonial-info span {
+      font-size: 13px;
+      color: var(--color-text-sec);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: var(--color-text-main);
+    }
+
+    /* FAQ */
+    .faq {
+      padding: 60px 0;
+    }
+
+    .accordion-item {
+      background-color: var(--color-white);
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--color-primary);
+      font-family: var(--font-heading);
+      user-select: none;
+    }
+
+    .accordion-header svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--color-primary);
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-item.active .accordion-header svg {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 20px;
+      color: var(--color-text-sec);
+    }
+
+    .accordion-item.active .accordion-content {
+      padding-bottom: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-white);
+    }
+
+    /* Popup */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .popup-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup-content {
+      background-color: var(--color-white);
+      border-radius: 16px;
+      width: 92vw;
+      max-width: 400px;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 24px 20px;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+
+    .popup-overlay.active .popup-content {
+      transform: translateY(0);
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--color-text-sec);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .popup-badge {
+      display: inline-block;
+      background-color: var(--color-gold);
+      color: var(--color-white);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .popup-title {
+      font-size: 18px;
+      margin-bottom: 16px;
+      color: var(--color-primary);
+    }
+
+    .popup-list {
+      text-align: left;
+      margin-bottom: 16px;
+      background-color: var(--color-bg);
+      border-radius: 8px;
+      padding: 12px;
+    }
+
+    .popup-list-item {
+      font-size: 13px;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .popup-list-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .popup-value {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .popup-value span {
+      color: var(--color-gold);
+    }
+
+    .popup-btn-no {
+      background: none;
+      border: none;
+      color: var(--color-text-sec);
+      font-size: 13px;
+      margin-top: 12px;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* Desktop Breakpoint */
+    @media (min-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero p.subheadline {
+        font-size: 24px;
+      }
+
+      .vsl-container {
+        width: 80%;
+        margin: 0 auto 40px;
+      }
+
+      .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .hero-buttons .btn {
+        width: auto;
+        min-width: 250px;
+      }
+      
+      .hero-buttons .btn-gold {
+        order: 2;
+      }
+      
+      .hero-buttons .btn-outline-blue {
+        order: 1;
+      }
+
+      .main-card {
+        width: 80%;
+        margin: 0 auto 32px;
+      }
+
+      .bonus-list {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .pricing-cards {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 32px;
+      }
+
+      .pricing-card {
+        flex: 1;
+        max-width: 400px;
+      }
+
+      .testimonials {
+        flex-direction: row;
+        gap: 24px;
+      }
+
+      .testimonial-card {
+        flex: 1;
+      }
+
+      .faq-container {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- 1. Barra Superior -->
-    <div class="top-bar">
-        Tú y algunas personas de <strong id="dynamic-city">tu ciudad</strong> fueron seleccionados para ver esta
-        presentación.
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="badge-top">⭐ Más de 3,452 líderes ya lo usan</div>
+      <h1>¿Se te acabaron las ideas para el grupo de jóvenes Cristianos?</h1>
+      <p class="subheadline">101 dinámicas listas para usar — para que cada reunión sea diferente, poderosa y memorable.</p>
+      
+      <div class="vsl-container">
+        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        <span>Tu video aquí</span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#planos" class="btn btn-outline-blue">Quiero el Plan Básico — $9</a>
+        <a href="#planos" class="btn btn-gold">Quiero el Plan Completo — $19</a>
+      </div>
     </div>
+  </section>
 
-    <!-- 2. Headline -->
-    <section class="headline-section">
-        <span class="urgente">URGENTE:</span>
-        <h1 class="headline">Nunca uses este truco de la gelatina a menos que quieras perder peso muchísimo más rápido
-            de lo normal.</h1>
-    </section>
+  <!-- WHAT YOU GET SECTION -->
+  <section class="what-you-get">
+    <div class="container">
+      <h2 class="section-title">Todo lo que recibes</h2>
+      
+      <div class="main-card">
+        <div class="main-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zM8 6h8v2H8zM8 10h8v2H8zM8 14h5v2H8z"/></svg>
+        </div>
+        <div class="main-card-content">
+          <h3>101 Dinámicas para Jóvenes Cristianos</h3>
+          <p>Acceso vitalicio · Organizado por objetivo · Listo para usar hoy</p>
+        </div>
+      </div>
 
-    <!-- 3. VSL Container -->
-    <main class="vsl-container">
-        <div class="vsl-wrapper" id="vsl-anchor">
-            <!-- Embed VTurb Smartplayer Vertical fornecido pelo usuario -->
-            <vturb-smartplayer id="vid-699c6196f5e86dda40b16da5"
-                style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
-            <script
-                type="text/javascript"> var s = document.createElement("script"); s.src = "https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/699c6196f5e86dda40b16da5/v4/player.js", s.async = !0, document.head.appendChild(s); </script>
+      <div class="divider">
+        <span>Más en el Plan Completo:</span>
+      </div>
+
+      <div class="bonus-list">
+        <div class="bonus-card">
+          <span>🎁</span> Guía de Reunión Perfecta
+          <span class="bonus-price">$17</span>
+        </div>
+        <div class="bonus-card">
+          <span>🎁</span> 20 Icebreakers Rápidos
+          <span class="bonus-price">$12</span>
+        </div>
+        <div class="bonus-card">
+          <span>🎁</span> 30 Preguntas Poderosas
+          <span class="bonus-price">$12</span>
+        </div>
+        <div class="bonus-card">
+          <span>🎁</span> Calendario Anual del Líder
+          <span class="bonus-price">$17</span>
+        </div>
+        <div class="bonus-card">
+          <span>🎁</span> Dinámicas para Momentos Difíciles
+          <span class="bonus-price">$12</span>
+        </div>
+      </div>
+
+      <p class="bonus-total">Valor total de bonos: <span>$70</span></p>
+    </div>
+  </section>
+
+  <!-- PRICING SECTION -->
+  <section id="planos" class="pricing">
+    <div class="container">
+      <h2 class="section-title">Elige tu plan</h2>
+      
+      <div class="pricing-cards">
+        <!-- Basic Card -->
+        <div class="pricing-card basic">
+          <div class="pricing-header">
+            <h3 class="pricing-title">Básico</h3>
+            <div class="pricing-price">$9 USD</div>
+          </div>
+          <ul class="pricing-list">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              101 Dinámicas
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Acceso vitalicio
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Garantía 7 días
+            </li>
+          </ul>
+          <button class="btn btn-outline-blue" id="btn-basic">Empezar con el Básico</button>
         </div>
 
-        <!-- 3.1 Botão CTA -->
-        <div class="cta-container hide">
-            <p style="font-size:13px;font-weight:bold;text-align:center;margin-bottom:10px;">🔒 <span
-                    style="color:#FF4444;text-decoration:line-through;">$97</span> <span style="color:#00C853;">Hoy solo
-                    $19</span><br><span style="color:#333333;">Garantía de 7 días o te devolvemos el dinero</span></p>
-
-            <a href="https://pay.hotmart.com/M104741361H?off=ryfqek7i&checkoutMode=10" class="cta-btn" id="cta-button">
-                Quiero acceder al método ahora
-            </a>
+        <!-- Complete Card -->
+        <div class="pricing-card complete">
+          <div class="recommended-badge">⭐ Recomendado</div>
+          <div class="pricing-header">
+            <h3 class="pricing-title">Completo</h3>
+            <div class="pricing-price">$19 USD</div>
+            <div class="pricing-note">Bonos valorados en $70 incluidos</div>
+          </div>
+          <ul class="pricing-list">
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              <strong>101 Dinámicas</strong>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Guía de Reunión Perfecta
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              20 Icebreakers Rápidos
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              30 Preguntas Poderosas
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Calendario Anual del Líder
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              Dinámicas Momentos Difíciles
+            </li>
+          </ul>
+          <a href="#" class="btn btn-gold">Quiero el Plan Completo</a>
         </div>
-    </main>
+      </div>
+    </div>
+  </section>
 
-    <!-- 4. Comentários Facebook -->
-    <section class="fb-comments">
-        <div class="comments-header">
-            Mostrando 9 de 322 comentarios
-        </div>
+  <!-- GUARANTEE & TESTIMONIALS -->
+  <section class="guarantee-testimonials">
+    <div class="container">
+      <div class="guarantee-box">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+        <p class="guarantee-text">Garantía de 7 días — Si no estás satisfecho, te devolvemos tu dinero. Sin preguntas.</p>
+      </div>
 
-        <!-- Comentário 1 (Positivo) -->
-        <div class="comment">
-            <!-- Placeholder WebP usando randomuser (Lazy load strict + dimensões explicitas para 0 CLS) -->
-            <img class="avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de perfil" width="36"
-                height="36" loading="lazy">
-            <div class="comment-body">
-                <div class="comment-text-bubble">
-                    <span class="comment-name">María García</span>
-                    Wow, probé este truco de la gelatina hoy por la mañana y ya me siento mucho más deshinchada! 🙏
-                    Increíble como funciona rápido.
-                </div>
-                <div class="comment-actions">
-                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 42 · 12
-                    m
-                </div>
+      <div class="testimonials">
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-img"></div>
+            <div class="testimonial-info">
+              <h4>Carlos M.</h4>
+              <span>Bogotá, Colombia</span>
             </div>
+          </div>
+          <p class="testimonial-text">"Nunca había visto a los jóvenes tan conectados. Las dinámicas resolvieron mis fines de semana y me ahorraron muchísimas horas de planificación."</p>
         </div>
 
-        <!-- Comentário 2 (Dúvida/Ceticismo) -->
-        <div class="comment">
-            <img class="avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Foto de perfil" width="36"
-                height="36" loading="lazy">
-            <div class="comment-body">
-                <div class="comment-text-bubble">
-                    <span class="comment-name">Carmen López</span>
-                    Será que esto de verdad funciona para quien tiene más de 50 años? Ya intenté absolutamente de todo y
-                    nada me resulta... 😔
-                </div>
-                <div class="comment-actions">
-                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 15 · 24
-                    m
-                </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-img"></div>
+            <div class="testimonial-info">
+              <h4>Ana P.</h4>
+              <span>Lima, Perú</span>
             </div>
+          </div>
+          <p class="testimonial-text">"La mejor inversión que he hecho para mi ministerio. El Plan Completo vale cada centavo por las preguntas poderosas que vienen incluidas."</p>
         </div>
 
-        <!-- Resposta ao Comentário 2 -->
-        <div class="comment reply">
-            <img class="avatar" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Foto de perfil" width="36"
-                height="36" loading="lazy">
-            <div class="comment-body">
-                <div class="comment-text-bubble">
-                    <span class="comment-name">Ana Sofía</span>
-                    Sí Carmen!! Yo tengo 54 y en dos semanas ya noto muchísima diferencia en la ropa. Al principio
-                    dudaba pero puedes hacerlo sin miedo. 🥰
-                </div>
-                <div class="comment-actions">
-                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 28 · 18
-                    m
-                </div>
+        <div class="testimonial-card">
+          <div class="testimonial-header">
+            <div class="testimonial-img"></div>
+            <div class="testimonial-info">
+              <h4>David R.</h4>
+              <span>CDMX, México</span>
             </div>
+          </div>
+          <p class="testimonial-text">"Práctico, directo al punto y con propósito. Hemos visto un crecimiento espiritual real usando estas herramientas."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq">
+    <div class="container faq-container">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      
+      <div class="accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            ¿Cómo accedo después de comprar?
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </div>
+          <div class="accordion-content">
+            <p>Inmediatamente después de procesar tu pago, recibirás un correo electrónico con tus datos de acceso a nuestra plataforma privada donde podrás ver, descargar y utilizar todo el material desde cualquier dispositivo.</p>
+          </div>
         </div>
 
-        <!-- Comentário 3 (Humor/Orgânico) -->
-        <div class="comment">
-            <img class="avatar" src="https://randomuser.me/api/portraits/women/52.jpg" alt="Foto de perfil" width="36"
-                height="36" loading="lazy">
-            <div class="comment-body">
-                <div class="comment-text-bubble">
-                    <span class="comment-name">Rosa Martínez</span>
-                    Mi marido pensó que estaba loca haciendo esta mezcla rara de la gelatina, pero cuando vio la balanza
-                    no lo podía creer jajaja 🤣 Ya hasta él quiere tomar ahora.
-                </div>
-                <div class="comment-actions">
-                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 89 · 45
-                    m
-                </div>
-            </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            ¿Funciona para grupos pequeños?
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </div>
+          <div class="accordion-content">
+            <p>¡Absolutamente! Nuestro material incluye indicaciones claras sobre cómo adaptar cada dinámica según el tamaño de tu grupo, ya sean 5, 20 o 100 jóvenes.</p>
+          </div>
         </div>
 
-        <!-- Comentário 4 (Alivio da objeção) -->
-        <div class="comment">
-            <img class="avatar" src="https://randomuser.me/api/portraits/women/29.jpg" alt="Foto de perfil" width="36"
-                height="36" loading="lazy">
-            <div class="comment-body">
-                <div class="comment-text-bubble">
-                    <span class="comment-name">Elena Valdés</span>
-                    Al principio estaba dudando, parece demasiado simple. Pero la verdad es que me quitó toda la
-                    ansiedad por comer dulces y pan por la noche. Vi el video hasta el final y valió cada segundo!
-                </div>
-                <div class="comment-actions">
-                    <span class="action-link">Me gusta</span> · <span class="action-link">Responder</span> · 👍 104 · 1
-                    h
-                </div>
-            </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            ¿Las dinámicas necesitan materiales especiales?
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </div>
+          <div class="accordion-content">
+            <p>La gran mayoría de las dinámicas están diseñadas para funcionar sin recursos costosos, utilizando objetos cotidianos (papel, bolígrafos, sillas) o simplemente la participación del grupo.</p>
+          </div>
         </div>
 
-        <!-- 6. Aviso de Login -->
-        <div class="login-notice">
-            Necesitas iniciar sesión para comentar.
+        <div class="accordion-item">
+          <div class="accordion-header">
+            ¿Sirve para cualquier denominación cristiana?
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </div>
+          <div class="accordion-content">
+            <p>Sí, todo nuestro material está centrado en principios bíblicos universales y valores cristianos, respetando la diversidad y siendo fácilmente adaptable a cualquier ministerio.</p>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- 7 e 8. Footer -->
-    <footer>
-        <p>Copyright &copy; 2026 - El Truco de la Gelatina. Todos los derechos reservados.</p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>Dinámicas para Jóvenes Cristianos © 2025</p>
+      <div class="footer-links">
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos</a>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+  </footer>
 
-        <div class="disclaimer">
-            <strong>Descargo de responsabilidad:</strong> Los testimonios representados en esta página son resultados
-            reales, pero los resultados pueden variar de persona a persona. Esta información tiene fines estrictamente
-            educativos y no sustituye en ningún caso el consejo o tratamiento de un profesional médico. Consulte siempre
-            a su médico antes de iniciar cualquier cambio en su dieta o rutina.
-        </div>
-    </footer>
+  <!-- UPSELL POPUP -->
+  <div class="popup-overlay" id="upsell-popup">
+    <div class="popup-content">
+      <button class="popup-close" id="close-popup">&times;</button>
+      <div class="popup-badge">⚡ Oferta especial</div>
+      <h3 class="popup-title">Lleva todo por solo $6 más</h3>
+      
+      <div class="popup-list">
+        <div class="popup-list-item">🎁 Guía de Reunión Perfecta</div>
+        <div class="popup-list-item">🎁 20 Icebreakers Rápidos</div>
+        <div class="popup-list-item">🎁 30 Preguntas Poderosas</div>
+        <div class="popup-list-item">🎁 Calendario Anual del Líder</div>
+        <div class="popup-list-item">🎁 Dinámicas para Momentos Difíciles</div>
+      </div>
 
-    <!-- SCRIPT INLINE CRÍTICO, MÍNIMO E ASSÍNCRONO -->
-    <!-- API de geolocalização rápida e livre de CORS/limites -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Buscando cidade do usuário de forma assíncrona para não travar renderização
-            fetch('https://get.geojs.io/v1/ip/geo.json')
-                .then(response => response.json())
-                .then(data => {
-                    if (data && data.city) {
-                        const cityElements = document.querySelectorAll('#dynamic-city');
-                        cityElements.forEach(el => el.innerText = data.city);
-                    }
-                })
-                .catch(error => console.warn('Geo falhou, fallback mantido.'));
+      <div class="popup-value">Bonos valorados en $70 &rarr; <span>solo $6 más ahora</span></div>
+
+      <a href="#" class="btn btn-gold" id="btn-upsell-yes">✓ Sí, quiero el Completo por $15</a>
+      <button class="popup-btn-no" id="btn-upsell-no">No gracias, continuar con el Básico por $9</button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Accordion logic
+      const accordionItems = document.querySelectorAll('.accordion-item');
+      
+      accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        header.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          
+          // Close all
+          accordionItems.forEach(i => {
+            i.classList.remove('active');
+            i.querySelector('.accordion-content').style.maxHeight = null;
+          });
+
+          // Open clicked if it wasn't active
+          if (!isActive) {
+            item.classList.add('active');
+            const content = item.querySelector('.accordion-content');
+            content.style.maxHeight = content.scrollHeight + "px";
+          }
         });
-    </script>
-</body>
+      });
 
+      // 2. Upsell Popup Logic
+      const btnBasic = document.getElementById('btn-basic');
+      const popup = document.getElementById('upsell-popup');
+      const closePopupBtn = document.getElementById('close-popup');
+      const btnUpsellNo = document.getElementById('btn-upsell-no');
+      const btnUpsellYes = document.getElementById('btn-upsell-yes');
+
+      const POPUP_SHOWN_KEY = 'upsell_popup_shown';
+
+      const showPopup = (e) => {
+        e.preventDefault();
+        const hasSeenPopup = sessionStorage.getItem(POPUP_SHOWN_KEY);
+        
+        if (!hasSeenPopup) {
+          popup.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+          sessionStorage.setItem(POPUP_SHOWN_KEY, 'true');
+        } else {
+          // Redirect to basic checkout directly if already seen
+          window.location.href = "#checkout-basic"; // Placeholder
+        }
+      };
+
+      const hidePopupAndRedirectBasic = () => {
+        popup.classList.remove('active');
+        document.body.style.overflow = '';
+        window.location.href = "#checkout-basic"; // Placeholder
+      };
+
+      const redirectCompleteSpecial = (e) => {
+        e.preventDefault();
+        window.location.href = "#checkout-complete-15"; // Placeholder
+      };
+
+      btnBasic.addEventListener('click', showPopup);
+      
+      closePopupBtn.addEventListener('click', hidePopupAndRedirectBasic);
+      
+      btnUpsellNo.addEventListener('click', hidePopupAndRedirectBasic);
+
+      btnUpsellYes.addEventListener('click', redirectCompleteSpecial);
+
+      // Close popup clicking on overlay
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+          hidePopupAndRedirectBasic();
+        }
+      });
+
+      // Close popup pressing ECS
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('active')) {
+          hidePopupAndRedirectBasic();
+        }
+      });
+    });
+  </script>
+</body>
 </html>
