@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dinámicas para Jóvenes Cristianos</title>
+  <title>Dinámicas para Jóvenes Cristianos | 101 Ideas Listas para Usar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
   <style>
+    /* CSS Custom Properties */
     :root {
-      --color-primary: #1A2E6E;
-      --color-secondary: #2D4FBF;
-      --color-gold: #D4A017;
-      --color-amber: #F5C842;
-      --color-bg: #F8F9FF;
-      --color-white: #FFFFFF;
-      --color-text-main: #1C1C1E;
-      --color-text-sec: #6B7280;
+      --blue-dark: #0F1E5C;
+      --blue-royal: #1A2E6E;
+      --blue-mid: #2D4FBF;
+      --gold: #D4A017;
+      --gold-light: #F5C842;
+      --white: #FFFFFF;
+      --off-white: #F8F9FF;
+      --text-dark: #0D0D0D;
+      --text-muted: #6B7280;
+      --card-bg: #FFFFFF;
       
-      --font-body: 'Inter', sans-serif;
-      --font-heading: 'Poppins', sans-serif;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Nunito', sans-serif;
     }
 
+    /* Reset & Base Styles */
     * {
       margin: 0;
       padding: 0;
@@ -34,34 +38,61 @@
 
     body {
       font-family: var(--font-body);
-      background-color: var(--color-bg);
-      color: var(--color-text-main);
-      line-height: 1.7;
-      font-size: 15px;
+      background-color: var(--off-white);
+      color: var(--text-dark);
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
     }
 
-    h1, h2, h3, h4 {
-      font-family: var(--font-heading);
-      color: var(--color-primary);
-      line-height: 1.2;
+    h1, h2, h3, h4, .display-font {
+      font-family: var(--font-display);
+      font-weight: 700;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
     }
 
     img {
       max-width: 100%;
       height: auto;
+      display: block;
     }
 
+    /* Layout Containers */
     .container {
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 24px;
     }
+
+    .text-center { text-align: center; }
+
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-up {
+      opacity: 0;
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
 
     /* Buttons */
     .btn {
@@ -70,9 +101,9 @@
       justify-content: center;
       width: 100%;
       padding: 16px 24px;
-      border-radius: 8px;
-      font-family: var(--font-heading);
-      font-weight: 600;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-weight: 700;
       font-size: 16px;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -81,420 +112,576 @@
     }
 
     .btn-gold {
-      background-color: var(--color-gold);
-      color: var(--color-white);
-      box-shadow: 0 4px 6px rgba(212, 160, 23, 0.3);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--text-dark);
+      box-shadow: 0 4px 15px rgba(212, 160, 23, 0.3);
     }
 
     .btn-gold:hover {
-      background-color: var(--color-amber);
       transform: translateY(-2px);
-      box-shadow: 0 6px 12px rgba(212, 160, 23, 0.4);
+      box-shadow: 0 0 20px rgba(212, 160, 23, 0.4);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-outline-white:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--white);
     }
 
     .btn-outline-blue {
-      background-color: transparent;
-      color: var(--color-primary);
-      border: 2px solid var(--color-primary);
+      background: transparent;
+      color: var(--blue-royal);
+      border: 2px solid var(--blue-royal);
     }
 
     .btn-outline-blue:hover {
-      background-color: var(--color-primary);
-      color: var(--color-white);
+      background: var(--blue-royal);
+      color: var(--white);
     }
 
-    /* Hero Section */
+    /* --- HERO SECTION --- */
     .hero {
-      padding: 60px 0 40px;
-      text-align: center;
+      position: relative;
+      background-color: var(--blue-royal);
+      background-image: 
+        radial-gradient(var(--gold) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--blue-royal), var(--blue-dark));
+      background-size: 20px 20px, 100% 100%;
+      background-position: 0 0, 0 0;
+      padding: 60px 0 80px;
+      color: var(--white);
+      overflow: hidden;
     }
 
-    .badge-top {
-      display: inline-block;
-      background-color: rgba(212, 160, 23, 0.1);
-      color: var(--color-gold);
-      padding: 6px 12px;
-      border-radius: 20px;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      padding: 6px 16px;
+      border-radius: 30px;
       font-size: 13px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-badge .star {
+      color: var(--gold);
     }
 
     .hero h1 {
-      font-size: 28px;
-      font-weight: 700;
+      font-size: 32px;
+      line-height: 1.2;
       margin-bottom: 16px;
     }
 
     .hero p.subheadline {
-      font-size: 18px;
-      color: var(--color-text-sec);
-      margin-bottom: 32px;
-      font-weight: 600;
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .vsl-wrapper {
+      max-width: 360px;
+      margin: 0 auto 32px;
     }
 
     .vsl-container {
       width: 100%;
-      aspect-ratio: 16/9;
-      background-color: var(--color-primary);
-      border-radius: 12px;
+      aspect-ratio: 9/16;
+      background-color: var(--blue-dark);
+      border-radius: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-bottom: 32px;
-      box-shadow: 0 10px 25px rgba(26, 46, 110, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+      overflow: hidden;
     }
 
-    .vsl-container svg {
+    .vsl-container::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at center, rgba(212,160,23,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .vsl-play {
       width: 64px;
       height: 64px;
-      fill: var(--color-gold);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-bottom: 16px;
       cursor: pointer;
-      transition: transform 0.3s ease;
+      backdrop-filter: blur(4px);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(212, 160, 23, 0.3);
     }
 
-    .vsl-container svg:hover {
+    .vsl-play svg {
+      width: 24px;
+      height: 24px;
+      fill: var(--gold);
+      margin-left: 4px; /* visually center play icon */
+    }
+
+    .vsl-play:hover {
       transform: scale(1.1);
+      background: rgba(212, 160, 23, 0.2);
     }
 
-    .vsl-container span {
-      color: var(--color-white);
-      font-family: var(--font-heading);
+    .vsl-text {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
       font-weight: 600;
     }
 
     .hero-buttons {
+      max-width: 360px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 16px;
-    }
-    
-    .hero-buttons .btn-gold {
-      order: 1;
-      padding: 20px 24px;
-      font-size: 18px;
-    }
-    
-    .hero-buttons .btn-outline-blue {
-      order: 2;
+      gap: 12px;
     }
 
-    /* What you get */
+    .hero-buttons .btn-gold {
+      font-size: 18px;
+      padding: 20px 24px;
+    }
+
+    /* SVG Wave Divider */
+    .wave-divider {
+      position: absolute;
+      bottom: -1px; /* fix rendering gap */
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+
+    .wave-divider svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 48px;
+    }
+
+    .wave-divider .shape-fill {
+      fill: var(--off-white);
+    }
+
+
+    /* --- WHAT YOU GET SECTION --- */
     .what-you-get {
-      padding: 60px 0;
-      background-color: var(--color-white);
+      padding: 80px 0 60px;
+      background-color: var(--off-white);
     }
 
     .section-title {
+      font-size: 32px;
+      color: var(--blue-royal);
       text-align: center;
-      font-size: 28px;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
     }
 
     .main-card {
-      background-color: var(--color-bg);
-      border-radius: 12px;
+      background: var(--card-bg);
+      border-radius: 16px;
       padding: 24px;
       display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-      border: 1px solid rgba(26, 46, 110, 0.1);
+      align-items: flex-start;
+      gap: 20px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      border-left: 4px solid var(--gold);
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .main-card-icon {
-      width: 60px;
-      height: 60px;
-      background-color: var(--color-primary);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .main-card-icon svg {
-      width: 32px;
-      height: 32px;
-      fill: var(--color-white);
+      font-size: 48px;
+      line-height: 1;
     }
 
     .main-card-content h3 {
-      font-size: 18px;
-      margin-bottom: 4px;
+      font-family: var(--font-body);
+      font-size: 20px;
+      color: var(--blue-royal);
+      margin-bottom: 8px;
+      font-weight: 700;
     }
 
     .main-card-content p {
       font-size: 14px;
-      color: var(--color-text-sec);
+      color: var(--text-muted);
     }
 
-    .divider {
+    .bonus-separator {
       text-align: center;
+      margin: 40px 0;
       position: relative;
-      margin: 32px 0;
     }
 
-    .divider span {
-      background-color: var(--color-white);
-      padding: 0 16px;
-      color: var(--color-primary);
-      font-weight: 600;
-      font-family: var(--font-heading);
-      position: relative;
-      z-index: 1;
-    }
-
-    .divider::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background-color: rgba(26, 46, 110, 0.1);
-      z-index: 0;
+    .bonus-separator span {
+      display: inline-block;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
     .bonus-list {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .bonus-card {
-      background-color: var(--color-bg);
-      border-radius: 8px;
-      padding: 16px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+      border-left: 3px solid var(--gold);
+    }
+
+    .bonus-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    .bonus-title-wrap {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 15px;
-      font-weight: 600;
+    }
+
+    .bonus-icon {
+      font-size: 24px;
+    }
+
+    .bonus-title {
+      font-weight: 700;
+      color: var(--blue-royal);
+      font-size: 16px;
     }
 
     .bonus-price {
-      margin-left: auto;
+      color: var(--text-muted);
       text-decoration: line-through;
-      color: var(--color-text-sec);
-      font-weight: 400;
+      font-size: 15px;
     }
 
-    .bonus-total {
+    .bonus-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-left: 36px; /* align with text, bypassing icon */
+    }
+
+    .bonus-total-wrap {
       text-align: center;
-      margin-top: 24px;
-      font-size: 18px;
-      font-weight: 700;
+      margin-top: 48px;
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
     }
 
-    .bonus-total span {
-      color: var(--color-gold);
+    .bonus-total-text {
+      font-size: 16px;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .bonus-total-price {
       text-decoration: line-through;
-      margin-left: 8px;
+      color: var(--text-muted);
     }
 
-    /* Pricing */
+    .bonus-total-highlight {
+      display: block;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+
+    /* --- PRICING SECTION --- */
     .pricing {
-      padding: 60px 0;
+      padding: 80px 0;
+      background-color: var(--off-white);
     }
 
     .pricing-cards {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .pricing-card {
-      background-color: var(--color-white);
-      border-radius: 16px;
-      padding: 32px 24px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    .plan-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 40px 32px;
       position: relative;
     }
 
-    .pricing-card.basic {
-      opacity: 0.85;
+    .plan-basic {
+      opacity: 0.9;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
     }
 
-    .pricing-card.complete {
-      border: 2px solid var(--color-gold);
-      box-shadow: 0 10px 30px rgba(212, 160, 23, 0.15);
+    .plan-complete {
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 0 4px rgba(212,160,23,0.15), 0 10px 40px rgba(0,0,0,0.1);
+      z-index: 10;
     }
 
-    .recommended-badge {
+    .plan-badge {
       position: absolute;
-      top: -14px;
+      top: -16px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: var(--color-gold);
-      color: var(--color-white);
-      padding: 4px 16px;
-      border-radius: 20px;
-      font-size: 13px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--text-dark);
+      padding: 6px 20px;
+      border-radius: 30px;
       font-weight: 700;
-      font-family: var(--font-heading);
+      font-size: 14px;
+      box-shadow: 0 4px 10px rgba(212,160,23,0.3);
       white-space: nowrap;
     }
 
-    .pricing-header {
+    .plan-header {
       text-align: center;
-      margin-bottom: 24px;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      padding-bottom: 24px;
-    }
-
-    .pricing-title {
-      font-size: 20px;
-      color: var(--color-text-main);
-      margin-bottom: 8px;
-    }
-
-    .pricing-price {
-      font-size: 40px;
-      font-weight: 700;
-      color: var(--color-primary);
-      line-height: 1;
-    }
-
-    .pricing-note {
-      font-size: 13px;
-      color: var(--color-gold);
-      margin-top: 8px;
-      font-weight: 600;
-    }
-
-    .pricing-list {
-      list-style: none;
       margin-bottom: 32px;
     }
 
-    .pricing-list li {
+    .plan-title {
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 20px;
       margin-bottom: 12px;
+    }
+
+    .plan-basic .plan-title { color: var(--text-muted); }
+    .plan-complete .plan-title { color: var(--blue-royal); }
+
+    .plan-price {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .plan-basic .plan-price { color: var(--blue-mid); }
+    .plan-complete .plan-price { 
+      font-size: 42px;
+      color: var(--blue-royal); 
+    }
+
+    .plan-note {
+      display: block;
+      font-size: 14px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    .plan-list {
+      list-style: none;
+      margin-bottom: 40px;
+    }
+
+    .plan-list li {
       display: flex;
       align-items: flex-start;
       gap: 12px;
+      margin-bottom: 16px;
+      font-size: 15px;
+      color: var(--text-dark);
     }
 
-    .pricing-list svg {
+    .plan-list li.sub-item {
+      padding-left: 32px;
+      font-size: 14px;
+      color: var(--blue-mid);
+      margin-top: -8px;
+      margin-bottom: 12px;
+    }
+
+    .plan-list svg {
       width: 20px;
       height: 20px;
       flex-shrink: 0;
       margin-top: 2px;
     }
 
-    .pricing-card.basic .pricing-list svg {
-      fill: var(--color-primary);
-    }
+    .plan-basic .plan-list svg { fill: var(--blue-mid); }
+    .plan-complete .plan-list svg { fill: var(--gold); }
 
-    .pricing-card.complete .pricing-list svg {
-      fill: var(--color-gold);
-    }
 
-    /* Guarantee & Testimonials */
-    .guarantee-testimonials {
-      background-color: var(--color-white);
-      padding: 60px 0;
+    /* --- GUARANTEE & TESTIMONIALS --- */
+    .proof-section {
+      background-color: var(--white);
+      padding: 80px 0;
     }
 
     .guarantee-box {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      background-color: rgba(212, 160, 23, 0.05);
-      border: 1px solid rgba(212, 160, 23, 0.2);
-      padding: 24px;
-      border-radius: 12px;
-      margin-bottom: 48px;
+      max-width: 600px;
+      margin: 0 auto 64px;
+      text-align: center;
+      padding: 32px;
+      background: rgba(212, 160, 23, 0.05);
+      border-radius: 20px;
+      border: 1px dashed rgba(212, 160, 23, 0.3);
     }
 
-    .guarantee-box svg {
-      width: 48px;
-      height: 48px;
-      fill: var(--color-gold);
-      flex-shrink: 0;
+    .guarantee-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    .guarantee-title {
+      font-family: var(--font-body);
+      font-size: 20px;
+      color: var(--text-dark);
+      margin-bottom: 8px;
     }
 
     .guarantee-text {
-      font-weight: 600;
-      color: var(--color-text-main);
+      font-size: 15px;
+      color: var(--text-muted);
     }
 
-    .testimonials {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    .testimonials-grid {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .testimonial-card {
-      background-color: var(--color-bg);
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      background: var(--off-white);
+      padding: 32px;
+      border-radius: 16px;
+      border: 1px solid rgba(0,0,0,0.03);
     }
 
-    .testimonial-header {
+    .t-header {
       display: flex;
       align-items: center;
       gap: 16px;
       margin-bottom: 16px;
     }
 
-    .testimonial-img {
-      width: 50px;
-      height: 50px;
+    .t-avatar {
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background-color: #E5E7EB;
       object-fit: cover;
+      border: 2px solid var(--white);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    .testimonial-info h4 {
+    .t-info h4 {
       font-size: 16px;
-      color: var(--color-text-main);
+      color: var(--text-dark);
       margin-bottom: 2px;
+      font-family: var(--font-body);
     }
 
-    .testimonial-info span {
+    .t-info span {
       font-size: 13px;
-      color: var(--color-text-sec);
+      color: var(--text-muted);
     }
 
-    .testimonial-text {
+    .t-stars {
+      color: var(--gold);
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .t-text {
       font-style: italic;
-      color: var(--color-text-main);
+      color: var(--text-dark);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    /* FAQ */
-    .faq {
-      padding: 60px 0;
+
+    /* --- FAQ SECTION --- */
+    .faq-section {
+      padding: 80px 0;
+      background-color: var(--off-white);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .accordion-item {
-      background-color: var(--color-white);
-      border-radius: 8px;
-      margin-bottom: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
       overflow: hidden;
     }
 
     .accordion-header {
-      padding: 20px;
+      padding: 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       cursor: pointer;
-      font-weight: 600;
-      color: var(--color-primary);
-      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--blue-royal);
+      font-size: 16px;
       user-select: none;
     }
 
     .accordion-header svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--color-primary);
+      width: 24px;
+      height: 24px;
+      fill: var(--blue-royal);
       transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 16px;
     }
 
     .accordion-item.active .accordion-header svg {
@@ -504,29 +691,49 @@
     .accordion-content {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease;
-      padding: 0 20px;
-      color: var(--color-text-sec);
+      transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+      padding: 0 24px;
+      color: var(--text-muted);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     .accordion-item.active .accordion-content {
-      padding-bottom: 20px;
+      transition: max-height 0.4s ease-in-out;
     }
 
-    /* Footer */
-    footer {
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      padding: 40px 0;
+    .accordion-content-inner {
+      padding-bottom: 24px;
+      padding-top: 8px;
+    }
+
+
+    /* --- FOOTER --- */
+    .site-footer {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      padding: 48px 0 32px;
       text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .footer-copy {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 24px;
     }
 
     .footer-links {
       display: flex;
       justify-content: center;
-      gap: 16px;
-      margin-top: 16px;
+      gap: 24px;
       flex-wrap: wrap;
+      margin-bottom: 32px;
     }
 
     .footer-links a {
@@ -536,189 +743,184 @@
     }
 
     .footer-links a:hover {
-      color: var(--color-white);
+      color: var(--white);
     }
 
-    /* Popup */
-    .popup-overlay {
+    .footer-disclaimer {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+
+    /* --- MODAL UPSELL --- */
+    .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.7);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.75);
       display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 1000;
+      z-index: 9999;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s ease;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(2px);
     }
 
-    .popup-overlay.active {
+    .modal-overlay.active {
       opacity: 1;
       visibility: visible;
     }
 
-    .popup-content {
-      background-color: var(--color-white);
-      border-radius: 16px;
+    .modal-content {
+      background: var(--white);
       width: 92vw;
-      max-width: 400px;
-      max-height: 88vh;
+      max-width: 420px;
+      max-height: 85vh;
       overflow-y: auto;
-      padding: 24px 20px;
+      border-radius: 20px;
+      padding: 32px 24px 24px;
       position: relative;
-      transform: translateY(20px);
-      transition: transform 0.3s ease;
+      transform: scale(0.92);
+      transition: transform 0.2s ease-out;
       text-align: center;
     }
 
-    .popup-overlay.active .popup-content {
-      transform: translateY(0);
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
     }
 
-    .popup-close {
+    .modal-close {
       position: absolute;
       top: 16px;
       right: 16px;
-      background: none;
+      background: transparent;
       border: none;
       font-size: 24px;
-      color: var(--color-text-sec);
+      color: #D1D5DB;
       cursor: pointer;
       line-height: 1;
+      padding: 4px;
     }
 
-    .popup-badge {
+    .modal-badge {
       display: inline-block;
-      background-color: var(--color-gold);
-      color: var(--color-white);
-      padding: 4px 12px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+      color: var(--text-dark);
+      padding: 4px 16px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    .popup-title {
-      font-size: 18px;
       margin-bottom: 16px;
-      color: var(--color-primary);
+      box-shadow: 0 2px 8px rgba(212,160,23,0.3);
     }
 
-    .popup-list {
+    .modal-title {
+      font-size: 20px;
+      color: var(--blue-royal);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    .modal-list {
       text-align: left;
-      margin-bottom: 16px;
-      background-color: var(--color-bg);
-      border-radius: 8px;
-      padding: 12px;
+      margin-bottom: 24px;
     }
 
-    .popup-list-item {
+    .modal-list-item {
       font-size: 13px;
-      margin-bottom: 8px;
-      font-weight: 600;
-    }
-    .popup-list-item:last-child {
-      margin-bottom: 0;
+      color: var(--text-dark);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      gap: 8px;
     }
 
-    .popup-value {
-      font-size: 14px;
+    .modal-list-item:last-child {
+      border-bottom: none;
+    }
+
+    .modal-value {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .modal-value span {
+      color: var(--gold);
       font-weight: 700;
-      margin-bottom: 20px;
+      font-size: 14px;
+      display: block;
+      margin-top: 4px;
     }
 
-    .popup-value span {
-      color: var(--color-gold);
+    .modal-btn-yes {
+      height: 52px;
+      margin-bottom: 16px;
     }
 
-    .popup-btn-no {
-      background: none;
+    .modal-btn-no {
+      background: transparent;
       border: none;
-      color: var(--color-text-sec);
-      font-size: 13px;
-      margin-top: 12px;
+      color: #9CA3AF;
+      font-size: 11px;
       cursor: pointer;
-      text-decoration: underline;
+      font-family: var(--font-body);
+      display: inline-block;
+      padding: 8px;
     }
 
-    /* Desktop Breakpoint */
+    /* Desktop Breakpoints */
     @media (min-width: 768px) {
-      body {
-        font-size: 16px;
+      .hero {
+        padding: 80px 0 100px;
       }
 
       .hero h1 {
-        font-size: 48px;
+        font-size: 52px;
+        margin-bottom: 24px;
       }
 
       .hero p.subheadline {
-        font-size: 24px;
-      }
-
-      .vsl-container {
-        width: 80%;
-        margin: 0 auto 40px;
-      }
-
-      .hero-buttons {
-        flex-direction: row;
-        justify-content: center;
-        width: 80%;
-        margin: 0 auto;
-      }
-
-      .hero-buttons .btn {
-        width: auto;
-        min-width: 250px;
+        font-size: 20px;
       }
       
-      .hero-buttons .btn-gold {
-        order: 2;
-      }
-      
-      .hero-buttons .btn-outline-blue {
-        order: 1;
-      }
-
-      .main-card {
-        width: 80%;
-        margin: 0 auto 32px;
-      }
-
-      .bonus-list {
-        width: 80%;
-        margin: 0 auto;
+      .wave-divider svg {
+        height: 64px;
       }
 
       .pricing-cards {
         flex-direction: row;
         align-items: center;
-        justify-content: center;
-        gap: 32px;
       }
 
-      .pricing-card {
-        flex: 1;
-        max-width: 400px;
-      }
-
-      .testimonials {
-        flex-direction: row;
-        gap: 24px;
-      }
-
-      .testimonial-card {
+      .plan-card {
         flex: 1;
       }
 
-      .faq-container {
-        width: 80%;
-        margin: 0 auto;
+      .plan-basic {
+        /* Subtle indentation to make complete plan pop more */
+        transform: scale(0.95);
+        transform-origin: right center;
+      }
+
+      .plan-complete {
+        min-height: 520px; /* Make it visually taller */
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .accordion-header {
+        font-size: 18px;
+      }
+      
+      .main-card {
+        padding: 32px;
       }
     }
   </style>
@@ -726,83 +928,138 @@
 <body>
 
   <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="container">
-      <div class="badge-top">⭐ Más de 3,452 líderes ya lo usan</div>
+  <header class="hero">
+    <div class="container text-center animate-fade-up">
+      <div class="hero-badge">
+        <span class="star">★</span> Más de 3.452 líderes ya lo usan
+      </div>
+      
       <h1>¿Se te acabaron las ideas para el grupo de jóvenes Cristianos?</h1>
       <p class="subheadline">101 dinámicas listas para usar — para que cada reunión sea diferente, poderosa y memorable.</p>
-      
-      <div class="vsl-container">
-        <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        <span>Tu video aquí</span>
+
+      <div class="vsl-wrapper animate-fade-up delay-100">
+        <div class="vsl-container">
+          <div class="vsl-play">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <span class="vsl-text">Tu video aquí</span>
+        </div>
       </div>
 
-      <div class="hero-buttons">
-        <a href="#planos" class="btn btn-outline-blue">Quiero el Plan Básico — $9</a>
-        <a href="#planos" class="btn btn-gold">Quiero el Plan Completo — $19</a>
+      <div class="hero-buttons animate-fade-up delay-200">
+        <a href="#planos" class="btn btn-gold">✓ Quiero el Plan Completo — $19</a>
+        <a href="#planos" class="btn btn-outline-white">Ver el Plan Básico — $9</a>
       </div>
     </div>
-  </section>
+    
+    <!-- Wave Divider -->
+    <div class="wave-divider">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V0C73.8,11.33,147.27,33.4,213.6,50.8,249.66,60.25,285.5,63.11,321.39,56.44Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </header>
 
   <!-- WHAT YOU GET SECTION -->
   <section class="what-you-get">
     <div class="container">
-      <h2 class="section-title">Todo lo que recibes</h2>
+      <h2 class="section-title display-font animate-fade-up">Todo lo que recibes</h2>
       
-      <div class="main-card">
-        <div class="main-card-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 1H7C5.9 1 5 1.9 5 3v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14zM8 6h8v2H8zM8 10h8v2H8zM8 14h5v2H8z"/></svg>
-        </div>
+      <div class="main-card animate-fade-up delay-100">
+        <div class="main-card-icon">📱</div>
         <div class="main-card-content">
           <h3>101 Dinámicas para Jóvenes Cristianos</h3>
           <p>Acceso vitalicio · Organizado por objetivo · Listo para usar hoy</p>
         </div>
       </div>
 
-      <div class="divider">
-        <span>Más en el Plan Completo:</span>
+      <div class="bonus-separator animate-fade-up delay-200">
+        <span>━━ Más en el Plan Completo ━━</span>
       </div>
 
       <div class="bonus-list">
-        <div class="bonus-card">
-          <span>🎁</span> Guía de Reunión Perfecta
-          <span class="bonus-price">$17</span>
+        <!-- Bonus 1 -->
+        <div class="bonus-card animate-fade-up delay-300">
+          <div class="bonus-header">
+            <div class="bonus-title-wrap">
+              <span class="bonus-icon">🎁</span>
+              <span class="bonus-title">Guía de Reunión Perfecta</span>
+            </div>
+            <span class="bonus-price">$17</span>
+          </div>
+          <p class="bonus-desc">Estructura tu reunión de 60, 90 o 120 min de principio a fin</p>
         </div>
-        <div class="bonus-card">
-          <span>🎁</span> 20 Icebreakers Rápidos
-          <span class="bonus-price">$12</span>
+
+        <!-- Bonus 2 -->
+        <div class="bonus-card animate-fade-up delay-300">
+          <div class="bonus-header">
+            <div class="bonus-title-wrap">
+              <span class="bonus-icon">🎁</span>
+              <span class="bonus-title">20 Icebreakers Rápidos</span>
+            </div>
+            <span class="bonus-price">$12</span>
+          </div>
+          <p class="bonus-desc">Activa al grupo en menos de 5 minutos, sin materiales</p>
         </div>
-        <div class="bonus-card">
-          <span>🎁</span> 30 Preguntas Poderosas
-          <span class="bonus-price">$12</span>
+
+        <!-- Bonus 3 -->
+        <div class="bonus-card animate-fade-up delay-400">
+          <div class="bonus-header">
+            <div class="bonus-title-wrap">
+              <span class="bonus-icon">🎁</span>
+              <span class="bonus-title">30 Preguntas Poderosas</span>
+            </div>
+            <span class="bonus-price">$12</span>
+          </div>
+          <p class="bonus-desc">Convierte cualquier dinámica en una conversación profunda</p>
         </div>
-        <div class="bonus-card">
-          <span>🎁</span> Calendario Anual del Líder
-          <span class="bonus-price">$17</span>
+
+        <!-- Bonus 4 -->
+        <div class="bonus-card animate-fade-up delay-400">
+          <div class="bonus-header">
+            <div class="bonus-title-wrap">
+              <span class="bonus-icon">🎁</span>
+              <span class="bonus-title">Calendario Anual del Líder</span>
+            </div>
+            <span class="bonus-price">$17</span>
+          </div>
+          <p class="bonus-desc">52 semanas de reuniones ya planificadas para ti</p>
         </div>
-        <div class="bonus-card">
-          <span>🎁</span> Dinámicas para Momentos Difíciles
-          <span class="bonus-price">$12</span>
+
+        <!-- Bonus 5 -->
+        <div class="bonus-card animate-fade-up delay-400">
+          <div class="bonus-header">
+            <div class="bonus-title-wrap">
+              <span class="bonus-icon">🎁</span>
+              <span class="bonus-title">Dinámicas para Momentos Difíciles</span>
+            </div>
+            <span class="bonus-price">$12</span>
+          </div>
+          <p class="bonus-desc">Qué hacer cuando alguien en el grupo está sufriendo</p>
         </div>
       </div>
 
-      <p class="bonus-total">Valor total de bonos: <span>$70</span></p>
+      <div class="bonus-total-wrap animate-fade-up delay-400">
+        <p class="bonus-total-text">Valor total de bonos: <span class="bonus-total-price">$70</span></p>
+        <span class="bonus-total-highlight">Incluidos gratis en el Plan Completo</span>
+      </div>
     </div>
   </section>
 
   <!-- PRICING SECTION -->
   <section id="planos" class="pricing">
     <div class="container">
-      <h2 class="section-title">Elige tu plan</h2>
+      <h2 class="section-title display-font animate-fade-up">Elige tu plan</h2>
       
       <div class="pricing-cards">
-        <!-- Basic Card -->
-        <div class="pricing-card basic">
-          <div class="pricing-header">
-            <h3 class="pricing-title">Básico</h3>
-            <div class="pricing-price">$9 USD</div>
+        
+        <!-- Basic Plan -->
+        <div class="plan-card plan-basic animate-fade-up delay-100">
+          <div class="plan-header">
+            <h3 class="plan-title">Básico</h3>
+            <div class="plan-price">$9 USD</div>
           </div>
-          <ul class="pricing-list">
+          <ul class="plan-list">
             <li>
               <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
               101 Dinámicas
@@ -816,98 +1073,91 @@
               Garantía 7 días
             </li>
           </ul>
-          <button class="btn btn-outline-blue" id="btn-basic">Empezar con el Básico</button>
+          <button class="btn btn-outline-blue" id="btn-trigger-upsell">Empezar con el Básico</button>
         </div>
 
-        <!-- Complete Card -->
-        <div class="pricing-card complete">
-          <div class="recommended-badge">⭐ Recomendado</div>
-          <div class="pricing-header">
-            <h3 class="pricing-title">Completo</h3>
-            <div class="pricing-price">$19 USD</div>
-            <div class="pricing-note">Bonos valorados en $70 incluidos</div>
+        <!-- Complete Plan -->
+        <div class="plan-card plan-complete animate-fade-up delay-200">
+          <div class="plan-badge">⭐ Recomendado</div>
+          <div class="plan-header">
+            <h3 class="plan-title">Completo</h3>
+            <div class="plan-price">$19 USD</div>
+            <span class="plan-note">Bonos valorados en $70 incluidos</span>
           </div>
-          <ul class="pricing-list">
+          <ul class="plan-list">
             <li>
               <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
               <strong>101 Dinámicas</strong>
             </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              Guía de Reunión Perfecta
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              20 Icebreakers Rápidos
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              30 Preguntas Poderosas
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              Calendario Anual del Líder
-            </li>
-            <li>
-              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-              Dinámicas Momentos Difíciles
-            </li>
+            <li class="sub-item">Guía de Reunión Perfecta</li>
+            <li class="sub-item">20 Icebreakers Rápidos</li>
+            <li class="sub-item">30 Preguntas Poderosas</li>
+            <li class="sub-item">Calendario Anual del Líder</li>
+            <li class="sub-item">Dinámicas para Momentos Difíciles</li>
           </ul>
-          <a href="#" class="btn btn-gold">Quiero el Plan Completo</a>
+          <a href="#checkout-completo" class="btn btn-gold">Quiero el Plan Completo</a>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- GUARANTEE & TESTIMONIALS -->
-  <section class="guarantee-testimonials">
-    <div class="container">
+  <section class="proof-section">
+    <div class="container animate-fade-up">
       <div class="guarantee-box">
-        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
-        <p class="guarantee-text">Garantía de 7 días — Si no estás satisfecho, te devolvemos tu dinero. Sin preguntas.</p>
+        <div class="guarantee-icon">🛡️</div>
+        <h3 class="guarantee-title">Garantía de 7 días sin preguntas</h3>
+        <p class="guarantee-text">Si en 7 días no estás 100% satisfecho, te devolvemos tu dinero completo. Sin formularios, sin esperas.</p>
       </div>
 
-      <div class="testimonials">
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
         <div class="testimonial-card">
-          <div class="testimonial-header">
-            <div class="testimonial-img"></div>
-            <div class="testimonial-info">
+          <div class="t-header">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/12.jpg" alt="Carlos M." class="t-avatar">
+            <div class="t-info">
               <h4>Carlos M.</h4>
               <span>Bogotá, Colombia</span>
             </div>
           </div>
-          <p class="testimonial-text">"Nunca había visto a los jóvenes tan conectados. Las dinámicas resolvieron mis fines de semana y me ahorraron muchísimas horas de planificación."</p>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Nunca había visto a los jóvenes tan conectados. Las dinámicas resolvieron mis fines de semana y me ahorraron muchísimas horas de planificación."</p>
         </div>
 
+        <!-- Testimonial 2 -->
         <div class="testimonial-card">
-          <div class="testimonial-header">
-            <div class="testimonial-img"></div>
-            <div class="testimonial-info">
+          <div class="t-header">
+            <img src="https://xsgames.co/randomusers/assets/avatars/female/7.jpg" alt="Ana P." class="t-avatar">
+            <div class="t-info">
               <h4>Ana P.</h4>
               <span>Lima, Perú</span>
             </div>
           </div>
-          <p class="testimonial-text">"La mejor inversión que he hecho para mi ministerio. El Plan Completo vale cada centavo por las preguntas poderosas que vienen incluidas."</p>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"La mejor inversión que he hecho para mi ministerio. El Plan Completo vale cada centavo — especialmente la Guía de Reunión Perfecta."</p>
         </div>
 
+        <!-- Testimonial 3 -->
         <div class="testimonial-card">
-          <div class="testimonial-header">
-            <div class="testimonial-img"></div>
-            <div class="testimonial-info">
+          <div class="t-header">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/34.jpg" alt="David R." class="t-avatar">
+            <div class="t-info">
               <h4>David R.</h4>
               <span>CDMX, México</span>
             </div>
           </div>
-          <p class="testimonial-text">"Práctico, directo al punto y con propósito. Hemos visto un crecimiento espiritual real usando estas herramientas."</p>
+          <div class="t-stars">★★★★★</div>
+          <p class="t-text">"Práctico, directo al punto y con propósito. Hemos visto un crecimiento espiritual real en nuestros jóvenes desde que empezamos a usar estas herramientas."</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FAQ SECTION -->
-  <section class="faq">
-    <div class="container faq-container">
-      <h2 class="section-title">Preguntas frecuentes</h2>
+  <section class="faq-section">
+    <div class="container faq-container animate-fade-up">
+      <h2 class="section-title display-font">Preguntas frecuentes</h2>
       
       <div class="accordion">
         <div class="accordion-item">
@@ -916,27 +1166,33 @@
             <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
           </div>
           <div class="accordion-content">
-            <p>Inmediatamente después de procesar tu pago, recibirás un correo electrónico con tus datos de acceso a nuestra plataforma privada donde podrás ver, descargar y utilizar todo el material desde cualquier dispositivo.</p>
+            <div class="accordion-content-inner">
+              Inmediatamente después de tu compra recibes un correo con tu acceso al app. En menos de 2 minutos ya estás dentro, con todas las dinámicas organizadas y listas para usar. Funciona en cualquier celular — no necesitas descargar nada.
+            </div>
           </div>
         </div>
 
         <div class="accordion-item">
           <div class="accordion-header">
-            ¿Funciona para grupos pequeños?
+            ¿Funciona para grupos pequeños, de 5 o 6 jóvenes?
             <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
           </div>
           <div class="accordion-content">
-            <p>¡Absolutamente! Nuestro material incluye indicaciones claras sobre cómo adaptar cada dinámica según el tamaño de tu grupo, ya sean 5, 20 o 100 jóvenes.</p>
+            <div class="accordion-content-inner">
+              Sí, todas las dinámicas tienen variaciones para grupos pequeños (desde 4 personas) y grupos grandes (hasta 50+). El app te indica claramente el tamaño ideal para cada actividad, así que nunca tendrás que improvisar.
+            </div>
           </div>
         </div>
 
         <div class="accordion-item">
           <div class="accordion-header">
-            ¿Las dinámicas necesitan materiales especiales?
+            ¿Las dinámicas necesitan materiales o preparación especial?
             <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
           </div>
           <div class="accordion-content">
-            <p>La gran mayoría de las dinámicas están diseñadas para funcionar sin recursos costosos, utilizando objetos cotidianos (papel, bolígrafos, sillas) o simplemente la participación del grupo.</p>
+            <div class="accordion-content-inner">
+              La gran mayoría no necesita absolutamente nada — solo tu voz y el grupo. Las pocas que usan materiales solo requieren cosas básicas como hojas de papel o un bolígrafo. Diseñamos todo para que puedas llegar a la reunión sin preparación elaborada.
+            </div>
           </div>
         </div>
 
@@ -946,7 +1202,21 @@
             <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
           </div>
           <div class="accordion-content">
-            <p>Sí, todo nuestro material está centrado en principios bíblicos universales y valores cristianos, respetando la diversidad y siendo fácilmente adaptable a cualquier ministerio.</p>
+            <div class="accordion-content-inner">
+              Sí. Las dinámicas son teológicamente neutras y fueron diseñadas para funcionar en iglesias evangélicas, católicas, pentecostales, bautistas y cualquier otra denominación. El foco es en el crecimiento espiritual y la conexión grupal, no en una doctrina específica.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header">
+            ¿Qué pasa si no me gusta o no me sirve?
+            <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              Tienes 7 días para probarlo sin ningún riesgo. Si por cualquier razón no estás satisfecho, nos escribes y te devolvemos el 100% de tu dinero — sin preguntas, sin formularios largos, sin complicaciones. Tu confianza vale más que tu dinero.
+            </div>
           </div>
         </div>
       </div>
@@ -954,118 +1224,124 @@
   </section>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="site-footer">
     <div class="container">
-      <p>Dinámicas para Jóvenes Cristianos © 2025</p>
+      <h3 class="footer-logo display-font">Dinámicas para Jóvenes Cristianos</h3>
+      <p class="footer-copy">© 2025</p>
+      
       <div class="footer-links">
         <a href="#">Política de Privacidad</a>
-        <a href="#">Términos</a>
+        <a href="#">Términos de Uso</a>
         <a href="#">Contacto</a>
       </div>
+      
+      <p class="footer-disclaimer">Este producto es digital. El acceso se entrega por correo electrónico tras la compra.</p>
     </div>
   </footer>
 
-  <!-- UPSELL POPUP -->
-  <div class="popup-overlay" id="upsell-popup">
-    <div class="popup-content">
-      <button class="popup-close" id="close-popup">&times;</button>
-      <div class="popup-badge">⚡ Oferta especial</div>
-      <h3 class="popup-title">Lleva todo por solo $6 más</h3>
+  <!-- UPSELL MODAL -->
+  <div class="modal-overlay" id="upsellModal">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal">&times;</button>
       
-      <div class="popup-list">
-        <div class="popup-list-item">🎁 Guía de Reunión Perfecta</div>
-        <div class="popup-list-item">🎁 20 Icebreakers Rápidos</div>
-        <div class="popup-list-item">🎁 30 Preguntas Poderosas</div>
-        <div class="popup-list-item">🎁 Calendario Anual del Líder</div>
-        <div class="popup-list-item">🎁 Dinámicas para Momentos Difíciles</div>
+      <div class="modal-badge">⚡ Oferta especial · Solo esta vez</div>
+      
+      <h3 class="modal-title display-font">Lleva todo por solo $6 más</h3>
+      
+      <div class="modal-list">
+        <div class="modal-list-item">🎁 Guía de Reunión Perfecta</div>
+        <div class="modal-list-item">🎁 20 Icebreakers Rápidos</div>
+        <div class="modal-list-item">🎁 30 Preguntas Poderosas</div>
+        <div class="modal-list-item">🎁 Calendario Anual del Líder</div>
+        <div class="modal-list-item">🎁 Dinámicas para Momentos Difíciles</div>
       </div>
 
-      <div class="popup-value">Bonos valorados en $70 &rarr; <span>solo $6 más ahora</span></div>
+      <div class="modal-value">
+        Bonos valorados en $70 &rarr;
+        <span>solo $6 más ahora</span>
+      </div>
 
-      <a href="#" class="btn btn-gold" id="btn-upsell-yes">✓ Sí, quiero el Completo por $15</a>
-      <button class="popup-btn-no" id="btn-upsell-no">No gracias, continuar con el Básico por $9</button>
+      <a href="#checkout-completo" class="btn btn-gold modal-btn-yes">✓ Sí, quiero el Completo por $15</a>
+      <button class="modal-btn-no" id="btnContinueBasic">No gracias, prefiero el Básico por $9</button>
     </div>
   </div>
 
-  <!-- JAVASCRIPT -->
+  <!-- SCRIPTS -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Accordion logic
+      // 1. FAQ Accordion Logic
       const accordionItems = document.querySelectorAll('.accordion-item');
       
       accordionItems.forEach(item => {
         const header = item.querySelector('.accordion-header');
+        
         header.addEventListener('click', () => {
           const isActive = item.classList.contains('active');
+          const content = item.querySelector('.accordion-content');
+          const innerContent = item.querySelector('.accordion-content-inner');
           
-          // Close all
-          accordionItems.forEach(i => {
-            i.classList.remove('active');
-            i.querySelector('.accordion-content').style.maxHeight = null;
+          // Close all others
+          accordionItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+              otherItem.querySelector('.accordion-content').style.maxHeight = null;
+            }
           });
 
-          // Open clicked if it wasn't active
-          if (!isActive) {
+          // Toggle current
+          if (isActive) {
+            item.classList.remove('active');
+            content.style.maxHeight = null;
+          } else {
             item.classList.add('active');
-            const content = item.querySelector('.accordion-content');
-            content.style.maxHeight = content.scrollHeight + "px";
+            content.style.maxHeight = innerContent.scrollHeight + "px";
           }
         });
       });
 
-      // 2. Upsell Popup Logic
-      const btnBasic = document.getElementById('btn-basic');
-      const popup = document.getElementById('upsell-popup');
-      const closePopupBtn = document.getElementById('close-popup');
-      const btnUpsellNo = document.getElementById('btn-upsell-no');
-      const btnUpsellYes = document.getElementById('btn-upsell-yes');
+      // 2. Upsell Modal Logic
+      const btnTriggerBasic = document.getElementById('btn-trigger-upsell');
+      const modalOverlay = document.getElementById('upsellModal');
+      const closeModalBtn = document.getElementById('closeModal');
+      const btnContinueBasic = document.getElementById('btnContinueBasic');
+      const SESSION_KEY = 'has_seen_upsell';
 
-      const POPUP_SHOWN_KEY = 'upsell_popup_shown';
-
-      const showPopup = (e) => {
+      const showModal = (e) => {
         e.preventDefault();
-        const hasSeenPopup = sessionStorage.getItem(POPUP_SHOWN_KEY);
+        const hasSeen = sessionStorage.getItem(SESSION_KEY);
         
-        if (!hasSeenPopup) {
-          popup.classList.add('active');
-          document.body.style.overflow = 'hidden'; // Prevent background scrolling
-          sessionStorage.setItem(POPUP_SHOWN_KEY, 'true');
+        if (!hasSeen) {
+          modalOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden'; // stop background scroll
+          sessionStorage.setItem(SESSION_KEY, 'true');
         } else {
-          // Redirect to basic checkout directly if already seen
-          window.location.href = "#checkout-basic"; // Placeholder
+          // Redirect immediately if already seen
+          window.location.href = "#checkout-basico"; 
         }
       };
 
-      const hidePopupAndRedirectBasic = () => {
-        popup.classList.remove('active');
+      const hideModalAndRedirect = () => {
+        modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
-        window.location.href = "#checkout-basic"; // Placeholder
+        window.location.href = "#checkout-basico";
       };
 
-      const redirectCompleteSpecial = (e) => {
-        e.preventDefault();
-        window.location.href = "#checkout-complete-15"; // Placeholder
-      };
+      // Events
+      btnTriggerBasic.addEventListener('click', showModal);
+      closeModalBtn.addEventListener('click', hideModalAndRedirect);
+      btnContinueBasic.addEventListener('click', hideModalAndRedirect);
 
-      btnBasic.addEventListener('click', showPopup);
-      
-      closePopupBtn.addEventListener('click', hidePopupAndRedirectBasic);
-      
-      btnUpsellNo.addEventListener('click', hidePopupAndRedirectBasic);
-
-      btnUpsellYes.addEventListener('click', redirectCompleteSpecial);
-
-      // Close popup clicking on overlay
-      popup.addEventListener('click', (e) => {
-        if (e.target === popup) {
-          hidePopupAndRedirectBasic();
+      // Close on overlay click
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+          hideModalAndRedirect();
         }
       });
 
-      // Close popup pressing ECS
+      // Close on ESC
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && popup.classList.contains('active')) {
-          hidePopupAndRedirectBasic();
+        if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+          hideModalAndRedirect();
         }
       });
     });
