@@ -1977,6 +1977,14 @@ function navigateTo(url) {
   }
 }
 
+// Fix for Back Button (BFCache)
+window.addEventListener('pageshow', (event) => {
+  const transition = document.querySelector('.page-transition');
+  if (transition) {
+    transition.classList.add('loaded'); // Always force it back to transparent
+  }
+});
+
 /* ==========================================================================
    FAVORITES LOGIC
    ========================================================================== */
