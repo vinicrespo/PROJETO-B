@@ -7,16 +7,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
-    /* Extreme Performance & CLS Stability */
-    @font-face { font-family: 'Nunito'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/nunito/v26/XRXV3I6LiwbKMvckZ1ZNyZpYv28.woff2) format('woff2'); }
-    @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZtu_jt_4WsqM5HJKZHRIJqp_ZLHXCtX5v0.woff2) format('woff2'); }
+    /* Absolute CLS Stability & Performance Core */
+    @font-face { font-family: 'Nunito'; font-style: normal; font-weight: 400; font-display: optional; src: url(https://fonts.gstatic.com/s/nunito/v26/XRXV3I6LiwbKMvckZ1ZNyZpYv28.woff2) format('woff2'); }
+    @font-face { font-family: 'Playfair Display'; font-style: normal; font-weight: 700; font-display: optional; src: url(https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZtu_jt_4WsqM5HJKZHRIJqp_ZLHXCtX5v0.woff2) format('woff2'); }
     
     /* Pre-rendering space for images */
-    .main-card-icon { width: 80px; height: 80px; }
+    .main-card-icon { width: 80px !important; height: 80px !important; }
     .main-card-icon img { width: 80px !important; height: 80px !important; object-fit: cover; }
     
-    /* Simplify animations for better CLS score */
-    .animate-no-shift { opacity: 1 !important; transform: none !important; }
+    /* Lock VSL area to prevent jump */
+    .vsl-wrapper { min-height: 640px; }
   </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" media="print" onload="this.media='all'">
   
@@ -950,12 +950,12 @@
 
   <!-- HERO SECTION -->
   <header class="hero">
-    <div class="container text-center animate-fade-up">
+    <div class="container text-center">
       
-      <h1 class="display-font animate-no-shift">101 Dinámicas de Impacto para Jóvenes Cristianos</h1>
-      <p class="subheadline animate-no-shift">Transforma tus reuniones con herramientas que generan conexión real y crecimiento espiritual profundo.</p>
+      <h1 class="display-font">101 Dinámicas de Impacto para Jóvenes Cristianos</h1>
+      <p class="subheadline">Transforma tus reuniones con herramientas que generan conexión real y crecimiento espiritual profundo.</p>
 
-      <div class="vsl-wrapper animate-no-shift">
+      <div class="vsl-wrapper">
         <!-- VTURB PLAYER -->
         <vturb-smartplayer id="vid-69b97580ec3c62fc7c27849f" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer> 
         <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/69b97580ec3c62fc7c27849f/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
@@ -977,9 +977,9 @@
   <!-- WHAT YOU GET SECTION -->
   <section class="what-you-get">
     <div class="container">
-      <h2 class="section-title display-font animate-fade-up">Todo lo que recibes</h2>
+      <h2 class="section-title display-font">Todo lo que recibes</h2>
       
-      <div class="main-card animate-no-shift">
+      <div class="main-card">
         <div class="main-card-icon">
           <img src="img/app-mockup.png" alt="App Mockup 101 Dinámicas" width="80" height="80" decoding="async">
         </div>
