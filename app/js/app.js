@@ -1941,7 +1941,8 @@ if ('serviceWorker' in navigator) {
 // Page Transition Logic
 document.addEventListener("DOMContentLoaded", () => {
   // Handle splash screen visibility on index
-  if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/app/')) {
+  const path = window.location.pathname;
+  if (path.endsWith('index.html') || path.endsWith('/app') || path.endsWith('/app/') || path === '/') {
     initSplashAndLogin();
   }
 
