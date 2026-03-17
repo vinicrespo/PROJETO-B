@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bono | Guía de Reunión Perfecta</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .sub-header {
+      position: sticky;
+      top: 0;
+      background: var(--blue-royal);
+      color: var(--white);
+      padding: 16px 24px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+    }
+    .btn-back { display: flex; align-items: center; color: var(--gold); background: none; }
+    .btn-back svg { width: 24px; height: 24px; fill: currentColor; }
+    .page-title { flex: 1; text-align: center; font-size: 16px; font-weight: 700; font-family: var(--font-headings); padding-right: 24px; }
+
+    .bonus-hero {
+      background: var(--blue-dark);
+      padding: 32px 24px 40px;
+      color: var(--white);
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+    .bonus-hero h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; color: var(--gold); }
+    .bonus-hero p { font-size: 15px; color: rgba(255,255,255,0.8); }
+
+    .content-area { padding: 32px 24px; }
+    
+    .timeline {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 40px;
+      border-left: 2px dashed rgba(212, 160, 23, 0.4);
+    }
+    
+    .timeline-item { position: relative; margin-bottom: 24px; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -27px;
+      top: 4px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--gold);
+      border: 3px solid var(--white);
+    }
+
+    .t-time { font-size: 13px; font-weight: 700; color: var(--blue-royal); margin-bottom: 4px; }
+    .t-title { font-size: 16px; font-family: var(--font-headings); color: var(--text-dark); margin-bottom: 4px; }
+    .t-desc { font-size: 14px; color: var(--text-muted); }
+
+    .tabs { display: flex; gap: 8px; margin-bottom: 24px; background: rgba(0,0,0,0.03); padding: 4px; border-radius: 12px; }
+    .tab-btn { flex: 1; padding: 10px; text-align: center; font-size: 13px; font-weight: 700; color: var(--text-muted); border-radius: 8px; background: transparent; transition: all 0.2s; }
+    .tab-btn.active { background: var(--white); color: var(--blue-royal); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fadeIn 0.3s; }
+
+    .tip-box {
+      background: #FFF8E7;
+      border-left: 4px solid var(--gold);
+      padding: 16px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 24px;
+    }
+    .tip-title { font-size: 14px; font-weight: 700; color: #9A720B; text-transform: uppercase; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+    .tip-text { font-size: 14px; color: var(--text-dark); }
+
+  </style>
+</head>
+<body class="with-bottom-nav">
+
+  <header class="sub-header">
+    <button class="btn-back" onclick="window.history.back()">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h1 class="page-title">Bonus Exclusivo</h1>
+  </header>
+
+  <section class="bonus-hero animate-fade-up">
+    <h1>La Guía de Reunión Perfecta</h1>
+    <p>Estructuras comprobadas y consejos de facilitación para mantener la atención, fomentar la participación y dejar un impacto espiritual real.</p>
+  </section>
+
+  <main class="content-area">
+    
+    <div class="tip-box animate-fade-up delay-100">
+      <div class="tip-title">💡 El secreto del ritmo</div>
+      <div class="tip-text">Una reunión exitosa parece que fluye naturalmente, pero en realidad está coreografiada. Alterna momentos de alta energía con momentos de reflexión para mantener la atención en su nivel máximo.</div>
+    </div>
+
+    <h2 class="mb-3 animate-fade-up delay-200" style="font-size: 22px;">Elige tu cronograma</h2>
+    
+    <div class="tabs animate-fade-up delay-200">
+      <button class="tab-btn active" data-target="cron-60">60 Min</button>
+      <button class="tab-btn" data-target="cron-90">90 Min</button>
+      <button class="tab-btn" data-target="cron-120">120 Min</button>
+    </div>
+
+    <!-- 60 MINS -->
+    <div class="tab-content active" id="cron-60">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="t-time">00:00 - 00:10 (10 min)</div>
+          <div class="t-title">Llegada y Rompehielo Rápido</div>
+          <div class="t-desc">Música alegre de fondo. Haz una dinámica rápida (ej. rompehielos de 5 min) que no requiera materiales para integrar a los que llegan temprano.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">00:10 - 00:20 (10 min)</div>
+          <div class="t-title">Alabanza / Adoración</div>
+          <div class="t-desc">1 o 2 canciones dinámicas y 1 canción de adoración para centrar el corazón.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">00:20 - 00:40 (20 min)</div>
+          <div class="t-title">Dinámica Principal y Reflexión</div>
+          <div class="t-desc">Haz la dinámica central del día, seguida inmediatamente por el mensaje corto (10 min de dinámica + 10 min de mensaje).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">00:40 - 00:55 (15 min)</div>
+          <div class="t-title">Grupos Pequeños</div>
+          <div class="t-desc">Divide al grupo principal en grupos de 4-5 personas para discutir 2 preguntas poderosas sobre el tema.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">00:55 - 01:00 (5 min)</div>
+          <div class="t-title">Cierre y Anuncios</div>
+          <div class="t-desc">Oración final, anuncios rápidos y despedida. Mantén la energía alta.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 90 MINS -->
+    <div class="tab-content" id="cron-90">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="t-time">00:00 - 00:15 (15 min)</div>
+          <div class="t-title">Llegada y Conexión Libre</div>
+          <div class="t-desc">Snacks, música, tiempo para hablar. Fomenta que los líderes conecten intencionalmente con los nuevos.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">00:15 - 00:30 (15 min)</div>
+          <div class="t-title">Bienvenida e Icebreaker</div>
+          <div class="t-desc">Bienvenida oficial y una dinámica de integración para romper el hielo y levantar la energía.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">00:30 - 00:45 (15 min)</div>
+          <div class="t-title">Tiempo de Adoración</div>
+          <div class="t-desc">3 a 4 canciones. Tiempo extendido para conectar con Dios sin distracciones.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">00:45 - 01:05 (20 min)</div>
+          <div class="t-title">Enseñanza Práctica</div>
+          <div class="t-desc">Un mensaje corto, al punto, y muy enfocado en la aplicación diaria de la Palabra.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">01:05 - 01:25 (20 min)</div>
+          <div class="t-title">Dinámica de Aplicación / Grupos Pequeños</div>
+          <div class="t-desc">Una dinámica post-mensaje para solidificar el aprendizaje, o un tiempo profundo de discusión en mesas.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">01:25 - 01:30 (5 min)</div>
+          <div class="t-title">Ministración y Cierre</div>
+          <div class="t-desc">Oración por necesidades específicas, anuncios clave.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 120 MINS -->
+    <div class="tab-content" id="cron-120">
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="t-time">00:00 - 00:20 (20 min)</div>
+          <div class="t-title">Comunidad y Snacks</div>
+          <div class="t-desc">Tiempo de fellowship crucial. La gente viene por el contenido pero se queda por las relaciones.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">00:20 - 00:40 (20 min)</div>
+          <div class="t-title">Gran Juego / Dinámica Competitiva</div>
+          <div class="t-desc">Invierte tiempo en una dinámica de equipo más compleja y divertida. Levanta la energía al techo.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">00:40 - 01:00 (20 min)</div>
+          <div class="t-title">Alabanza y Testimonios</div>
+          <div class="t-desc">4 canciones y espacio para que un par de jóvenes compartan algo breve que Dios está haciendo en sus vidas.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">01:00 - 01:30 (30 min)</div>
+          <div class="t-title">Enseñanza e Interacción</div>
+          <div class="t-desc">Mensaje profundo con interactividad (ej. que saquen sus celulares para votar, o que respondan en vivo).</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">01:30 - 01:50 (20 min)</div>
+          <div class="t-title">Dinámica de Cierre o Activación</div>
+          <div class="t-desc">Una actividad para anclar el mensaje espiritual en sus corazones antes de salir.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-time">01:50 - 02:00 (10 min)</div>
+          <div class="t-title">Ministración, Oración Final y Anuncios</div>
+          <div class="t-desc">Llamado a la acción, tiempo de oración y anuncios energéticos.</div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="mt-4 mb-3" style="font-size: 22px;">4 Reglas de Oro en Facilitación</h2>
+    <div class="card mb-3 animate-fade-up">
+      <h3 style="font-size: 16px; margin-bottom: 8px;">1. La regla del 15%</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">Asume que todo tomará un 15% más de tiempo del que planeaste. Siempre ten una sección "cortable" en tu mente por si los tiempos se alargan.</p>
+    </div>
+    <div class="card mb-3 animate-fade-up">
+      <h3 style="font-size: 16px; margin-bottom: 8px;">2. Nunca expliques dos veces</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">Para las dinámicas, explica las reglas UNA vez de forma clara, y luego diles: "Cualquier duda, se resolverá mientras jugamos". La mejor forma de entender un juego es jugándolo.</p>
+    </div>
+    <div class="card mb-3 animate-fade-up">
+      <h3 style="font-size: 16px; margin-bottom: 8px;">3. Redirecciona al que habla mucho</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">Si alguien monopoliza la palabra: "Ese es un punto excelente, Juan. Ahora, me encantaría escuchar qué piensa María o Pedro sobre esto."</p>
+    </div>
+    <div class="card mb-3 animate-fade-up">
+      <h3 style="font-size: 16px; margin-bottom: 8px;">4. El silencio no es malo</h3>
+      <p style="font-size: 14px; color: var(--text-muted);">Después de hacer una pregunta poderosa, cuenta mentalmente hasta 8. Los jóvenes necesitan tiempo para procesar la pregunta y encontrar el coraje para hablar. No respondas tu propia pregunta prematuramente.</p>
+    </div>
+
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="home.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Inicio
+    </a>
+    <a href="dinamicas.html?search=true" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      Buscar
+    </a>
+    <a href="favoritos.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Favoritos
+    </a>
+    <a href="home.html" class="nav-item active" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); return false;">
+      <svg viewBox="0 0 24 24"><path d="M21.3 6.7l-9.3 9.3c-1.1 1.1-2.9 1.1-4 0l-4.3-4.3c-1.1-1.1-1.1-2.9 0-4 1.1-1.1 2.9-1.1 4 0l2.3 2.3 7.3-7.3c1.1-1.1 2.9-1.1 4 0 1.1 1.1 1.1 2.9 0 4z"/></svg>
+      Bonos
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          
+          btn.classList.add('active');
+          document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

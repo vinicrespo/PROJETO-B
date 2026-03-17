@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bono | Momentos Difíciles</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .sub-header {
+      position: sticky;
+      top: 0;
+      background: var(--blue-royal);
+      color: var(--white);
+      padding: 16px 24px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+    }
+    .btn-back { display: flex; align-items: center; color: var(--gold); background: none; }
+    .btn-back svg { width: 24px; height: 24px; fill: currentColor; }
+    .page-title { flex: 1; text-align: center; font-size: 16px; font-weight: 700; font-family: var(--font-headings); padding-right: 24px; }
+
+    .bonus-hero {
+      background: #17243b; /* Cooler, more serious tone */
+      padding: 32px 24px 24px;
+      color: var(--white);
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+    .bonus-hero h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; color: #8BAEEB; }
+    .bonus-hero p { font-size: 15px; color: rgba(255,255,255,0.7); }
+
+    .list-container {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .diff-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border: 1px solid rgba(139, 174, 235, 0.3);
+      border-left: 4px solid #486EAE;
+    }
+
+    .d-sit { font-size: 11px; font-weight: 700; color: #486EAE; text-transform: uppercase; margin-bottom: 8px; display: inline-block; background: #EEF3FA; padding: 4px 8px; border-radius: 6px; }
+    .d-title { font-family: var(--font-headings); font-size: 20px; color: #17243b; margin-bottom: 8px; line-height: 1.2; }
+    
+    .d-text-block { margin-top: 12px; }
+    .d-label { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+    .d-content { font-size: 14px; color: var(--text-dark); margin-bottom: 12px; }
+
+    .d-warning { background: #FFF4F4; border-left: 2px solid #FF4B4B; padding: 12px; border-radius: 0 8px 8px 0; margin-top: 16px; font-size: 13px; color: var(--text-dark); }
+    .d-warning strong { color: #D1224A; }
+
+  </style>
+</head>
+<body class="with-bottom-nav">
+
+  <header class="sub-header">
+    <button class="btn-back" onclick="window.history.back()">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h1 class="page-title">Bonus Exclusivo</h1>
+  </header>
+
+  <section class="bonus-hero animate-fade-up">
+    <h1>Momentos Difíciles</h1>
+    <p>15 dinámicas específicas diseñadas con sensibilidad para abordar luto, depresión, conflictos, crisis de fe y temas delicados.</p>
+  </section>
+
+  <main class="list-container" id="momentos-list">
+    <!-- Generated via JS -->
+  </main>
+
+  <nav class="bottom-nav">
+    <!-- Same bottom nav -->
+    <a href="home.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Inicio
+    </a>
+    <a href="dinamicas.html?search=true" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      Buscar
+    </a>
+    <a href="favoritos.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Favoritos
+    </a>
+    <a href="home.html" class="nav-item active" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); return false;">
+      <svg viewBox="0 0 24 24"><path d="M21.3 6.7l-9.3 9.3c-1.1 1.1-2.9 1.1-4 0l-4.3-4.3c-1.1-1.1-1.1-2.9 0-4 1.1-1.1 2.9-1.1 4 0l2.3 2.3 7.3-7.3c1.1-1.1 2.9-1.1 4 0 1.1 1.1 1.1 2.9 0 4z"/></svg>
+      Bonos
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById('momentos-list');
+      
+      const momentos = [
+        { sit: "Luto Colectivo o Personal", title: "El Mural de las Rocas", ctx: "Cuando la iglesia, grupo, o el familiar directo de un joven ha fallecido y hay mucha tristeza.", pasos: "1. Reparte una roca pequeña y un marcador negro a cada uno.<br>2. Pide que escriban una palabra o dibujen algo que representa su dolor.<br>3. En el centro, ten una cruz de madera en el piso. Pide que, en silencio constante (con música instrumental de fondo), vayan poniendo la carga (la roca) a los pies de la cruz.<br>4. Lean todos juntos Salmos 34:18.", avoid: "No presiones a nadie a hablar. El silencio y la acción física son suficientes." },
+        { sit: "Crisis de Fe / Dudas", title: "El Buzón Anónimo de Dudas", ctx: "Cuando notas escepticismo, o sabes que hay jóvenes dudando de Dios pero temen decirlo.", pasos: "1. Pide que todos cierren los ojos por respeto a la privacidad.<br>2. Pasa una caja. Cada uno debe meter una tarjeta.<br>3. Pueden escribir su duda más grande sobre Dios en la tarjeta, o dejarla en blanco si no tienen una ahora.<br>4. Como líder, abre la caja al frente de todos y lee un par de cartas en voz alta. Diles 'Es normal sentir esto, no estás solo. Vamos a investigar esto juntos'.", avoid: "Evita respuestas de 'Cállate y solo ten fe'. Valida que dudar es un paso hacia una fe madura si lo buscamos a Él." },
+        { sit: "Conflictos Graves en el Grupo", title: "El Hilo que nos Une", ctx: "Hay divisiones claras, chismes o rencores que están fracturando el grupo.", pasos: "1. Sienta a todos en círculo.<br>2. Toma un ovillo de lana gruesa amarilla. Toma la punta y comparte una debilidad tuya profunda en la que necesitas gracia.<br>3. Lanza el ovillo a alguien cruzando el círculo mientras retienes tu parte del hilo.<br>4. Esa persona comparte y lanza.<br>5. Cuando todos tengan hilo, corta un hilo del centro con tijeras. Muestra cómo todo el sistema pierde estabilidad. Hablen de EFESIOS 4:32 y la unidad.", avoid: "No uses esta dinámica para apuntar el dedo al 'culpable' del conflicto de forma pasivo-agresiva." },
+        { sit: "Ansiedad y Depresión", title: "La Terapia del Papel Arrugado", ctx: "Un entorno marcado por el estrés académico, problemas familiares o diagnósticos de salud mental en los jóvenes.", pasos: "1. Todos toman una hoja de papel.<br>2. Diles que escriban todo lo que los está agobiando.<br>3. Pídeles que arruguen la hoja con todas sus fuerzas (liberación física).<br>4. Pídeles que intenten volver a alisar la hoja. Quedarán marcas.<br>5. Ministra: 'Las marcas quedan, el dolor fue real, pero la hoja sigue entera, no se destruyó'. Lee 2 Corintios 4:8-9.", avoid: "Evita comentarios como 'la depresión es falta de fe'. Trátalo con el respeto clínico y pastoral profundo que merece." },
+        { sit: "Pecado Oculto / Romper el Silencio", title: "El Peso del Secreto", ctx: "Percibes un peso de culpa en el ambiente, jóvenes atrapados en ciclos destructivos.", pasos: "1. Entrega a cada joven 5 piedras. Diles que las mantengan en sus manos apretadas sin soltarlas mientras hablas.<br>2. A los pocos minutos les dolerán las manos.<br>3. Haz un altar. Diles que cada piedra representa un pecado o hábito oculto que les pesa.<br>4. Llama al altar a depositarlas una por una mientras leen 1 Juan 1:9.<br>5. Ofrece consejería privada.", avoid: "No pidas que confiesen sus pecados a gritos ni en el micrófono. Promueve un espacio seguro y 1 a 1 posterior." }
+      ];
+
+      container.innerHTML = momentos.map((m, i) => `
+        <div class="diff-card animate-fade-up" style="animation-delay: ${Math.min(400, (i%5)*100)}ms">
+          <span class="d-sit">${m.sit}</span>
+          <h3 class="d-title">${m.title}</h3>
+          
+          <div class="d-text-block">
+            <div class="d-label">Contexto</div>
+            <div class="d-content">${m.ctx}</div>
+          </div>
+          
+          <div class="d-text-block">
+            <div class="d-label">Cómo Abordarlo</div>
+            <div class="d-content">${m.pasos}</div>
+          </div>
+
+          <div class="d-warning">
+            <strong>⚠️ Qué EVITAR:</strong> ${m.avoid}
+          </div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>

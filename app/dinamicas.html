@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dinámicas | Listado</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .sub-header {
+      position: sticky;
+      top: 0;
+      background: var(--blue-royal);
+      color: var(--white);
+      padding: 16px 24px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    .header-top { display: flex; align-items: center; margin-bottom: 16px; }
+    .btn-back { display: flex; align-items: center; color: var(--gold); background: none; margin-right: 16px; }
+    .btn-back svg { width: 24px; height: 24px; fill: currentColor; }
+    .page-title { flex: 1; font-size: 18px; font-weight: 700; font-family: var(--font-headings); }
+    .count-badge { background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+
+    .search-box {
+      width: 100%;
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      height: 48px;
+      background: rgba(255,255,255,1);
+      border: none;
+      border-radius: 8px;
+      padding: 0 16px 0 44px;
+      font-size: 15px;
+      font-family: var(--font-body);
+      outline: none;
+      color: var(--text-dark);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .search-icon { position: absolute; left: 14px; top: 12px; color: var(--text-muted); }
+    .search-icon svg { width: 24px; height: 24px; fill: currentColor; }
+
+    /* List Container */
+    .list-container {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .dinamica-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border-left: 4px solid var(--blue-mid);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .dinamica-card:active { transform: scale(0.98); }
+
+    .d-title { font-family: var(--font-headings); font-size: 18px; color: var(--blue-royal); margin-bottom: 4px; padding-right: 32px; }
+    .d-obj { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    
+    .d-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+    .d-tag { 
+      background: #FFF8E7; /* Light gold bg */
+      color: #9A720B; /* Darker gold text */
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      padding: 4px 10px; 
+      border-radius: 20px; 
+      font-size: 11px; 
+      font-weight: 700; 
+      display: flex; align-items: center; gap: 4px;
+    }
+    .d-tag svg { width: 14px; height: 14px; fill: currentColor; }
+
+    .btn-fav {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: none;
+      color: #E0E0E0;
+      transition: color 0.2s;
+    }
+    .btn-fav svg { width: 24px; height: 24px; fill: currentColor; stroke: #BDBDBD; stroke-width: 1px; }
+    .btn-fav.active { color: #FF4B4B; }
+    .btn-fav.active svg { stroke: #FF4B4B; }
+
+    .empty-state { text-align: center; padding: 40px 24px; color: var(--text-muted); display: none; }
+    .empty-state svg { width: 64px; height: 64px; fill: #E0E0E0; margin-bottom: 16px; }
+
+  </style>
+</head>
+<body class="with-bottom-nav">
+
+  <header class="sub-header">
+    <div class="header-top">
+      <button class="btn-back" onclick="navigateTo('home.html')">
+        <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      </button>
+      <h1 class="page-title" id="page-title">Cargando...</h1>
+      <span class="count-badge" id="d-count">0</span>
+    </div>
+    
+    <div class="search-box">
+      <div class="search-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+      <input type="text" class="search-input" id="search-input" placeholder="Buscar dinámicas o temas...">
+    </div>
+  </header>
+
+  <main class="list-container" id="list-container">
+    <!-- Cards will be populated here -->
+  </main>
+
+  <div class="empty-state" id="empty-state">
+    <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+    <h3>No hay resultados</h3>
+    <p class="mt-1">No encontramos dinámicas con ese término. Intenta con otra palabra.</p>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <nav class="bottom-nav">
+    <a href="home.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Inicio
+    </a>
+    <a href="dinamicas.html?search=true" class="nav-item active">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      Buscar
+    </a>
+    <a href="favoritos.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Favoritos
+    </a>
+    <a href="home.html" class="nav-item" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); return false;">
+      <svg viewBox="0 0 24 24"><path d="M21.3 6.7l-9.3 9.3c-1.1 1.1-2.9 1.1-4 0l-4.3-4.3c-1.1-1.1-1.1-2.9 0-4 1.1-1.1 2.9-1.1 4 0l2.3 2.3 7.3-7.3c1.1-1.1 2.9-1.1 4 0 1.1 1.1 1.1 2.9 0 4z"/></svg>
+      Bonos
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Parse URL params
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoria = urlParams.get('categoria');
+      const isSearchMode = urlParams.get('search') === 'true';
+      
+      const titleEl = document.getElementById('page-title');
+      const listContainer = document.getElementById('list-container');
+      const searchInput = document.getElementById('search-input');
+      const emptyState = document.getElementById('empty-state');
+      const countEl = document.getElementById('d-count');
+      
+      let currentData = window.DINAMICAS || []; // Assuming DINAMICAS is loaded from app.js
+
+      if (categoria) {
+        titleEl.textContent = categoria;
+        currentData = currentData.filter(d => d.categoria === categoria);
+        searchInput.placeholder = `Buscar en ${categoria}...`;
+      } else if (isSearchMode) {
+        titleEl.textContent = "Búsqueda Global";
+        searchInput.focus();
+      } else {
+        titleEl.textContent = "Todas las Dinámicas";
+      }
+
+      function renderCards(data) {
+        listContainer.innerHTML = '';
+        countEl.textContent = data.length;
+
+        if (data.length === 0) {
+          emptyState.style.display = 'block';
+          return;
+        }
+
+        emptyState.style.display = 'none';
+
+        data.forEach((item, index) => {
+          const isFav = window.isFavorite ? window.isFavorite(item.id) : false;
+          const delayClass = `delay-${Math.min(400, (index % 5) * 100)}`; // Stagger up to 5 items
+          
+          const card = document.createElement('div');
+          card.className = `dinamica-card animate-fade-up ${delayClass}`;
+          card.innerHTML = `
+            <button class="btn-fav ${isFav ? 'active' : ''}" data-id="${item.id}" aria-label="Favorito">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </button>
+            <h3 class="d-title">${item.nombre}</h3>
+            <p class="d-obj">${item.objetivo}</p>
+            <div class="d-tags">
+              <span class="d-tag">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/><path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                ${item.duracion}
+              </span>
+              <span class="d-tag">
+                <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                ${item.tamano_grupo}
+              </span>
+            </div>
+          `;
+
+          // Handle Favorite Click (prevent card click)
+          const favBtn = card.querySelector('.btn-fav');
+          favBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if(window.toggleFavorite) {
+              const newState = window.toggleFavorite(item.id);
+              favBtn.classList.toggle('active', newState);
+            }
+          });
+
+          // Handle Card Click (navigate)
+          card.addEventListener('click', () => {
+            navigateTo(`detalhe.html?id=${item.id}`);
+          });
+
+          listContainer.appendChild(card);
+        });
+      }
+
+      // Initial Render
+      renderCards(currentData);
+
+      // Search Logic
+      searchInput.addEventListener('input', (e) => {
+        const term = e.target.value.toLowerCase();
+        const filtered = currentData.filter(d => 
+          d.nombre.toLowerCase().includes(term) || 
+          d.objetivo.toLowerCase().includes(term) ||
+          d.categoria.toLowerCase().includes(term)
+        );
+        renderCards(filtered);
+      });
+      
+    });
+  </script>
+</body>
+</html>

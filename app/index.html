@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dinámicas para Jóvenes Cristianos</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    /* Specific styles for index (login/splash) */
+    body {
+      background-image: 
+        radial-gradient(var(--gold) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--blue-royal), var(--blue-dark));
+      background-size: 20px 20px, 100% 100%;
+      background-position: 0 0, 0 0;
+      color: var(--white);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #splash-screen {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--blue-royal);
+      z-index: 100;
+      transition: opacity 0.3s ease;
+    }
+
+    #splash-screen img {
+      width: 180px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 1; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+
+    #login-screen {
+      display: none; /* hidden initially */
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 32px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .login-logo {
+      width: 120px;
+      margin-bottom: 32px;
+    }
+
+    .login-title {
+      font-size: 28px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .login-subtitle {
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 40px;
+      max-width: 280px;
+    }
+
+    .input-group {
+      width: 100%;
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    .login-input {
+      width: 100%;
+      height: 52px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 8px;
+      padding: 0 16px;
+      color: var(--white);
+      font-size: 16px;
+      font-family: var(--font-body);
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .login-input::placeholder {
+      color: rgba(255,255,255,0.4);
+    }
+
+    .login-input:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.15);
+    }
+
+    .error-msg {
+      color: #FF6B6B;
+      font-size: 12px;
+      margin-top: 8px;
+      display: none;
+      text-align: left;
+    }
+
+    .support-text {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 32px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash-screen">
+    <img src="logo.svg" alt="Dinámicas Logo">
+  </div>
+
+  <!-- LOGIN SCREEN -->
+  <div id="login-screen">
+    <img src="logo.svg" alt="Logo" class="login-logo animate-fade-up">
+    
+    <h1 class="login-title animate-fade-up delay-100">Bienvenido de vuelta</h1>
+    <p class="login-subtitle animate-fade-up delay-200">Ingresa el correo con el que realizaste tu compra</p>
+
+    <form id="access-form" class="w-100 animate-fade-up delay-300" style="width: 100%">
+      <div class="input-group">
+        <input type="email" id="email-input" class="login-input" placeholder="tucorreo@ejemplo.com">
+        <div id="error-msg" class="error-msg">Por favor ingresa un correo válido</div>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Ingresar al app</button>
+    </form>
+
+    <p class="support-text animate-fade-up delay-400">¿Problemas para acceder? Escríbenos a soporte@dominio.com</p>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

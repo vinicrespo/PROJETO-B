@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Dinámica | Detalle</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .sub-header {
+      position: sticky;
+      top: 0;
+      background: var(--blue-royal);
+      color: var(--white);
+      padding: 16px 24px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .btn-back { display: flex; align-items: center; color: var(--gold); background: none; }
+    .btn-back svg { width: 24px; height: 24px; fill: currentColor; }
+    .page-title { flex: 1; text-align: center; font-size: 14px; font-weight: 600; font-family: var(--font-body); }
+    
+    .btn-fav-top { background: none; color: rgba(255,255,255,0.5); }
+    .btn-fav-top svg { width: 24px; height: 24px; fill: currentColor; stroke: currentColor; stroke-width: 1px; }
+    .btn-fav-top.active { color: #FF4B4B; }
+
+    /* Hero Detail */
+    .detail-hero {
+      background: var(--blue-dark);
+      padding: 32px 24px 40px;
+      color: var(--white);
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+    .detail-title { font-size: 28px; line-height: 1.2; margin-bottom: 12px; }
+    .detail-obj { font-size: 15px; color: rgba(255,255,255,0.8); }
+
+    /* Info Cards */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      padding: 0 24px;
+      margin-top: -24px;
+      position: relative;
+      z-index: 10;
+    }
+    .info-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .info-card.full-width { grid-column: span 2; }
+    .info-icon { font-size: 20px; margin-bottom: 4px; display: block; }
+    .info-label { font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: 2px; }
+    .info-val { font-size: 14px; color: var(--blue-royal); font-weight: 700; }
+
+    /* Content Sections */
+    .content-section {
+      padding: 32px 24px;
+    }
+    .section-title { font-size: 20px; color: var(--blue-royal); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+    
+    .paso-card {
+      background: var(--white);
+      border-left: 4px solid var(--gold);
+      padding: 16px;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .paso-num { font-size: 12px; font-weight: 700; color: var(--gold); margin-bottom: 4px; text-transform: uppercase; }
+    .paso-text { font-size: 15px; color: var(--text-dark); }
+
+    /* Variations Tabs */
+    .tabs { display: flex; gap: 8px; margin-bottom: 16px; background: rgba(0,0,0,0.03); padding: 4px; border-radius: 12px; }
+    .tab-btn { flex: 1; padding: 10px; text-align: center; font-size: 13px; font-weight: 700; color: var(--text-muted); border-radius: 8px; background: transparent; transition: all 0.2s; }
+    .tab-btn.active { background: var(--white); color: var(--blue-royal); box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .tab-content { display: none; background: var(--white); padding: 16px; border-radius: 12px; font-size: 14px; border: 1px solid rgba(0,0,0,0.05); }
+    .tab-content.active { display: block; animation: fadeIn 0.3s; }
+
+    /* Special Blocks */
+    .reflexion-box {
+      background: #FFF8E7;
+      border: 1px solid rgba(212, 160, 23, 0.3);
+      padding: 24px;
+      border-radius: 16px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .reflexion-icon { font-size: 24px; margin-bottom: 8px; }
+    .reflexion-title { color: #9A720B; font-weight: 700; font-size: 14px; text-transform: uppercase; margin-bottom: 8px; }
+    .reflexion-text { font-family: var(--font-headings); font-size: 18px; color: var(--text-dark); }
+
+    .versiculo-box {
+      background: var(--blue-mid);
+      color: var(--white);
+      padding: 24px;
+      border-radius: 16px;
+      margin-top: 16px;
+      text-align: center;
+      position: relative;
+    }
+    .versiculo-box::before { content: '“'; position: absolute; top: -10px; left: 16px; font-family: var(--font-headings); font-size: 60px; color: rgba(255,255,255,0.2); }
+    .versiculo-text { font-style: italic; font-size: 15px; margin-bottom: 12px; position: relative; z-index: 2; }
+    .versiculo-ref { font-weight: 700; font-size: 13px; color: var(--gold-light); }
+
+    /* Save Button Fixed */
+    .save-bottom-bar {
+      position: fixed; bottom: 0; left: 0; width: 100%;
+      background: var(--white);
+      padding: 16px 24px;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.05);
+      z-index: 100;
+    }
+    
+    .btn-save-big {
+      background: var(--off-white);
+      color: var(--text-dark);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .btn-save-big.active {
+      background: #FFF8E7;
+      color: #9A720B;
+      border-color: rgba(212, 160, 23, 0.3);
+    }
+    
+    body { padding-bottom: 80px; } /* Space for fixed save block */
+  </style>
+</head>
+<body>
+
+  <!-- View is generated via JS -->
+  <div id="app-content">
+    <div style="padding:40px; text-align:center;">Cargando dinámica...</div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = parseInt(urlParams.get('id'));
+      
+      const appContent = document.getElementById('app-content');
+      const data = (window.DINAMICAS || []).find(d => d.id === id);
+
+      if (!data) {
+        appContent.innerHTML = `
+          <div style="padding:40px; text-align:center; padding-top:100px;">
+            <h2>Dinámica no encontrada</h2>
+            <button class="btn btn-primary mt-4" onclick="navigateTo('home.html')">Volver al inicio</button>
+          </div>
+        `;
+        return;
+      }
+
+      const isFav = window.isFavorite ? window.isFavorite(data.id) : false;
+
+      let pasosHTML = data.paso_a_paso.map((paso, i) => `
+        <div class="paso-card animate-fade-up" style="animation-delay: ${i*100}ms">
+          <div class="paso-num">Paso ${i+1}</div>
+          <div class="paso-text">${paso}</div>
+        </div>
+      `).join('');
+
+      let versiculoHTML = data.versículo ? `
+        <div class="versiculo-box animate-fade-up delay-400">
+          <p class="versiculo-text">"${data.versículo.split(' - ')[0]}"</p>
+          <p class="versiculo-ref">${data.versículo.split(' - ')[1] || 'Biblia'}</p>
+        </div>
+      ` : '';
+
+      appContent.innerHTML = `
+        <header class="sub-header">
+          <button class="btn-back" onclick="window.history.back()">
+            <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+          </button>
+          <div class="page-title">${data.categoria}</div>
+          <button class="btn-fav-top ${isFav ? 'active' : ''}" id="btn-fav-top">
+            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </button>
+        </header>
+
+        <section class="detail-hero animate-fade-up">
+          <h1 class="detail-title">${data.nombre}</h1>
+          <p class="detail-obj">${data.objetivo}</p>
+        </section>
+
+        <div class="info-grid animate-fade-up delay-100">
+          <div class="info-card">
+            <span class="info-icon">⏱️</span>
+            <div class="info-label">Duración</div>
+            <div class="info-val">${data.duracion}</div>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">👥</span>
+            <div class="info-label">Grupo</div>
+            <div class="info-val">${data.tamano_grupo}</div>
+          </div>
+          <div class="info-card full-width">
+            <span class="info-icon">📦</span>
+            <div class="info-label">Materiales</div>
+            <div class="info-val">${data.materiales}</div>
+          </div>
+        </div>
+
+        <section class="content-section">
+          <h2 class="section-title animate-fade-up delay-200">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--gold)"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            Paso a paso
+          </h2>
+          ${pasosHTML}
+
+          <div class="mt-4 animate-fade-up delay-300">
+            <h2 class="section-title">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--blue-royal)"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              Variaciones
+            </h2>
+            <div class="tabs">
+              <button class="tab-btn active" data-target="tab-peq">Grupo Pequeño</button>
+              <button class="tab-btn" data-target="tab-gra">Grupo Grande</button>
+            </div>
+            <div class="tab-content active" id="tab-peq">${data.variacion_pequeno}</div>
+            <div class="tab-content" id="tab-gra">${data.variacion_grande}</div>
+          </div>
+
+          <div class="reflexion-box animate-fade-up delay-400">
+            <div class="reflexion-icon">💡</div>
+            <div class="reflexion-title">Para reflexionar</div>
+            <div class="reflexion-text">"${data.pregunta_reflexion}"</div>
+          </div>
+
+          ${versiculoHTML}
+        </section>
+
+        <div class="save-bottom-bar">
+          <button class="btn btn-save-big ${isFav ? 'active' : ''}" id="btn-save-big">
+            ⭐ ${isFav ? 'Guardado en favoritos' : 'Guardar en favoritos'}
+          </button>
+        </div>
+      `;
+
+      // Handlers
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          tabContents.forEach(c => c.classList.remove('active'));
+          
+          btn.classList.add('active');
+          document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+        });
+      });
+
+      const btnTop = document.getElementById('btn-fav-top');
+      const btnBig = document.getElementById('btn-save-big');
+
+      function toggleFavUI() {
+        if(window.toggleFavorite) {
+          const newState = window.toggleFavorite(data.id);
+          if (newState) {
+            btnTop.classList.add('active');
+            btnBig.classList.add('active');
+            btnBig.innerHTML = '⭐ Guardado en favoritos';
+          } else {
+            btnTop.classList.remove('active');
+            btnBig.classList.remove('active');
+            btnBig.innerHTML = '⭐ Guardar en favoritos';
+          }
+        }
+      }
+
+      btnTop.addEventListener('click', toggleFavUI);
+      btnBig.addEventListener('click', toggleFavUI);
+
+    });
+  </script>
+</body>
+</html>

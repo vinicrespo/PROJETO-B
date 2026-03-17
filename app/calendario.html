@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bono | Calendario Anual</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .sub-header {
+      position: sticky;
+      top: 0;
+      background: var(--blue-royal);
+      color: var(--white);
+      padding: 16px 24px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+    }
+    .btn-back { display: flex; align-items: center; color: var(--gold); background: none; }
+    .btn-back svg { width: 24px; height: 24px; fill: currentColor; }
+    .page-title { flex: 1; text-align: center; font-size: 16px; font-weight: 700; font-family: var(--font-headings); padding-right: 24px; }
+
+    .bonus-hero {
+      background: var(--blue-dark);
+      padding: 32px 24px 24px;
+      color: var(--white);
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+      margin-bottom: 24px;
+    }
+    .bonus-hero h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; color: var(--gold); }
+    .bonus-hero p { font-size: 15px; color: rgba(255,255,255,0.8); }
+
+    .month-selector {
+      display: flex;
+      overflow-x: auto;
+      gap: 12px;
+      padding: 0 24px 16px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+    .month-selector::-webkit-scrollbar { display: none; }
+    
+    .month-btn {
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.05);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-muted);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .month-btn.active {
+      background: var(--blue-royal);
+      color: var(--white);
+      border-color: var(--blue-royal);
+      box-shadow: 0 4px 12px rgba(26, 46, 110, 0.2);
+    }
+
+    .list-container {
+      padding: 0 24px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .week-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      position: relative;
+    }
+
+    .special-badge {
+      position: absolute;
+      top: -10px; right: 16px;
+      background: var(--gold);
+      color: var(--text-dark);
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(212, 160, 23, 0.3);
+    }
+
+    .w-num { font-size: 12px; font-weight: 700; color: var(--gold); text-transform: uppercase; margin-bottom: 4px; }
+    .w-theme { font-family: var(--font-headings); font-size: 20px; color: var(--blue-royal); margin-bottom: 8px; line-height: 1.2;}
+    
+    .w-row { display: flex; align-items: flex-start; gap: 8px; margin-top: 8px; font-size: 13px; }
+    .w-icon { width: 16px; text-align: center; }
+    .w-text { flex: 1; color: var(--text-dark); }
+    .w-text strong { color: var(--blue-mid); }
+
+  </style>
+</head>
+<body class="with-bottom-nav">
+
+  <header class="sub-header">
+    <button class="btn-back" onclick="window.history.back()">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h1 class="page-title">Bonus Exclusivo</h1>
+  </header>
+
+  <section class="bonus-hero animate-fade-up">
+    <h1>Calendario Anual</h1>
+    <p>52 semanas planeadas. Temas secuenciales, dinámicas sugeridas y eventos especiales para que nunca tengas que improvisar.</p>
+  </section>
+
+  <div class="month-selector animate-fade-up delay-100" id="month-selector">
+    <!-- Generated via JS -->
+  </div>
+
+  <main class="list-container" id="calendar-list">
+    <!-- Generated via JS -->
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="home.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Inicio
+    </a>
+    <a href="dinamicas.html?search=true" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      Buscar
+    </a>
+    <a href="favoritos.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Favoritos
+    </a>
+    <a href="home.html" class="nav-item active" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); return false;">
+      <svg viewBox="0 0 24 24"><path d="M21.3 6.7l-9.3 9.3c-1.1 1.1-2.9 1.1-4 0l-4.3-4.3c-1.1-1.1-1.1-2.9 0-4 1.1-1.1 2.9-1.1 4 0l2.3 2.3 7.3-7.3c1.1-1.1 2.9-1.1 4 0 1.1 1.1 1.1 2.9 0 4z"/></svg>
+      Bonos
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const selector = document.getElementById('month-selector');
+      const list = document.getElementById('calendar-list');
+      
+      const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
+      
+      // Generate 52 weeks mock data mapped by months
+      const calendarData = {};
+      months.forEach((m, ix) => { calendarData[m] = []; });
+
+      let currentWeek = 1;
+      
+      // Populate data
+      months.forEach((m, monthIndex) => {
+        const weeksInMonth = (monthIndex === 1 || monthIndex === 3 || monthIndex === 5 || monthIndex === 8 || monthIndex === 10) ? 4 : 5; 
+        // Just rough distribution to hit 52 weeks
+        
+        for(let i=0; i < weeksInMonth && currentWeek <= 52; i++) {
+          
+          let special = "";
+          let theme = "Identificando mi llamado";
+          let dynRec = "Dinámica de Reflexión Bíblica";
+          let ver = "Jeremías 29:11";
+
+          // Inject some special dates realistically
+          if (m === "Ene" && i === 0) { special = "Renovación / Año Nuevo"; theme = "Metas Espirituales y Visión"; ver = "Proverbios 16:3";  }
+          else if (m === "Mar" && i === 3) { special = "Semana Santa"; theme = "El Precio de la Cruz"; dynRec = "Dinámica de Cierre e Impacto"; ver = "Romanos 5:8"; }
+          else if (m === "May" && i === 2) { special = "Día de la Madre"; theme = "Honrar a nuestros padres"; ver = "Efesios 6:2-3"; }
+          else if (m === "Dic" && i === 3) { special = "Navidad"; theme = "El Regalo Inesperado"; dynRec = "Dinámica de Integración Grupal"; ver = "Lucas 2:11"; }
+          else if (m === "Dic" && i === 4) { special = "Fin de Año"; theme = "Testimonios y Gratitud"; dynRec = "Dinámica de Gratitud / Cierre"; ver = "Salmos 103:2"; }
+
+          // Cycle some common themes
+          const themesCycle = ["Construyendo Hábitos Diarios", "El Poder de Nuestras Palabras", "Sanando Relaciones Rotas", "Amistades según Dios", "Lidiando con la Ansiedad", "Entendiendo la Gracia", "Pureza en un mundo hiperconectado", "Cómo escuchar la voz de Dios"];
+          
+          if(!special) {
+            theme = themesCycle[currentWeek % themesCycle.length];
+            const cats = ["Romper el Hielo", "Integración Grupal", "Reflexión Bíblica", "Autoconocimiento", "Liderazgo y Equipos"];
+            dynRec = "Dinámica de " + cats[currentWeek % cats.length];
+            const vars = ["Proverbios 18:21", "Efesios 4:32", "Salmos 119:9", "Mateo 6:34"];
+            ver = vars[currentWeek % vars.length];
+          }
+
+          calendarData[m].push({
+            week: currentWeek,
+            special: special,
+            theme: theme,
+            dynRec: dynRec,
+            ver: ver
+          });
+          currentWeek++;
+        }
+      });
+
+      // Render Months
+      selector.innerHTML = months.map((m, i) => `
+        <button class="month-btn ${i === 0 ? 'active' : ''}" data-month="${m}">${m}</button>
+      `).join('');
+
+      function renderMonth(month) {
+        const weeks = calendarData[month];
+        list.innerHTML = weeks.map((w, i) => `
+          <div class="week-card animate-fade-up" style="animation-delay: ${i*100}ms">
+            ${w.special ? `<div class="special-badge">📌 ${w.special}</div>` : ''}
+            <div class="w-num">Semana ${w.week}</div>
+            <h3 class="w-theme">${w.theme}</h3>
+            
+            <div class="w-row">
+              <span class="w-icon">💡</span>
+              <div class="w-text"><strong>Sugerencia:</strong> ${w.dynRec}</div>
+            </div>
+            <div class="w-row">
+              <span class="w-icon">📖</span>
+              <div class="w-text"><strong>Base:</strong> ${w.ver}</div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // Initial
+      renderMonth('Ene');
+
+      const btns = document.querySelectorAll('.month-btn');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          renderMonth(btn.getAttribute('data-month'));
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>

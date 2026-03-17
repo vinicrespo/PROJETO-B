@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+      
+      .bg { fill: #1A2E6E; }
+      .text-main { 
+        font-family: 'Playfair Display', serif; 
+        font-weight: 700; 
+        font-size: 130px; 
+        fill: #FFFFFF; 
+        text-anchor: middle; 
+      }
+      .text-sub { 
+        font-family: 'Nunito', sans-serif; 
+        font-weight: 600; 
+        font-size: 55px; 
+        fill: #D4A017; 
+        text-anchor: middle; 
+        letter-spacing: 2px;
+      }
+      .symbol-hands { fill: #FFFFFF; }
+      .symbol-flame { fill: #D4A017; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1080" height="1080" rx="200" />
+
+  <!-- Symbol Area -->
+  <g transform="translate(540, 420)">
+    <!-- Circle/Halo -->
+    <circle cx="0" cy="0" r="180" fill="none" stroke="#D4A017" stroke-width="8" stroke-dasharray="20 15" opacity="0.6" />
+    
+    <!-- Open Hands -->
+    <path class="symbol-hands" d="M-90,60 C-120,40 -140,0 -120,-30 C-100,-60 -50,-40 -20,10 C-10,25 0,35 0,35 C0,35 10,25 20,10 C50,-40 100,-60 120,-30 C140,0 120,40 90,60 C60,80 20,90 0,90 C-20,90 -60,80 -90,60 Z" />
+    
+    <!-- Flame -->
+    <path class="symbol-flame" d="M0,25 C-15,10 -30,-15 -20,-45 C-10,-75 0,-110 0,-110 C0,-110 10,-75 20,-45 C30,-15 15,10 0,25 Z" />
+    <!-- Inner Flame -->
+    <path fill="#F5C842" d="M0,15 C-8,5 -15,-10 -10,-25 C-5,-40 0,-60 0,-60 C0,-60 5,-40 10,-25 C15,-10 8,5 0,15 Z" />
+  </g>
+
+  <!-- Text Area -->
+  <text x="540" y="780" class="text-main">Dinámicas</text>
+  <text x="540" y="860" class="text-sub">PARA JÓVENES CRISTIANOS</text>
+</svg>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bono | 20 Icebreakers</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <style>
+    .sub-header {
+      position: sticky;
+      top: 0;
+      background: var(--blue-royal);
+      color: var(--white);
+      padding: 16px 24px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+    }
+    .btn-back { display: flex; align-items: center; color: var(--gold); background: none; }
+    .btn-back svg { width: 24px; height: 24px; fill: currentColor; }
+    .page-title { flex: 1; text-align: center; font-size: 16px; font-weight: 700; font-family: var(--font-headings); padding-right: 24px; }
+
+    .bonus-hero {
+      background: var(--blue-dark);
+      padding: 32px 24px 24px;
+      color: var(--white);
+      border-bottom-left-radius: 24px;
+      border-bottom-right-radius: 24px;
+    }
+    .bonus-hero h1 { font-size: 28px; line-height: 1.2; margin-bottom: 12px; color: var(--gold); }
+    .bonus-hero p { font-size: 15px; color: rgba(255,255,255,0.8); }
+
+    .list-container {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .ice-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      border-left: 4px solid #F5426C; /* Different color scheme for icebreakers */
+    }
+
+    .ice-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+    .ice-title { font-family: var(--font-headings); font-size: 18px; color: var(--blue-royal); flex: 1; }
+    .ice-badge { background: #FDE8ED; color: #D1224A; font-weight: 700; font-size: 11px; padding: 4px 8px; border-radius: 6px; white-space: nowrap; margin-left: 12px; }
+    
+    .ice-desc { font-size: 14px; color: var(--text-dark); margin-bottom: 12px; }
+    .ice-twist { background: #F8F9FF; padding: 12px; border-radius: 8px; font-size: 13px; color: var(--text-muted); font-style: italic; border-left: 2px solid var(--blue-mid); }
+
+  </style>
+</head>
+<body class="with-bottom-nav">
+
+  <header class="sub-header">
+    <button class="btn-back" onclick="window.history.back()">
+      <svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+    </button>
+    <h1 class="page-title">Bonus Exclusivo</h1>
+  </header>
+
+  <section class="bonus-hero animate-fade-up">
+    <h1>20 Icebreakers Rápidos</h1>
+    <p>Actividades de 3 a 7 minutos. Cero materiales. Perfectas rescate de reuniones lentas.</p>
+  </section>
+
+  <main class="list-container" id="icebreaker-list">
+    <!-- Generated via JS -->
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="home.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+      Inicio
+    </a>
+    <a href="dinamicas.html?search=true" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      Buscar
+    </a>
+    <a href="favoritos.html" class="nav-item">
+      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+      Favoritos
+    </a>
+    <a href="home.html" class="nav-item active" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); return false;">
+      <svg viewBox="0 0 24 24"><path d="M21.3 6.7l-9.3 9.3c-1.1 1.1-2.9 1.1-4 0l-4.3-4.3c-1.1-1.1-1.1-2.9 0-4 1.1-1.1 2.9-1.1 4 0l2.3 2.3 7.3-7.3c1.1-1.1 2.9-1.1 4 0 1.1 1.1 1.1 2.9 0 4z"/></svg>
+      Bonos
+    </a>
+  </nav>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const container = document.getElementById('icebreaker-list');
+      
+      const icebreakers = [
+        { title: "Dos Verdades y una Mentira", time: "5 min", desc: "Cada persona dice 3 cosas sobre sí misma (2 ciertas, 1 falsa). El grupo debe adivinar cuál es la mentira.", twist: "Twist Bíblico: Usa 'Dos verdades y una mentira sobre un personaje bíblico'." },
+        { title: "El Cuento Hilado", time: "7 min", desc: "Una persona dice una palabra, la siguiente dice otra, construyendo una historia sin sentido o muy graciosa.", twist: "Twist de Liderazgo: La historia debe intentar describir el tema de la reunión de hoy." },
+        { title: "Batalla de Pulgares Ninja", time: "3 min", desc: "En parejas, se toman de las manos derechas y tratan de 'aplastar' el pulgar del otro. El primero que llega a 3 puntos gana.", twist: "Para liberar máxima tensión al inicio." },
+        { title: "Adivina quién soy", time: "7 min", desc: "Pega una nota en la frente de alguien con un nombre de personaje bíblico o famoso. Debe hacer preguntas de Sí/No para adivinar.", twist: "Hazlo en equipos rápidos." },
+        { title: "Piedra, Papel, Tijeras Extremo", time: "5 min", desc: "Juego masivo. Quien pierde, se convierte en el mayor fan y animador de quien le ganó, siguiéndolo por el salón.", twist: "Al final queda una final épica con dos personas y todos los demás gritando sus nombres." },
+        { title: "Simon Dice Evangélico", time: "5 min", desc: "Clásico Simón Dice, pero con acciones divertidas (Praise the Lord, rodillas al piso, etc).", twist: "Aumenta la velocidad para eliminar rápido." },
+        { title: "El Ninja Evasivo", time: "5 min", desc: "En círculo. Todos saltan y caen en pose ninja. Por turnos, pueden hacer 1 solo movimiento para intentar tocar la mano de un vecino. Si te tocan, pierdes esa mano.", twist: "Si el grupo es muy grande, haz varios círculos de 8 personas." },
+        { title: "Detector de Mentirosos", time: "6 min", desc: "Haz preguntas binarias ('¿Amas la piña en la pizza?'). Todos cierran los ojos. Quienes sí, levantan la mano. Quienes no, no. Luego deben adivinar quién respondió qué.", twist: "Preguntas raras generan más risa." },
+        { title: "Ordenarse a Ciegas", time: "4 min", desc: "Sin hablar, el grupo entero debe ordenarse por fecha de cumpleaños (enero a diciembre).", twist: "También puede ser por estatura (con los ojos cerrados)." },
+        { title: "Aplaude y Cuenta", time: "3 min", desc: "El grupo debe contar del 1 al 20, diciendo un número a la vez al azar, sin orden fijo. Si dos personas dicen el número a la vez, vuelven a cero.", twist: "Requiere muchísima atención y sincronía." },
+        { title: "Teléfono Descompuesto Físico", time: "6 min", desc: "En fila, mirando la espalda del otro. El último dibuja algo simple con el dedo en la espalda del de adelante, y se pasa hasta el primero.", twist: "El de enfrente debe adivinar qué dibujaron (ej. una cruz, un pez)." },
+        { title: "Levantamiento Sincronizado", time: "4 min", desc: "En parejas, se sientan en el suelo espalda con espalda, entrelazan brazos e intentan pararse a la vez.", twist: "Si lo logran fácil, intenta hacerlo en grupos de a 4." },
+        { title: "Mata Moscas", time: "5 min", desc: "Siéntense en círculo. Alguien dice un nombre. El 'Mata moscas' (en el centro) debe tocar con un periódico enrollado a esa persona antes de que diga OTRO nombre.", twist: "Excelente para aprender los nombres rápido." },
+        { title: "Reacción Cadena", time: "4 min", desc: "El líder hace un sonido/ritmo y un movimiento. La siguiente persona lo copia y añade uno nuevo. Y así.", twist: "El que se equivoca debe hacer una penitencia graciosa." },
+        { title: "Cacería Selfie", time: "6 min", desc: "Lista de 5 cosas absurdas que deben encontrar en la iglesia y tomarse una selfie grupal con ellas (ej. un cable rojo, alguien dormido, etc).", twist: "El equipo más rápido gana." },
+        { title: "El Nudo Humano", time: "7 min", desc: "Todos extienden manos al centro, agarran manos de personas distintas, y luego deben desenredarse sin soltarse.", twist: "Habla sobre cómo los problemas parecen imposibles antes de resolverlos unidos." },
+        { title: "Nunca Nunca Clásico", time: "5 min", desc: "Cada persona levanta 5 dedos. Se dicen cosas: 'Nunca he fingido orar para dormir'. Quien lo haya hecho baja un dedo.", twist: "Baja la guardia y nos muestra que todos somos iguales." },
+        { title: "Guerra de Miradas Rara", time: "3 min", desc: "Guerra de miradas en parejas, PERO deben intentar hacerse reír haciendo ruidos extraños de animales.", twist: "Rompe por completo el hielo y la vergüenza." },
+        { title: "La Bomba de Tiempo", time: "5 min", desc: "Se pasan un objeto 'caliente' mientras dicen elementos de una categoría (ej: 'Libros del Nuevo Testamento'). Quien se queda en blanco o repite cuando suena el timer, pierde.", twist: "Pon categorías difíciles (Animales de la Biblia)." },
+        { title: "El Espejo Cómico", time: "4 min", desc: "En parejas frente a frente. Uno es el espejo y debe copiar cualquier expresión facial exagerada que haga el otro.", twist: "Saca a dos voluntarios a hacerlo frente a todos." }
+      ];
+
+      container.innerHTML = icebreakers.map((ice, i) => `
+        <div class="ice-card animate-fade-up" style="animation-delay: ${Math.min(400, (i%5)*100)}ms">
+          <div class="ice-header">
+            <h3 class="ice-title">${i+1}. ${ice.title}</h3>
+            <span class="ice-badge">${ice.time}</span>
+          </div>
+          <p class="ice-desc">${ice.desc}</p>
+          <div class="ice-twist">${ice.twist}</div>
+        </div>
+      `).join('');
+    });
+  </script>
+</body>
+</html>
