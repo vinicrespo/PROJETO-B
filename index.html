@@ -1358,28 +1358,32 @@
         document.body.style.overflow = 'hidden'; // stop background scroll
       };
 
-      const hideModalAndRedirect = () => {
+      const closeModalOnly = () => {
         modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
+      };
+
+      const hideModalAndRedirect = () => {
+        closeModalOnly();
         window.open('https://pay.hotmart.com/H104943121G?off=j0lubu2q', '_blank');
       };
 
       // Events
       btnTriggerBasic.addEventListener('click', showModal);
-      closeModalBtn.addEventListener('click', hideModalAndRedirect);
+      closeModalBtn.addEventListener('click', closeModalOnly);
       btnContinueBasic.addEventListener('click', hideModalAndRedirect);
 
       // Close on overlay click
       modalOverlay.addEventListener('click', (e) => {
         if (e.target === modalOverlay) {
-          hideModalAndRedirect();
+          closeModalOnly();
         }
       });
 
       // Close on ESC
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
-          hideModalAndRedirect();
+          closeModalOnly();
         }
       });
     });
