@@ -6,7 +6,8 @@
   <title>Dinámicas para Jóvenes Cristianos | 101 Ideas Listas para Usar</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"></noscript>
   
   <!-- VTurb Optimizations -->
   <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
@@ -1081,6 +1082,8 @@
             </li>
           </ul>
           <button class="btn btn-outline-blue" id="btn-trigger-upsell">Empezar con el Básico</button>
+          <!-- checkout-basico: used by JS redirect -->
+          <span id="checkout-basico-url" data-url="https://pay.hotmart.com/H104943121G?off=j0lubu2q" hidden></span>
         </div>
 
         <!-- Complete Plan -->
@@ -1125,7 +1128,7 @@
               Dinámicas para Momentos Difíciles
             </li>
           </ul>
-          <a href="#checkout-completo" class="btn btn-gold">Quiero el Plan Completo</a>
+          <a href="https://pay.hotmart.com/I104948891I?off=7ndlyvkb" class="btn btn-gold" target="_blank" rel="noopener">Quiero el Plan Completo</a>
         </div>
 
       </div>
@@ -1153,7 +1156,7 @@
         <!-- Testimonial 1 -->
         <div class="testimonial-card">
           <div class="t-header">
-            <img src="https://xsgames.co/randomusers/assets/avatars/male/12.jpg" alt="Carlos M." class="t-avatar">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/12.jpg" alt="Carlos M." class="t-avatar" loading="lazy" decoding="async">
             <div class="t-info">
               <h4>Carlos M.</h4>
               <span>Bogotá, Colombia</span>
@@ -1166,7 +1169,7 @@
         <!-- Testimonial 2 -->
         <div class="testimonial-card">
           <div class="t-header">
-            <img src="https://xsgames.co/randomusers/assets/avatars/female/7.jpg" alt="Ana P." class="t-avatar">
+            <img src="https://xsgames.co/randomusers/assets/avatars/female/7.jpg" alt="Ana P." class="t-avatar" loading="lazy" decoding="async">
             <div class="t-info">
               <h4>Ana P.</h4>
               <span>Lima, Perú</span>
@@ -1179,7 +1182,7 @@
         <!-- Testimonial 3 -->
         <div class="testimonial-card">
           <div class="t-header">
-            <img src="https://xsgames.co/randomusers/assets/avatars/male/34.jpg" alt="David R." class="t-avatar">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/34.jpg" alt="David R." class="t-avatar" loading="lazy" decoding="async">
             <div class="t-info">
               <h4>David R.</h4>
               <span>CDMX, México</span>
@@ -1291,7 +1294,7 @@
         <span>solo $2 más ahora</span>
       </div>
 
-      <a href="#checkout-completo" class="btn btn-gold modal-btn-yes">✓ Sí, quiero el Completo por $7</a>
+      <a href="https://pay.hotmart.com/I104948891I?off=rblxevjh" class="btn btn-gold modal-btn-yes" target="_blank" rel="noopener">✓ Sí, quiero el Completo por $7</a>
       <button class="modal-btn-no" id="btnContinueBasic">No gracias, prefiero el Básico por $5</button>
     </div>
   </div>
@@ -1350,7 +1353,7 @@
       const hideModalAndRedirect = () => {
         modalOverlay.classList.remove('active');
         document.body.style.overflow = '';
-        window.location.href = "#checkout-basico";
+        window.open('https://pay.hotmart.com/H104943121G?off=j0lubu2q', '_blank');
       };
 
       // Events
