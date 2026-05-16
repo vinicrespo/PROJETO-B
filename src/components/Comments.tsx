@@ -44,7 +44,7 @@ const commentsData: CommentProps[] = [
   },
   {
     name: "Madeleine Rousseau",
-    avatar: "https://images.unsplash.com/photo-1571231304851-74ecda9ae04a?auto=format&fit=crop&q=80&w=150",
+    avatar: "/madeleine-profile.png",
     text: "Il suffit de cliquer sur la vidéo et elle commence.",
     time: "14 min"
   },
