@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+@theme {
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --vp-green: #89c39e;
+  --vp-green-dark: #75b38b;
+  --vp-red: #e33036;
+}
+
+body {
+  @apply bg-white font-sans text-gray-900 antialiased;
+}
+
+.markdown-body {
+  @apply text-gray-800 leading-relaxed;
+}

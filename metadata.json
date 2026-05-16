@@ -1,0 +1,8 @@
+{
+  "name": "Vitalite Pure",
+  "description": "A high-performance landing page for wellness presentations, featuring a stylized video player and interactive comment section.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
