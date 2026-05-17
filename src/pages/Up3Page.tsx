@@ -10,12 +10,17 @@ export default function Up3Page() {
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full bg-[#b91c1c] p-3 shadow-md flex items-center justify-center">
-        <div className="w-full max-w-2xl flex items-center gap-3 px-2">
-           <span className="text-white font-bold text-sm md:text-base whitespace-nowrap">Statut de traitement :</span>
-           <div className="flex-1 bg-white h-6 rounded-sm overflow-hidden relative">
-             <div className="absolute top-0 left-0 h-full bg-red-600" style={{ width: '89%' }}></div>
-             <span className="absolute inset-0 flex items-center justify-end pr-2 text-xs font-bold text-gray-800 z-10">89%</span>
+      <div className="w-full bg-[#991b1b] border-b border-[#7f1d1d] shadow-md flex flex-col items-center justify-center py-3 px-4">
+        <div className="w-full max-w-md flex flex-col gap-2">
+           <div className="flex justify-between items-center text-white font-bold text-sm md:text-base tracking-wide">
+             <span>Statut de traitement</span>
+             <span>89%</span>
+           </div>
+           <div className="w-full bg-black/40 h-4 rounded-full overflow-hidden relative border border-black/30 shadow-inner">
+             <div className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#facc15] to-[#f59e0b] shadow-[0_0_10px_rgba(250,204,21,0.5)] rounded-full" style={{ width: '89%' }}>
+                {/* Stripes */}
+                <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.5) 10px, rgba(255,255,255,0.5) 20px)' }}></div>
+             </div>
            </div>
         </div>
       </div>
