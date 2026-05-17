@@ -115,7 +115,7 @@ export default function Up4Page() {
             ⚠️ Cette offre disparaît si vous quittez cette page.
           </p>
 
-          <div className="w-full space-y-4 max-w-sm mx-auto">
+          <div className="w-full space-y-8 max-w-sm mx-auto up4">
             <button 
               onClick={() => (window as any).acceptUpsell('https://app.kashpay.com.br/u/edffb3ef691c6cbe')} 
               style={{ fontFamily: 'Poppins', fontSize: '18px', fontWeight: 600, lineHeight: 1.3, color: '#ffffff', backgroundColor: '#057932', border: 'none', borderRadius: '10px', padding: '13px 7%', cursor: 'pointer', textAlign: 'center', display: 'block', margin: 'auto', width: '100%' }}

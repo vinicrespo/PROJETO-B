@@ -204,7 +204,7 @@ export default function Up3Page() {
         </div>
 
         {/* Upsell Button Placeholder */}
-        <div className="w-full pt-6 space-y-4 max-w-sm mx-auto">
+        <div className="w-full pt-6 space-y-8 max-w-sm mx-auto up3">
           <button 
             onClick={() => (window as any).acceptUpsell('https://app.kashpay.com.br/u/5e189e5e8b23a84d')} 
             style={{ fontFamily: 'Poppins', fontSize: '18px', fontWeight: 600, lineHeight: 1.3, color: '#ffffff', backgroundColor: '#057932', border: 'none', borderRadius: '10px', padding: '13px 7%', cursor: 'pointer', textAlign: 'center', display: 'block', margin: 'auto', width: '100%' }}
