@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, TrendingDown } from 'lucide-react';
+import { ArrowRight, TrendingDown, ShieldCheck } from 'lucide-react';
 import AppHeader from '../components/AppHeader';
 import PageWrapper from '../components/PageWrapper';
 import { useAuth, useOnboardingGuard } from '../hooks/useAuth';
@@ -32,6 +32,11 @@ export default function DashboardPage() {
             transition={{ delay: 0.1 }}
             className="stylo-card p-6 md:p-8 bg-gradient-to-br from-white to-accent-green/30"
           >
+            <div className="inline-flex items-center gap-1.5 bg-accent-green/80 text-primary px-3 py-1.5 rounded-lg mb-4 text-xs font-semibold">
+              <ShieldCheck className="w-4 h-4" />
+              Accès à vie • Mises à jour mensuelles incluses
+            </div>
+            
             <h1 className="font-serif text-2xl md:text-3xl font-bold text-text-dark mb-1">
               Bienvenue dans votre programme
             </h1>
