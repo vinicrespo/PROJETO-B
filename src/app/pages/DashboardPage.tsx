@@ -5,7 +5,8 @@ import AppHeader from '../components/AppHeader';
 import PageWrapper from '../components/PageWrapper';
 import { useAuth, useOnboardingGuard } from '../hooks/useAuth';
 import { useProfile } from '../hooks/useProfile';
-import { dashboardCards } from '../config/dashboardCards';
+import { programs } from '../config/programs';
+import ProgramSection from '../components/ProgramSection';
 
 export default function DashboardPage() {
   useAuth();
@@ -68,42 +69,11 @@ export default function DashboardPage() {
             <p className="text-text-muted text-xs">Jour {currentDay}/21 du protocole — {completedDays.length} jour{completedDays.length !== 1 ? 's' : ''} complété{completedDays.length !== 1 ? 's' : ''}</p>
           </motion.div>
 
-          {/* Module cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {dashboardCards.filter(c => c.available).map((card, i) => {
-              const Icon = card.icon;
-              return (
-                <motion.div
-                  key={card.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 + i * 0.05 }}
-                  className={card.featured ? 'sm:col-span-2 lg:col-span-3' : ''}
-                >
-                  <Link to={card.route} className="block">
-                    <div className={`stylo-card h-full transition-all duration-200 hover:scale-[1.02] hover:shadow-lg group ${card.featured ? 'bg-gradient-to-r from-accent-green/40 to-white border-primary/20' : ''}`}>
-                      <div className="flex items-start gap-4">
-                        <div className={`p-3 rounded-xl ${card.featured ? 'bg-primary/10' : 'bg-gray-50'} group-hover:bg-primary/10 transition-colors`}>
-                          <Icon className={`w-6 h-6 ${card.featured ? 'text-primary' : 'text-text-muted group-hover:text-primary'} transition-colors`} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-1 flex-wrap">
-                            <h3 className="font-serif text-lg font-bold text-text-dark">{card.title}</h3>
-                            {card.badge && (
-                              <span className={`px-2 py-0.5 rounded-full text-xs font-semibold ${card.badgeColor === 'gold' ? 'bg-gold/20 text-gold' : 'bg-accent-green text-primary'}`}>
-                                {card.badge}
-                              </span>
-                            )}
-                          </div>
-                          <p className="text-text-muted text-sm leading-relaxed">{card.description}</p>
-                        </div>
-                        <ArrowRight className="w-5 h-5 text-border group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
+          {/* Module cards (Programs) */}
+          <div className="space-y-12 mt-8">
+            {programs.map((program, index) => (
+              <ProgramSection key={program.id} program={program} index={index} />
+            ))}
           </div>
         </div>
       </PageWrapper>
