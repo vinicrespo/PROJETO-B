@@ -30,7 +30,7 @@ export default function Up2Page() {
       </div>
 
       {/* Main Content */}
-      <div className="w-full max-w-3xl px-4 py-8 text-center flex flex-col items-center">
+      <div className="w-full max-w-3xl px-4 pt-8 pb-24 text-center flex flex-col items-center">
         
         {/* Icon */}
         <div className="mb-6 mt-4">

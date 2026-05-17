@@ -22,7 +22,7 @@ export default function Up1Page() {
       </div>
 
       {/* Main Content */}
-      <div className="w-full max-w-3xl px-4 py-8 text-center space-y-6">
+      <div className="w-full max-w-3xl px-4 pt-8 pb-24 text-center space-y-6">
         <p className="text-base md:text-lg text-gray-100 leading-relaxed max-w-2xl mx-auto">
           Vous ne verrez cette page qu'une seule fois (et pour toujours). 
           Regardez la vidéo ci-dessous et soyez très attentif à la révélation 
