@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Leaf } from 'lucide-react';
@@ -9,6 +9,14 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const savedEmail = localStorage.getItem('stylo_user_email');
+    if (savedEmail) {
+      const isComplete = localStorage.getItem('stylo_onboarding_complete') === 'true';
+      navigate(isComplete ? '/app/dashboard' : '/app/onboarding', { replace: true });
+    }
+  }, [navigate]);
 
   const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
