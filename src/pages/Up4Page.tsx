@@ -124,7 +124,7 @@ export default function Up4Page() {
             </button>
             
             <Link to="/thanks" className="block text-center text-sm text-gray-500 underline hover:text-gray-300">
-              Non merci, je passe mon tour.
+              Non, merci !
             </Link>
           </div>
 

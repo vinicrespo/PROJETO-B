@@ -63,7 +63,7 @@ export default function Up2Page() {
           </button>
 
           <Link to="/up3" className="block text-center text-sm text-gray-500 underline hover:text-gray-300">
-            Non merci, je passe mon tour.
+            Non, merci !
           </Link>
         </div>
       </div>
