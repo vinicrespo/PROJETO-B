@@ -37,21 +37,29 @@ import DetoxSubstitutionsPage from './app/pages/detox/DetoxSubstitutionsPage';
 import DetoxSelRosePage from './app/pages/detox/DetoxSelRosePage';
 import DetoxLipoMaisonPage from './app/pages/detox/DetoxLipoMaisonPage';
 import DetoxChocolatMinceurPage from './app/pages/detox/DetoxChocolatMinceurPage';
+import DetoxBainEpsomPage from './app/pages/detox/DetoxBainEpsomPage';
+import DetoxRespirationPage from './app/pages/detox/DetoxRespirationPage';
 
 // Shot Hormonal
 import HormonalRecettePage from './app/pages/hormonal/HormonalRecettePage';
 import HormonalToniqueDesirPage from './app/pages/hormonal/HormonalToniqueDesirPage';
 import HormonalCafeBariatriquePage from './app/pages/hormonal/HormonalCafeBariatriquePage';
 import HormonalCremeJeunessePage from './app/pages/hormonal/HormonalCremeJeunessePage';
+import HormonalSommeilPage from './app/pages/hormonal/HormonalSommeilPage';
+import HormonalAlimentsPage from './app/pages/hormonal/HormonalAlimentsPage';
 
 // Anti-Peau Flasque
 import AntiFlasquePlanPage from './app/pages/anti-flasque/AntiFlasquePlanPage';
+import AntiFlasqueCollagenPage from './app/pages/anti-flasque/AntiFlasqueCollagenPage';
+import AntiFlasqueGommagePage from './app/pages/anti-flasque/AntiFlasqueGommagePage';
 
 // Maintien 365
 import MaintienPlanPage from './app/pages/maintien/MaintienPlanPage';
 import MaintienRecettePage from './app/pages/maintien/MaintienRecettePage';
 import MaintienAntiYoyoPage from './app/pages/maintien/MaintienAntiYoyoPage';
 import MaintienReset48hPage from './app/pages/maintien/MaintienReset48hPage';
+import MaintienCheatMealPage from './app/pages/maintien/MaintienCheatMealPage';
+import MaintienPsychologiePage from './app/pages/maintien/MaintienPsychologiePage';
 
 function LandingPage() {
   return (
@@ -160,21 +168,29 @@ export default function App() {
         <Route path="/app/dashboard/detox/sel-rose" element={<DetoxSelRosePage />} />
         <Route path="/app/dashboard/detox/lipo-maison" element={<DetoxLipoMaisonPage />} />
         <Route path="/app/dashboard/detox/chocolat-minceur" element={<DetoxChocolatMinceurPage />} />
+        <Route path="/app/dashboard/detox/bain-epsom" element={<DetoxBainEpsomPage />} />
+        <Route path="/app/dashboard/detox/respiration" element={<DetoxRespirationPage />} />
 
         {/* Shot Hormonal */}
         <Route path="/app/dashboard/hormonal/recette" element={<HormonalRecettePage />} />
         <Route path="/app/dashboard/hormonal/tonique-desir" element={<HormonalToniqueDesirPage />} />
         <Route path="/app/dashboard/hormonal/cafe-bariatrique" element={<HormonalCafeBariatriquePage />} />
         <Route path="/app/dashboard/hormonal/creme-jeunesse" element={<HormonalCremeJeunessePage />} />
+        <Route path="/app/dashboard/hormonal/sommeil" element={<HormonalSommeilPage />} />
+        <Route path="/app/dashboard/hormonal/aliments" element={<HormonalAlimentsPage />} />
 
         {/* Anti-Peau Flasque */}
         <Route path="/app/dashboard/anti-flasque/plan" element={<AntiFlasquePlanPage />} />
+        <Route path="/app/dashboard/anti-flasque/collagene" element={<AntiFlasqueCollagenPage />} />
+        <Route path="/app/dashboard/anti-flasque/gommage" element={<AntiFlasqueGommagePage />} />
 
         {/* Maintien 365 */}
         <Route path="/app/dashboard/maintien/plan" element={<MaintienPlanPage />} />
         <Route path="/app/dashboard/maintien/recette" element={<MaintienRecettePage />} />
         <Route path="/app/dashboard/maintien/anti-yoyo" element={<MaintienAntiYoyoPage />} />
         <Route path="/app/dashboard/maintien/reset-48h" element={<MaintienReset48hPage />} />
+        <Route path="/app/dashboard/maintien/cheat-meal" element={<MaintienCheatMealPage />} />
+        <Route path="/app/dashboard/maintien/psychologie" element={<MaintienPsychologiePage />} />
 
         {/* Catch-all: redirect unknown app routes to dashboard */}
         <Route path="/app/*" element={<Navigate to="/app/dashboard" replace />} />
