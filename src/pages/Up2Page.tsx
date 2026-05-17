@@ -1,6 +1,18 @@
+import { useEffect } from 'react';
 import { Hand } from 'lucide-react';
 
 export default function Up2Page() {
+  useEffect(() => {
+    const scriptId = 'vturb-player-script-up2';
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/6a091d7aaf83766f2b46d654/v4/player.js";
+      script.async = true;
+      document.head.appendChild(script);
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white font-sans flex flex-col items-center">
       {/* Header Gradient & Progress */}
@@ -35,12 +47,9 @@ export default function Up2Page() {
 
         {/* Video Placeholder Area */}
         <div className="w-full max-w-[400px] mx-auto mt-4">
-          
-          {/* Replace this div with your Vturb Embed code later */}
-          <div className="aspect-[9/16] bg-gray-900 border border-gray-800 flex items-center justify-center">
-             <p className="text-gray-500 text-sm">Espace pour votre vidéo Vturb</p>
-          </div>
-          
+          {/* Vturb Embed */}
+          {/* @ts-ignore */}
+          <vturb-smartplayer id="vid-6a091d7aaf83766f2b46d654" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}></vturb-smartplayer>
         </div>
       </div>
     </div>
