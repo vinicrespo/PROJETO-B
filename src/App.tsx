@@ -14,6 +14,7 @@ import { ToastProvider } from './app/components/Toast';
 import Up1Page from './pages/Up1Page';
 import Up2Page from './pages/Up2Page';
 import Up3Page from './pages/Up3Page';
+import Up4Page from './pages/Up4Page';
 import LoginPage from './app/pages/LoginPage';
 import LoadingPage from './app/pages/LoadingPage';
 import OnboardingPage from './app/pages/OnboardingPage';
@@ -106,6 +107,9 @@ export default function App() {
         
         {/* Upsell 3 */}
         <Route path="/up3" element={<Up3Page />} />
+        
+        {/* Upsell 4 */}
+        <Route path="/up4" element={<Up4Page />} />
 
         {/* Stylo Maison App routes */}
         <Route path="/app" element={<LoginPage />} />
