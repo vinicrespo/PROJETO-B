@@ -212,7 +212,7 @@ export default function Up3Page() {
             Accepter l’offre
           </button>
           
-          <Link to="/up4" className="block text-center text-sm text-gray-500 underline hover:text-gray-300">
+          <Link to="/up4" className="block text-center text-sm text-gray-500 underline hover:text-gray-300 mt-8">
             Non, merci !
           </Link>
         </div>

@@ -63,7 +63,7 @@ export default function Up1Page() {
               Accepter l’offre
             </button>
 
-            <Link to="/up2" className="block text-center text-sm text-gray-500 underline hover:text-gray-300">
+            <Link to="/up2" className="block text-center text-sm text-gray-500 underline hover:text-gray-300 mt-8">
               Non, merci !
             </Link>
           </div>

@@ -123,7 +123,7 @@ export default function Up4Page() {
               Accepter l’offre
             </button>
             
-            <Link to="/thanks" className="block text-center text-sm text-gray-500 underline hover:text-gray-300">
+            <Link to="/thanks" className="block text-center text-sm text-gray-500 underline hover:text-gray-300 mt-8">
               Non, merci !
             </Link>
           </div>
