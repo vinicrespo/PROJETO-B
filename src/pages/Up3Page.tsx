@@ -9,11 +9,13 @@ export default function Up3Page() {
       </div>
 
       {/* Progress Bar */}
-      <div className="w-full max-w-3xl flex items-center bg-[#b91c1c] p-2 mt-2">
-        <span className="text-white font-bold ml-2 mr-4 whitespace-nowrap">Statut de traitement :</span>
-        <div className="flex-1 bg-white h-6 relative overflow-hidden flex items-center justify-end pr-2">
-          <div className="absolute top-0 left-0 h-full bg-[#b91c1c]" style={{ width: '89%' }}></div>
-          <span className="relative z-10 text-gray-800 font-bold text-sm">89%</span>
+      <div className="w-full bg-[#b91c1c] p-3 shadow-md flex items-center justify-center">
+        <div className="w-full max-w-2xl flex items-center gap-3 px-2">
+           <span className="text-white font-bold text-sm md:text-base whitespace-nowrap">Statut de traitement :</span>
+           <div className="flex-1 bg-white h-6 rounded-sm overflow-hidden relative">
+             <div className="absolute top-0 left-0 h-full bg-red-600" style={{ width: '89%' }}></div>
+             <span className="absolute inset-0 flex items-center justify-end pr-2 text-xs font-bold text-gray-800 z-10">89%</span>
+           </div>
         </div>
       </div>
 
@@ -48,10 +50,9 @@ export default function Up3Page() {
           <span className="text-[#ef4444] font-bold text-xl block mt-2">La peau flasque.</span>
         </p>
 
-        {/* Image 1 Placeholder */}
-        <div className="aspect-[16/9] md:aspect-[4/3] bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center justify-center w-full max-w-md mx-auto overflow-hidden shadow-lg relative">
-           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-           <p className="text-gray-500 font-bold uppercase tracking-widest relative z-10">[Image : Peau flasque 1]</p>
+        {/* Image 1 */}
+        <div className="aspect-[16/9] md:aspect-[4/3] bg-gray-900 border border-gray-800 rounded-lg flex items-center justify-center w-full max-w-md mx-auto overflow-hidden">
+           <img src="https://images.unsplash.com/photo-1607593674256-427357482813?w=800&q=80" alt="Peau flasque" className="w-full h-full object-cover" />
         </div>
 
         <p className="text-base md:text-lg leading-relaxed">
@@ -76,10 +77,9 @@ export default function Up3Page() {
           Votre peau a été "tendue" pendant des mois, voire des années.
         </p>
 
-        {/* Image 2 Placeholder */}
-        <div className="aspect-[4/3] bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center justify-center w-full max-w-md mx-auto overflow-hidden shadow-lg relative">
-           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
-           <p className="text-gray-500 font-bold uppercase tracking-widest relative z-10">[Image : Peau flasque 2]</p>
+        {/* Image 2 */}
+        <div className="aspect-[4/3] bg-gray-900 border border-gray-800 rounded-lg flex items-center justify-center w-full max-w-md mx-auto overflow-hidden">
+           <img src="https://images.unsplash.com/photo-1573878744040-c5fc69b3602d?w=800&q=80" alt="Peau flasque 2" className="w-full h-full object-cover" />
         </div>
 
         <p className="text-base md:text-lg leading-relaxed">
