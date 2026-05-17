@@ -50,11 +50,6 @@ export default function Up3Page() {
           <span className="text-[#ef4444] font-bold text-xl block mt-2">La peau flasque.</span>
         </p>
 
-        {/* Image 1 */}
-        <div className="aspect-[16/9] md:aspect-[4/3] border-4 border-gray-800 rounded-xl overflow-hidden w-full max-w-md mx-auto shadow-2xl">
-           <img src="https://images.unsplash.com/photo-1607593674256-427357482813?w=800&q=80" alt="Peau flasque" className="w-full h-full object-cover grayscale-[30%]" />
-        </div>
-
         <p className="text-base md:text-lg leading-relaxed">
           Et ce que 21 jours de perte de graisse donne à la peau... est désolant.
         </p>
@@ -77,10 +72,6 @@ export default function Up3Page() {
           Votre peau a été "tendue" pendant des mois, voire des années.
         </p>
 
-        {/* Image 2 */}
-        <div className="aspect-[4/3] border-4 border-gray-800 rounded-xl overflow-hidden w-full max-w-md mx-auto shadow-2xl">
-           <img src="https://images.unsplash.com/photo-1573878744040-c5fc69b3602d?w=800&q=80" alt="Peau flasque 2" className="w-full h-full object-cover grayscale-[30%]" />
-        </div>
 
         <p className="text-base md:text-lg leading-relaxed">
           Soudainement, cette graisse disparaît... laissant place à la fameuse peau "pendante" que vous voyez chez les personnes ayant subi une liposuccion.
