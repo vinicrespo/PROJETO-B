@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Hand } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Up2Page() {
   useEffect(() => {
@@ -46,10 +47,24 @@ export default function Up2Page() {
         </h1>
 
         {/* Video Placeholder Area */}
-        <div className="w-full max-w-[400px] mx-auto mt-4">
+        <div className="w-full max-w-[400px] mx-auto mt-4 mb-8">
           {/* Vturb Embed */}
           {/* @ts-ignore */}
           <vturb-smartplayer id="vid-6a091d7aaf83766f2b46d654" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}></vturb-smartplayer>
+        </div>
+
+        {/* Upsell Action Area */}
+        <div className="w-full max-w-[400px] mx-auto mt-4 space-y-4">
+          <button 
+            onClick={() => (window as any).acceptUpsell('https://app.kashpay.com.br/u/d4ae4ffb98163314')} 
+            style={{ fontFamily: 'Poppins', fontSize: '18px', fontWeight: 600, lineHeight: 1.3, color: '#ffffff', backgroundColor: '#057932', border: 'none', borderRadius: '10px', padding: '13px 7%', cursor: 'pointer', textAlign: 'center', display: 'block', margin: 'auto', width: '100%' }}
+          >
+            Accepter l’offre
+          </button>
+
+          <Link to="/up3" className="block text-center text-sm text-gray-500 underline hover:text-gray-300">
+            Non merci, je passe mon tour.
+          </Link>
         </div>
       </div>
     </div>

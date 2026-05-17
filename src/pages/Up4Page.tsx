@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Check, ShieldCheck, Lock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Up4Page() {
   return (
@@ -114,12 +115,18 @@ export default function Up4Page() {
             ⚠️ Cette offre disparaît si vous quittez cette page.
           </p>
 
-          <a 
-            href="/checkout/up4"
-            className="block w-full bg-primary hover:bg-green-600 text-white font-bold text-sm md:text-base py-5 px-4 rounded-xl shadow-[0_8px_20px_rgba(22,163,74,0.3)] uppercase transition-all duration-200 hover:scale-[1.02] active:scale-95"
-          >
-            OUI ! JE PROTÈGE MES RÉSULTATS POUR 27€
-          </a>
+          <div className="w-full space-y-4 max-w-sm mx-auto">
+            <button 
+              onClick={() => (window as any).acceptUpsell('https://app.kashpay.com.br/u/edffb3ef691c6cbe')} 
+              style={{ fontFamily: 'Poppins', fontSize: '18px', fontWeight: 600, lineHeight: 1.3, color: '#ffffff', backgroundColor: '#057932', border: 'none', borderRadius: '10px', padding: '13px 7%', cursor: 'pointer', textAlign: 'center', display: 'block', margin: 'auto', width: '100%' }}
+            >
+              Accepter l’offre
+            </button>
+            
+            <Link to="/thanks" className="block text-center text-sm text-gray-500 underline hover:text-gray-300">
+              Non merci, je passe mon tour.
+            </Link>
+          </div>
 
           <div className="flex items-center justify-center gap-1.5 text-xs text-text-muted mt-4 font-medium">
             <Lock className="w-3.5 h-3.5" />

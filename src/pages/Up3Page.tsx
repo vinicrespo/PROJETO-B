@@ -1,4 +1,5 @@
 import { Check, ShieldCheck, Image as ImageIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Up3Page() {
   return (
@@ -198,10 +199,17 @@ export default function Up3Page() {
         </div>
 
         {/* Upsell Button Placeholder */}
-        <div className="w-full pt-6">
-          <a href="#" className="block w-full bg-gradient-to-b from-[#4ade80] to-[#16a34a] hover:from-[#22c55e] hover:to-[#15803d] text-white font-black text-lg md:text-xl py-5 px-4 rounded-xl shadow-[0_4px_14px_0_rgba(22,163,74,0.39)] uppercase transition-transform hover:scale-105">
-            OUI, JE DÉBLOQUE CE SECRET EN - DE 3 MINUTES
-          </a>
+        <div className="w-full pt-6 space-y-4 max-w-sm mx-auto">
+          <button 
+            onClick={() => (window as any).acceptUpsell('https://app.kashpay.com.br/u/5e189e5e8b23a84d')} 
+            style={{ fontFamily: 'Poppins', fontSize: '18px', fontWeight: 600, lineHeight: 1.3, color: '#ffffff', backgroundColor: '#057932', border: 'none', borderRadius: '10px', padding: '13px 7%', cursor: 'pointer', textAlign: 'center', display: 'block', margin: 'auto', width: '100%' }}
+          >
+            Accepter l’offre
+          </button>
+          
+          <Link to="/up4" className="block text-center text-sm text-gray-500 underline hover:text-gray-300">
+            Non merci, je passe mon tour.
+          </Link>
         </div>
 
       </div>

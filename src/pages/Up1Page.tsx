@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Up1Page() {
   useEffect(() => {
@@ -50,7 +51,21 @@ export default function Up1Page() {
             <div className="w-full h-3 bg-gray-800 overflow-hidden">
               <div className="h-full bg-green-500" style={{ width: '99%' }}></div>
             </div>
-            <p className="text-center text-sm text-gray-400 mt-2 font-medium">99%</p>
+            <p className="text-center text-sm text-gray-400 mt-2 font-medium mb-8">99%</p>
+          </div>
+
+          {/* Upsell Action Area */}
+          <div className="w-full mt-6 space-y-4">
+            <button 
+              onClick={() => (window as any).acceptUpsell('https://app.kashpay.com.br/u/0eae03d69e195e6c')} 
+              style={{ fontFamily: 'Poppins', fontSize: '18px', fontWeight: 600, lineHeight: 1.3, color: '#ffffff', backgroundColor: '#057932', border: 'none', borderRadius: '10px', padding: '13px 7%', cursor: 'pointer', textAlign: 'center', display: 'block', margin: 'auto', width: '100%' }}
+            >
+              Accepter l’offre
+            </button>
+
+            <Link to="/up2" className="block text-center text-sm text-gray-500 underline hover:text-gray-300">
+              Non merci, je passe mon tour.
+            </Link>
           </div>
 
         </div>
