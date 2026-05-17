@@ -55,7 +55,7 @@ export default function Up1Page() {
           </div>
 
           {/* Upsell Action Area */}
-          <div className="w-full mt-6 space-y-4">
+          <div className="w-full mt-6 space-y-4 up1">
             <button 
               onClick={() => (window as any).acceptUpsell('https://app.kashpay.com.br/u/0eae03d69e195e6c')} 
               style={{ fontFamily: 'Poppins', fontSize: '18px', fontWeight: 600, lineHeight: 1.3, color: '#ffffff', backgroundColor: '#057932', border: 'none', borderRadius: '10px', padding: '13px 7%', cursor: 'pointer', textAlign: 'center', display: 'block', margin: 'auto', width: '100%' }}
