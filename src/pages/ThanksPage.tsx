@@ -1,6 +1,5 @@
 import { motion } from 'motion/react';
 import { CheckCircle, Mail } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function ThanksPage() {
   return (
@@ -30,17 +29,8 @@ export default function ThanksPage() {
             <span>Vos accès ont été envoyés par e-mail.</span>
           </div>
           <p className="text-sm">
-            Veuillez vérifier votre boîte de réception (et vos spams) pour accéder à votre programme Stylo Maison App.
+            Veuillez vérifier votre boîte de réception (et vos courriers indésirables/spams) pour accéder à vos instructions.
           </p>
-        </div>
-
-        <div className="pt-6">
-          <Link 
-            to="/app"
-            className="block w-full bg-primary hover:bg-green-600 text-white font-bold py-4 px-6 rounded-xl shadow-[0_8px_20px_rgba(22,163,74,0.3)] transition-transform hover:scale-105 active:scale-95 uppercase text-sm"
-          >
-            Accéder à l'application
-          </Link>
         </div>
       </motion.div>
     </div>
