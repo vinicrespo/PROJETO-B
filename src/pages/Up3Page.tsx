@@ -49,8 +49,9 @@ export default function Up3Page() {
         </p>
 
         {/* Image 1 Placeholder */}
-        <div className="aspect-[16/9] md:aspect-[4/3] bg-gray-900 border border-gray-800 rounded-lg flex items-center justify-center w-full max-w-md mx-auto overflow-hidden">
-           <img src="https://images.unsplash.com/photo-1607593674256-427357482813?w=800&q=80" alt="Peau flasque" className="w-full h-full object-cover opacity-60 mix-blend-luminosity" />
+        <div className="aspect-[16/9] md:aspect-[4/3] bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center justify-center w-full max-w-md mx-auto overflow-hidden shadow-lg relative">
+           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+           <p className="text-gray-500 font-bold uppercase tracking-widest relative z-10">[Image : Peau flasque 1]</p>
         </div>
 
         <p className="text-base md:text-lg leading-relaxed">
@@ -76,8 +77,9 @@ export default function Up3Page() {
         </p>
 
         {/* Image 2 Placeholder */}
-        <div className="aspect-[4/3] bg-gray-900 border border-gray-800 rounded-lg flex items-center justify-center w-full max-w-md mx-auto overflow-hidden">
-           <img src="https://images.unsplash.com/photo-1573878744040-c5fc69b3602d?w=800&q=80" alt="Peau flasque 2" className="w-full h-full object-cover opacity-60 mix-blend-luminosity" />
+        <div className="aspect-[4/3] bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center justify-center w-full max-w-md mx-auto overflow-hidden shadow-lg relative">
+           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+           <p className="text-gray-500 font-bold uppercase tracking-widest relative z-10">[Image : Peau flasque 2]</p>
         </div>
 
         <p className="text-base md:text-lg leading-relaxed">
@@ -91,12 +93,13 @@ export default function Up3Page() {
         </h2>
 
         {/* Mockup Placeholder */}
-        <div className="aspect-[3/4] bg-gray-900 border border-gray-800 rounded-lg flex items-center justify-center w-full max-w-sm mx-auto overflow-hidden relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900"></div>
-          <div className="relative z-10 text-center p-6 border-4 border-white bg-white/10 backdrop-blur-sm rounded-xl">
-             <p className="text-xs uppercase tracking-widest text-gray-300 mb-2">Guide exclusif</p>
-             <h3 className="font-serif text-2xl font-bold text-white mb-2">Le Secret pour<br/>Raffermir la Peau</h3>
-             <p className="text-sm text-gray-200">Méthode Collagène V3</p>
+        <div className="aspect-[3/4] md:aspect-square bg-gray-900 border border-gray-800 rounded-2xl flex flex-col items-center justify-center w-full max-w-sm mx-auto overflow-hidden relative shadow-2xl p-6">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#facc15]/10 via-black to-[#b91c1c]/10"></div>
+          <div className="relative z-10 text-center p-8 border border-[#facc15]/30 bg-black/60 backdrop-blur-md rounded-xl w-full shadow-inner">
+             <div className="w-16 h-1 bg-gradient-to-r from-transparent via-[#facc15]/50 to-transparent mx-auto mb-6"></div>
+             <p className="text-xs uppercase tracking-widest text-[#facc15] mb-3 font-bold">Guide exclusif</p>
+             <h3 className="font-serif text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">Le Secret pour<br/>Raffermir la Peau</h3>
+             <p className="text-sm font-medium text-gray-300">Méthode Collagène V3</p>
           </div>
         </div>
 
