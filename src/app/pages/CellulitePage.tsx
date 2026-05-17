@@ -1,0 +1,121 @@
+import { motion } from 'motion/react';
+import { Droplet } from 'lucide-react';
+import AppHeader from '../components/AppHeader';
+import PageWrapper from '../components/PageWrapper';
+import { useAuth } from '../hooks/useAuth';
+
+const RECIPES = [
+  {
+    title: 'Gommage café + huile de coco',
+    ingredients: ['100g de marc de café (usagé ou frais)', '3 cuillères à soupe d\'huile de coco vierge', '1 cuillère à soupe de sucre brun (optionnel, pour exfoliation supplémentaire)'],
+    instructions: 'Mélangez le marc de café avec l\'huile de coco tiède jusqu\'à obtenir une pâte homogène. Sous la douche, appliquez sur les zones concernées en effectuant des mouvements circulaires fermes pendant 5 minutes. La caféine stimule la microcirculation et aide à déloger les cellules graisseuses. Rincez à l\'eau tiède.',
+    frequency: '3 fois par semaine',
+  },
+  {
+    title: 'Massage palper-rouler maison',
+    ingredients: ['Huile de massage neutre ou huile d\'amande douce', '10 gouttes d\'huile essentielle de genévrier (optionnel)', '5 gouttes d\'huile essentielle de romarin (optionnel)'],
+    instructions: 'Appliquez l\'huile sur la zone. Pincez un pli de peau entre le pouce et les autres doigts, puis faites-le rouler en remontant vers le haut. Effectuez ce mouvement pendant 10 minutes par zone. C\'est inconfortable au début mais devient plus facile avec le temps. C\'est la technique la plus efficace contre la cellulite.',
+    frequency: 'Tous les jours pendant 4 semaines',
+  },
+  {
+    title: 'Boisson drainante détox',
+    ingredients: ['1L d\'eau', '2 sachets de thé vert bio', '1 citron entier (jus et zeste)', '1 morceau de gingembre frais (3 cm)', '1 cuillère à café de miel (optionnel)'],
+    instructions: 'Faites bouillir l\'eau et infusez le thé vert pendant 5 minutes. Ajoutez le gingembre râpé et le jus de citron. Laissez refroidir et conservez au réfrigérateur. Buvez tout au long de la journée. Cette boisson favorise le drainage lymphatique et l\'élimination des toxines stockées dans les tissus adipeux.',
+    frequency: 'Tous les jours',
+  },
+  {
+    title: 'Bain dérivatif',
+    ingredients: ['1 gant de toilette', 'Eau fraîche (pas glacée)', '20 minutes de votre temps'],
+    instructions: 'Rafraîchissez la zone de l\'aine avec le gant humidifié à l\'eau fraîche pendant 20 minutes. Cette technique ancestrale, popularisée par France Guillain, stimule la vibration des fascias et favorise la migration des graisses stockées. Pratiquez assis sur un linge sec, au calme.',
+    frequency: '1 fois par jour, matin ou soir',
+  },
+  {
+    title: 'Crème naturelle au pamplemousse',
+    ingredients: ['50 ml de crème hydratante neutre bio', '15 gouttes d\'huile essentielle de pamplemousse', '5 gouttes d\'huile essentielle de cèdre de l\'Atlas', '5 gouttes d\'huile essentielle de cyprès'],
+    instructions: 'Mélangez les huiles essentielles à la crème hydratante. Appliquez le soir sur les zones à traiter en massant vigoureusement de bas en haut pendant 5 minutes. L\'huile essentielle de pamplemousse est reconnue pour ses propriétés lipolytiques (destruction des cellules graisseuses).',
+    frequency: 'Tous les soirs avant le coucher',
+  },
+];
+
+const PLAN = [
+  { week: 'Semaine 1', tasks: ['Gommage café 3x/semaine', 'Boisson drainante tous les jours', 'Palper-rouler 10 min/jour'] },
+  { week: 'Semaine 2', tasks: ['Ajoutez la crème pamplemousse le soir', 'Continuez tous les soins précédents', 'Commencez le bain dérivatif 1x/jour'] },
+  { week: 'Semaine 3', tasks: ['Intensifiez le palper-rouler (15 min)', 'Maintenez tous les soins', 'Prenez des photos de progression'] },
+  { week: 'Semaine 4', tasks: ['Maintenance de tous les soins', 'Comparez vos photos avant/après', 'Adaptez selon vos résultats'] },
+];
+
+export default function CellulitePage() {
+  useAuth();
+
+  return (
+    <div className="min-h-screen stylo-bg">
+      <AppHeader showBack title="Effacer la Cellulite" />
+      <PageWrapper>
+        <div className="max-w-2xl mx-auto px-4 py-6 space-y-6">
+          {/* Intro */}
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="stylo-card">
+            <div className="flex items-center gap-2 mb-3">
+              <Droplet className="w-5 h-5 text-primary" />
+              <span className="px-2 py-0.5 rounded-full bg-gold/20 text-gold text-xs font-semibold">Bonus</span>
+            </div>
+            <h2 className="font-serif text-xl font-bold text-text-dark mb-2">Pourquoi la cellulite persiste</h2>
+            <p className="text-text-muted text-sm leading-relaxed">
+              Selon le Dr. Nancy Schwartz, spécialiste en dermatologie esthétique, la cellulite n'est pas un problème de poids mais de structure des tissus.
+              Les fibres de collagène qui emprisonnent les cellules graisseuses se rigidifient avec le temps, créant l'aspect "peau d'orange".
+              La solution : attaquer sur 3 fronts simultanément — exfoliation, drainage et stimulation circulatoire.
+            </p>
+          </motion.div>
+
+          {/* Recipes */}
+          {RECIPES.map((recipe, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 + i * 0.05 }}
+              className="stylo-card"
+            >
+              <h3 className="font-serif text-lg font-bold text-text-dark mb-3">{i + 1}. {recipe.title}</h3>
+
+              <div className="bg-gray-50 rounded-xl p-4 mb-3">
+                <p className="text-xs font-semibold text-text-muted mb-2">Ingrédients</p>
+                <ul className="space-y-1">
+                  {recipe.ingredients.map((ing, j) => (
+                    <li key={j} className="text-text-dark text-sm flex gap-2">
+                      <span className="text-primary">-</span> {ing}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <p className="text-text-dark text-sm leading-relaxed mb-3">{recipe.instructions}</p>
+
+              <div className="bg-accent-green/50 rounded-lg px-3 py-2 inline-block">
+                <p className="text-primary text-xs font-semibold">Fréquence : {recipe.frequency}</p>
+              </div>
+            </motion.div>
+          ))}
+
+          {/* 4-week plan */}
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }} className="stylo-card">
+            <h2 className="font-serif text-xl font-bold text-text-dark mb-4">Plan sur 4 semaines</h2>
+            <div className="space-y-3">
+              {PLAN.map((w, i) => (
+                <div key={i} className="bg-gray-50 rounded-xl p-4">
+                  <p className="font-semibold text-text-dark text-sm mb-2">{w.week}</p>
+                  <ul className="space-y-1">
+                    {w.tasks.map((t, j) => (
+                      <li key={j} className="text-text-muted text-sm flex gap-2">
+                        <span className="text-primary">-</span> {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </PageWrapper>
+    </div>
+  );
+}

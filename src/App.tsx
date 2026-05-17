@@ -3,12 +3,29 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Volume2 } from 'lucide-react';
 import VSL from './components/VSL';
 import TrustLogos from './components/TrustLogos';
 import Comments from './components/Comments';
+import { ToastProvider } from './app/components/Toast';
 
-export default function App() {
+// App pages
+import LoginPage from './app/pages/LoginPage';
+import LoadingPage from './app/pages/LoadingPage';
+import OnboardingPage from './app/pages/OnboardingPage';
+import DashboardPage from './app/pages/DashboardPage';
+import RecettePage from './app/pages/RecettePage';
+import ProtocolePage from './app/pages/ProtocolePage';
+import RoutinePage from './app/pages/RoutinePage';
+import AlimentsPage from './app/pages/AlimentsPage';
+import ShotPage from './app/pages/ShotPage';
+import CellulitePage from './app/pages/CellulitePage';
+import VergeturesPage from './app/pages/VergeturesPage';
+import FessiersPage from './app/pages/FessiersPage';
+import ProfilPage from './app/pages/ProfilPage';
+
+function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Top Header */}
@@ -68,5 +85,34 @@ export default function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <ToastProvider>
+      <Routes>
+        {/* Landing / VSL page */}
+        <Route path="/" element={<LandingPage />} />
+
+        {/* Stylo Maison App routes */}
+        <Route path="/app" element={<LoginPage />} />
+        <Route path="/app/loading" element={<LoadingPage />} />
+        <Route path="/app/onboarding" element={<OnboardingPage />} />
+        <Route path="/app/dashboard" element={<DashboardPage />} />
+        <Route path="/app/dashboard/recette" element={<RecettePage />} />
+        <Route path="/app/dashboard/protocole" element={<ProtocolePage />} />
+        <Route path="/app/dashboard/routine" element={<RoutinePage />} />
+        <Route path="/app/dashboard/aliments" element={<AlimentsPage />} />
+        <Route path="/app/dashboard/shot" element={<ShotPage />} />
+        <Route path="/app/dashboard/cellulite" element={<CellulitePage />} />
+        <Route path="/app/dashboard/vergetures" element={<VergeturesPage />} />
+        <Route path="/app/dashboard/fessiers" element={<FessiersPage />} />
+        <Route path="/app/dashboard/profil" element={<ProfilPage />} />
+
+        {/* Catch-all: redirect unknown app routes to dashboard */}
+        <Route path="/app/*" element={<Navigate to="/app/dashboard" replace />} />
+      </Routes>
+    </ToastProvider>
   );
 }

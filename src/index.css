@@ -1,8 +1,18 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap');
 
 @theme {
-  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --color-primary: #16A34A;
+  --color-primary-dark: #15803D;
+  --color-accent-green: #DCFCE7;
+  --color-cream: #FAF7F2;
+  --color-gold: #D4A574;
+  --color-danger: #DC2626;
+  --color-text-dark: #1F2937;
+  --color-text-muted: #6B7280;
+  --color-border: #E5E7EB;
 }
 
 :root {
@@ -17,4 +27,73 @@ body {
 
 .markdown-body {
   @apply text-gray-800 leading-relaxed;
+}
+
+/* Stylo Maison App Styles */
+.stylo-bg {
+  background-color: #FAF7F2;
+}
+
+.stylo-card {
+  @apply bg-white rounded-2xl shadow-md p-6 border border-border;
+}
+
+.stylo-btn {
+  @apply bg-primary hover:bg-primary-dark text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 text-center inline-block w-full;
+}
+
+.stylo-btn:disabled {
+  @apply opacity-50 cursor-not-allowed;
+}
+
+.stylo-input {
+  @apply w-full border border-border rounded-xl py-3 px-4 text-base text-text-dark outline-none transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20 bg-white;
+}
+
+/* Custom range slider */
+input[type="range"].stylo-slider {
+  @apply w-full h-2 rounded-full appearance-none cursor-pointer;
+  background: linear-gradient(to right, #16A34A var(--progress, 50%), #E5E7EB var(--progress, 50%));
+}
+
+input[type="range"].stylo-slider::-webkit-slider-thumb {
+  @apply appearance-none w-6 h-6 rounded-full bg-primary border-2 border-white shadow-md;
+}
+
+input[type="range"].stylo-slider::-moz-range-thumb {
+  @apply w-6 h-6 rounded-full bg-primary border-2 border-white shadow-md;
+}
+
+/* Spinner animation */
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 1.2s linear infinite;
+}
+
+/* Gold border for premium cards */
+.gold-border {
+  border: 2px solid #D4A574;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Toast animation */
+@keyframes toast-in {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes toast-out {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(100%); opacity: 0; }
+}
+.toast-enter {
+  animation: toast-in 0.3s ease-out;
+}
+.toast-exit {
+  animation: toast-out 0.3s ease-in;
 }
