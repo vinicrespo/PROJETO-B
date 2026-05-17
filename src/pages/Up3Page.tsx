@@ -51,10 +51,8 @@ export default function Up3Page() {
         </p>
 
         {/* Image 1 */}
-        <div className="aspect-[16/9] md:aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-lg flex flex-col items-center justify-center w-full max-w-md mx-auto shadow-inner overflow-hidden relative">
-           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
-           <ImageIcon className="w-12 h-12 text-gray-600 mb-3 relative z-10" />
-           <p className="text-gray-500 font-medium text-sm tracking-widest uppercase relative z-10">Illustration : Peau flasque</p>
+        <div className="aspect-[16/9] md:aspect-[4/3] border-4 border-gray-800 rounded-xl overflow-hidden w-full max-w-md mx-auto shadow-2xl">
+           <img src="https://images.unsplash.com/photo-1607593674256-427357482813?w=800&q=80" alt="Peau flasque" className="w-full h-full object-cover grayscale-[30%]" />
         </div>
 
         <p className="text-base md:text-lg leading-relaxed">
@@ -80,10 +78,8 @@ export default function Up3Page() {
         </p>
 
         {/* Image 2 */}
-        <div className="aspect-[4/3] bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 rounded-lg flex flex-col items-center justify-center w-full max-w-md mx-auto shadow-inner overflow-hidden relative">
-           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-10"></div>
-           <ImageIcon className="w-12 h-12 text-gray-600 mb-3 relative z-10" />
-           <p className="text-gray-500 font-medium text-sm tracking-widest uppercase relative z-10">Illustration : Avant / Après</p>
+        <div className="aspect-[4/3] border-4 border-gray-800 rounded-xl overflow-hidden w-full max-w-md mx-auto shadow-2xl">
+           <img src="https://images.unsplash.com/photo-1573878744040-c5fc69b3602d?w=800&q=80" alt="Peau flasque 2" className="w-full h-full object-cover grayscale-[30%]" />
         </div>
 
         <p className="text-base md:text-lg leading-relaxed">
