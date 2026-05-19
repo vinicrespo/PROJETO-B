@@ -11,6 +11,8 @@ export default function TrustLogos() {
           src="/trust-logos.png" 
           alt="TF1, ABC, NBC, Fox News Logos" 
           className="h-10 md:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-500 opacity-80 hover:opacity-100"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </section>

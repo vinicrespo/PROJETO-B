@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Volume2 } from 'lucide-react';
 import VSL from './components/VSL';
@@ -10,56 +11,57 @@ import TrustLogos from './components/TrustLogos';
 import Comments from './components/Comments';
 import { ToastProvider } from './app/components/Toast';
 
-// App pages
-import Up1Page from './pages/Up1Page';
-import Up2Page from './pages/Up2Page';
-import Up3Page from './pages/Up3Page';
-import Up4Page from './pages/Up4Page';
-import ThanksPage from './pages/ThanksPage';
-import LoginPage from './app/pages/LoginPage';
-import LoadingPage from './app/pages/LoadingPage';
-import OnboardingPage from './app/pages/OnboardingPage';
-import DashboardPage from './app/pages/DashboardPage';
-import RecettePage from './app/pages/RecettePage';
-import ProtocolePage from './app/pages/ProtocolePage';
-import RoutinePage from './app/pages/RoutinePage';
-import AlimentsPage from './app/pages/AlimentsPage';
-import ShotPage from './app/pages/ShotPage';
-import CellulitePage from './app/pages/CellulitePage';
-import VergeturesPage from './app/pages/VergeturesPage';
-import FessiersPage from './app/pages/FessiersPage';
-import ProfilPage from './app/pages/ProfilPage';
+// App pages (Lazy loaded)
+const Up1Page = lazy(() => import('./pages/Up1Page'));
+const Up2Page = lazy(() => import('./pages/Up2Page'));
+const Up3Page = lazy(() => import('./pages/Up3Page'));
+const Up4Page = lazy(() => import('./pages/Up4Page'));
+const ThanksPage = lazy(() => import('./pages/ThanksPage'));
+
+const LoginPage = lazy(() => import('./app/pages/LoginPage'));
+const LoadingPage = lazy(() => import('./app/pages/LoadingPage'));
+const OnboardingPage = lazy(() => import('./app/pages/OnboardingPage'));
+const DashboardPage = lazy(() => import('./app/pages/DashboardPage'));
+const RecettePage = lazy(() => import('./app/pages/RecettePage'));
+const ProtocolePage = lazy(() => import('./app/pages/ProtocolePage'));
+const RoutinePage = lazy(() => import('./app/pages/RoutinePage'));
+const AlimentsPage = lazy(() => import('./app/pages/AlimentsPage'));
+const ShotPage = lazy(() => import('./app/pages/ShotPage'));
+const CellulitePage = lazy(() => import('./app/pages/CellulitePage'));
+const VergeturesPage = lazy(() => import('./app/pages/VergeturesPage'));
+const FessiersPage = lazy(() => import('./app/pages/FessiersPage'));
+const ProfilPage = lazy(() => import('./app/pages/ProfilPage'));
 
 // Détox 10X
-import DetoxPlanPage from './app/pages/detox/DetoxPlanPage';
-import DetoxRituelNuitPage from './app/pages/detox/DetoxRituelNuitPage';
-import DetoxSubstitutionsPage from './app/pages/detox/DetoxSubstitutionsPage';
-import DetoxSelRosePage from './app/pages/detox/DetoxSelRosePage';
-import DetoxLipoMaisonPage from './app/pages/detox/DetoxLipoMaisonPage';
-import DetoxChocolatMinceurPage from './app/pages/detox/DetoxChocolatMinceurPage';
-import DetoxBainEpsomPage from './app/pages/detox/DetoxBainEpsomPage';
-import DetoxRespirationPage from './app/pages/detox/DetoxRespirationPage';
+const DetoxPlanPage = lazy(() => import('./app/pages/detox/DetoxPlanPage'));
+const DetoxRituelNuitPage = lazy(() => import('./app/pages/detox/DetoxRituelNuitPage'));
+const DetoxSubstitutionsPage = lazy(() => import('./app/pages/detox/DetoxSubstitutionsPage'));
+const DetoxSelRosePage = lazy(() => import('./app/pages/detox/DetoxSelRosePage'));
+const DetoxLipoMaisonPage = lazy(() => import('./app/pages/detox/DetoxLipoMaisonPage'));
+const DetoxChocolatMinceurPage = lazy(() => import('./app/pages/detox/DetoxChocolatMinceurPage'));
+const DetoxBainEpsomPage = lazy(() => import('./app/pages/detox/DetoxBainEpsomPage'));
+const DetoxRespirationPage = lazy(() => import('./app/pages/detox/DetoxRespirationPage'));
 
 // Shot Hormonal
-import HormonalRecettePage from './app/pages/hormonal/HormonalRecettePage';
-import HormonalToniqueDesirPage from './app/pages/hormonal/HormonalToniqueDesirPage';
-import HormonalCafeBariatriquePage from './app/pages/hormonal/HormonalCafeBariatriquePage';
-import HormonalCremeJeunessePage from './app/pages/hormonal/HormonalCremeJeunessePage';
-import HormonalSommeilPage from './app/pages/hormonal/HormonalSommeilPage';
-import HormonalAlimentsPage from './app/pages/hormonal/HormonalAlimentsPage';
+const HormonalRecettePage = lazy(() => import('./app/pages/hormonal/HormonalRecettePage'));
+const HormonalToniqueDesirPage = lazy(() => import('./app/pages/hormonal/HormonalToniqueDesirPage'));
+const HormonalCafeBariatriquePage = lazy(() => import('./app/pages/hormonal/HormonalCafeBariatriquePage'));
+const HormonalCremeJeunessePage = lazy(() => import('./app/pages/hormonal/HormonalCremeJeunessePage'));
+const HormonalSommeilPage = lazy(() => import('./app/pages/hormonal/HormonalSommeilPage'));
+const HormonalAlimentsPage = lazy(() => import('./app/pages/hormonal/HormonalAlimentsPage'));
 
 // Anti-Peau Flasque
-import AntiFlasquePlanPage from './app/pages/anti-flasque/AntiFlasquePlanPage';
-import AntiFlasqueCollagenPage from './app/pages/anti-flasque/AntiFlasqueCollagenPage';
-import AntiFlasqueGommagePage from './app/pages/anti-flasque/AntiFlasqueGommagePage';
+const AntiFlasquePlanPage = lazy(() => import('./app/pages/anti-flasque/AntiFlasquePlanPage'));
+const AntiFlasqueCollagenPage = lazy(() => import('./app/pages/anti-flasque/AntiFlasqueCollagenPage'));
+const AntiFlasqueGommagePage = lazy(() => import('./app/pages/anti-flasque/AntiFlasqueGommagePage'));
 
 // Maintien 365
-import MaintienPlanPage from './app/pages/maintien/MaintienPlanPage';
-import MaintienRecettePage from './app/pages/maintien/MaintienRecettePage';
-import MaintienAntiYoyoPage from './app/pages/maintien/MaintienAntiYoyoPage';
-import MaintienReset48hPage from './app/pages/maintien/MaintienReset48hPage';
-import MaintienCheatMealPage from './app/pages/maintien/MaintienCheatMealPage';
-import MaintienPsychologiePage from './app/pages/maintien/MaintienPsychologiePage';
+const MaintienPlanPage = lazy(() => import('./app/pages/maintien/MaintienPlanPage'));
+const MaintienRecettePage = lazy(() => import('./app/pages/maintien/MaintienRecettePage'));
+const MaintienAntiYoyoPage = lazy(() => import('./app/pages/maintien/MaintienAntiYoyoPage'));
+const MaintienReset48hPage = lazy(() => import('./app/pages/maintien/MaintienReset48hPage'));
+const MaintienCheatMealPage = lazy(() => import('./app/pages/maintien/MaintienCheatMealPage'));
+const MaintienPsychologiePage = lazy(() => import('./app/pages/maintien/MaintienPsychologiePage'));
 
 function LandingPage() {
   return (
@@ -127,74 +129,76 @@ function LandingPage() {
 export default function App() {
   return (
     <ToastProvider>
-      <Routes>
-        {/* Landing / VSL page */}
-        <Route path="/" element={<LandingPage />} />
-        
-        {/* Upsell 1 */}
-        <Route path="/up1" element={<Up1Page />} />
-        
-        {/* Upsell 2 */}
-        <Route path="/up2" element={<Up2Page />} />
-        
-        {/* Upsell 3 */}
-        <Route path="/up3" element={<Up3Page />} />
-        
-        {/* Upsell 4 */}
-        <Route path="/up4" element={<Up4Page />} />
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin" /></div>}>
+        <Routes>
+          {/* Landing / VSL page */}
+          <Route path="/" element={<LandingPage />} />
+          
+          {/* Upsell 1 */}
+          <Route path="/up1" element={<Up1Page />} />
+          
+          {/* Upsell 2 */}
+          <Route path="/up2" element={<Up2Page />} />
+          
+          {/* Upsell 3 */}
+          <Route path="/up3" element={<Up3Page />} />
+          
+          {/* Upsell 4 */}
+          <Route path="/up4" element={<Up4Page />} />
 
-        {/* Thank You Page */}
-        <Route path="/thanks" element={<ThanksPage />} />
+          {/* Thank You Page */}
+          <Route path="/thanks" element={<ThanksPage />} />
 
-        {/* Stylo Maison App routes */}
-        <Route path="/app" element={<LoginPage />} />
-        <Route path="/app/loading" element={<LoadingPage />} />
-        <Route path="/app/onboarding" element={<OnboardingPage />} />
-        <Route path="/app/dashboard" element={<DashboardPage />} />
-        <Route path="/app/dashboard/recette" element={<RecettePage />} />
-        <Route path="/app/dashboard/protocole" element={<ProtocolePage />} />
-        <Route path="/app/dashboard/routine" element={<RoutinePage />} />
-        <Route path="/app/dashboard/aliments" element={<AlimentsPage />} />
-        <Route path="/app/dashboard/shot" element={<ShotPage />} />
-        <Route path="/app/dashboard/cellulite" element={<CellulitePage />} />
-        <Route path="/app/dashboard/vergetures" element={<VergeturesPage />} />
-        <Route path="/app/dashboard/fessiers" element={<FessiersPage />} />
-        <Route path="/app/dashboard/profil" element={<ProfilPage />} />
+          {/* Stylo Maison App routes */}
+          <Route path="/app" element={<LoginPage />} />
+          <Route path="/app/loading" element={<LoadingPage />} />
+          <Route path="/app/onboarding" element={<OnboardingPage />} />
+          <Route path="/app/dashboard" element={<DashboardPage />} />
+          <Route path="/app/dashboard/recette" element={<RecettePage />} />
+          <Route path="/app/dashboard/protocole" element={<ProtocolePage />} />
+          <Route path="/app/dashboard/routine" element={<RoutinePage />} />
+          <Route path="/app/dashboard/aliments" element={<AlimentsPage />} />
+          <Route path="/app/dashboard/shot" element={<ShotPage />} />
+          <Route path="/app/dashboard/cellulite" element={<CellulitePage />} />
+          <Route path="/app/dashboard/vergetures" element={<VergeturesPage />} />
+          <Route path="/app/dashboard/fessiers" element={<FessiersPage />} />
+          <Route path="/app/dashboard/profil" element={<ProfilPage />} />
 
-        {/* Détox 10X */}
-        <Route path="/app/dashboard/detox/plan" element={<DetoxPlanPage />} />
-        <Route path="/app/dashboard/detox/rituel-nuit" element={<DetoxRituelNuitPage />} />
-        <Route path="/app/dashboard/detox/substitutions" element={<DetoxSubstitutionsPage />} />
-        <Route path="/app/dashboard/detox/sel-rose" element={<DetoxSelRosePage />} />
-        <Route path="/app/dashboard/detox/lipo-maison" element={<DetoxLipoMaisonPage />} />
-        <Route path="/app/dashboard/detox/chocolat-minceur" element={<DetoxChocolatMinceurPage />} />
-        <Route path="/app/dashboard/detox/bain-epsom" element={<DetoxBainEpsomPage />} />
-        <Route path="/app/dashboard/detox/respiration" element={<DetoxRespirationPage />} />
+          {/* Détox 10X */}
+          <Route path="/app/dashboard/detox/plan" element={<DetoxPlanPage />} />
+          <Route path="/app/dashboard/detox/rituel-nuit" element={<DetoxRituelNuitPage />} />
+          <Route path="/app/dashboard/detox/substitutions" element={<DetoxSubstitutionsPage />} />
+          <Route path="/app/dashboard/detox/sel-rose" element={<DetoxSelRosePage />} />
+          <Route path="/app/dashboard/detox/lipo-maison" element={<DetoxLipoMaisonPage />} />
+          <Route path="/app/dashboard/detox/chocolat-minceur" element={<DetoxChocolatMinceurPage />} />
+          <Route path="/app/dashboard/detox/bain-epsom" element={<DetoxBainEpsomPage />} />
+          <Route path="/app/dashboard/detox/respiration" element={<DetoxRespirationPage />} />
 
-        {/* Shot Hormonal */}
-        <Route path="/app/dashboard/hormonal/recette" element={<HormonalRecettePage />} />
-        <Route path="/app/dashboard/hormonal/tonique-desir" element={<HormonalToniqueDesirPage />} />
-        <Route path="/app/dashboard/hormonal/cafe-bariatrique" element={<HormonalCafeBariatriquePage />} />
-        <Route path="/app/dashboard/hormonal/creme-jeunesse" element={<HormonalCremeJeunessePage />} />
-        <Route path="/app/dashboard/hormonal/sommeil" element={<HormonalSommeilPage />} />
-        <Route path="/app/dashboard/hormonal/aliments" element={<HormonalAlimentsPage />} />
+          {/* Shot Hormonal */}
+          <Route path="/app/dashboard/hormonal/recette" element={<HormonalRecettePage />} />
+          <Route path="/app/dashboard/hormonal/tonique-desir" element={<HormonalToniqueDesirPage />} />
+          <Route path="/app/dashboard/hormonal/cafe-bariatrique" element={<HormonalCafeBariatriquePage />} />
+          <Route path="/app/dashboard/hormonal/creme-jeunesse" element={<HormonalCremeJeunessePage />} />
+          <Route path="/app/dashboard/hormonal/sommeil" element={<HormonalSommeilPage />} />
+          <Route path="/app/dashboard/hormonal/aliments" element={<HormonalAlimentsPage />} />
 
-        {/* Anti-Peau Flasque */}
-        <Route path="/app/dashboard/anti-flasque/plan" element={<AntiFlasquePlanPage />} />
-        <Route path="/app/dashboard/anti-flasque/collagene" element={<AntiFlasqueCollagenPage />} />
-        <Route path="/app/dashboard/anti-flasque/gommage" element={<AntiFlasqueGommagePage />} />
+          {/* Anti-Peau Flasque */}
+          <Route path="/app/dashboard/anti-flasque/plan" element={<AntiFlasquePlanPage />} />
+          <Route path="/app/dashboard/anti-flasque/collagene" element={<AntiFlasqueCollagenPage />} />
+          <Route path="/app/dashboard/anti-flasque/gommage" element={<AntiFlasqueGommagePage />} />
 
-        {/* Maintien 365 */}
-        <Route path="/app/dashboard/maintien/plan" element={<MaintienPlanPage />} />
-        <Route path="/app/dashboard/maintien/recette" element={<MaintienRecettePage />} />
-        <Route path="/app/dashboard/maintien/anti-yoyo" element={<MaintienAntiYoyoPage />} />
-        <Route path="/app/dashboard/maintien/reset-48h" element={<MaintienReset48hPage />} />
-        <Route path="/app/dashboard/maintien/cheat-meal" element={<MaintienCheatMealPage />} />
-        <Route path="/app/dashboard/maintien/psychologie" element={<MaintienPsychologiePage />} />
+          {/* Maintien 365 */}
+          <Route path="/app/dashboard/maintien/plan" element={<MaintienPlanPage />} />
+          <Route path="/app/dashboard/maintien/recette" element={<MaintienRecettePage />} />
+          <Route path="/app/dashboard/maintien/anti-yoyo" element={<MaintienAntiYoyoPage />} />
+          <Route path="/app/dashboard/maintien/reset-48h" element={<MaintienReset48hPage />} />
+          <Route path="/app/dashboard/maintien/cheat-meal" element={<MaintienCheatMealPage />} />
+          <Route path="/app/dashboard/maintien/psychologie" element={<MaintienPsychologiePage />} />
 
-        {/* Catch-all: redirect unknown app routes to dashboard */}
-        <Route path="/app/*" element={<Navigate to="/app/dashboard" replace />} />
-      </Routes>
+          {/* Catch-all: redirect unknown app routes to dashboard */}
+          <Route path="/app/*" element={<Navigate to="/app/dashboard" replace />} />
+        </Routes>
+      </Suspense>
     </ToastProvider>
   );
 }

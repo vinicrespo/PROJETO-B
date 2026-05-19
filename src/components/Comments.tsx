@@ -80,6 +80,8 @@ export default function Comments() {
                   alt={comment.name} 
                   className="w-10 h-10 md:w-12 md:h-12 rounded-full flex-shrink-0 border-2 border-gray-50 shadow-sm object-cover"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="flex-1">
                   <div className="bg-[#f0f2f5] p-3 rounded-2xl">
