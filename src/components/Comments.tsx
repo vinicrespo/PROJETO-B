@@ -78,6 +78,8 @@ export default function Comments() {
                 <img 
                   src={comment.avatar} 
                   alt={comment.name} 
+                  width={48}
+                  height={48}
                   className="w-10 h-10 md:w-12 md:h-12 rounded-full flex-shrink-0 border-2 border-gray-50 shadow-sm object-cover"
                   referrerPolicy="no-referrer"
                   loading="lazy"
