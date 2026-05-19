@@ -1,0 +1,1 @@
+import{j as a}from"./index-gwdZOWiF.js";import{m as o}from"./proxy-BjTFhCS7.js";function n({children:t,className:i=""}){return a.jsx(o.div,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},exit:{opacity:0,y:-10},transition:{duration:.4,ease:"easeOut"},className:i,children:t})}export{n as P};
