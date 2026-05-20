@@ -17,6 +17,7 @@ const Up2Page = lazy(() => import('./pages/Up2Page'));
 const Up3Page = lazy(() => import('./pages/Up3Page'));
 const Up4Page = lazy(() => import('./pages/Up4Page'));
 const ThanksPage = lazy(() => import('./pages/ThanksPage'));
+const Lead1Page = lazy(() => import('./pages/Lead1Page'));
 
 const LoginPage = lazy(() => import('./app/pages/LoginPage'));
 const LoadingPage = lazy(() => import('./app/pages/LoadingPage'));
@@ -137,6 +138,9 @@ export default function App() {
         <Routes>
           {/* Landing / VSL page */}
           <Route path="/" element={<LandingPage />} />
+          
+          {/* Lead 1 VSL page */}
+          <Route path="/19lead1" element={<Lead1Page />} />
           
           {/* Upsell 1 */}
           <Route path="/up1" element={<Up1Page />} />
