@@ -14,31 +14,31 @@ interface CommentProps {
 const commentsData: CommentProps[] = [
   {
     name: "Valérie Petit",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
     text: "Si j'avais trouvé cette vidéo plus tôt, je n'aurais pas perdu autant de temps et d'argent à essayer de maigrir !",
     time: "1 min"
   },
   {
     name: "Céline Lefevre",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
     text: "Grâce à Dieu, j'ai regardé la vidéo jusqu'au bout, maintenant je comprends pourquoi je n'arrive pas à perdre du poids, je vais commencer dès aujourd'hui. Merci !",
     time: "2 min"
   },
   {
     name: "Colette Dubois",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
     text: "Pensaba que mi genética era la culpable de mis constantes subidas y bajadas de peso. ¡Por fin encontré algo que funciona!",
     time: "5 min"
   },
   {
     name: "Léa Rocher",
-    avatar: "https://images.unsplash.com/photo-1546539782-6fc531453083?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://images.unsplash.com/photo-1546539782-6fc531453083?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
     text: "Moi aussi, je pensais que c'était moi le problème. Heureusement que Amélie a tout expliqué!",
     time: "10 min"
   },
   {
     name: "Amélie Martinet",
-    avatar: "https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
     text: "Comment est-ce que je fais pour regarder la vidéo ? Il suffit de cliquer dessus ?",
     time: "16 min"
   },
@@ -50,13 +50,13 @@ const commentsData: CommentProps[] = [
   },
   {
     name: "Éloïse Leroux",
-    avatar: "https://images.unsplash.com/photo-1551069613-1904dbdcda11?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://images.unsplash.com/photo-1551069613-1904dbdcda11?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
     text: "La vidéo est-elle très longue ? Est-ce que quelqu'un peut me le dire ?",
     time: "10 min"
   },
   {
     name: "Simone Allard",
-    avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&q=80&w=150",
+    avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
     text: "Elle convient, j'ai 72 ans, je l'ai utilisée et j'ai perdu 9 kg. Je n'ai plus mal aux genoux, c'est incroyable !",
     time: "1 h"
   }
@@ -64,7 +64,7 @@ const commentsData: CommentProps[] = [
 
 export default function Comments() {
   return (
-    <section id="comments" className="bg-[#89c39e] py-8 px-2 md:px-4">
+    <section id="comments" className="bg-[#2d6a4f] py-8 px-2 md:px-4">
       <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden">
         <div className="p-4 md:p-6">
           <h2 className="text-xl font-bold text-gray-900 mb-6 flex items-center">

@@ -7,8 +7,8 @@ import { Suspense, lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { Volume2 } from 'lucide-react';
 import VSL from './components/VSL';
-import TrustLogos from './components/TrustLogos';
-import Comments from './components/Comments';
+const TrustLogos = lazy(() => import('./components/TrustLogos'));
+const Comments = lazy(() => import('./components/Comments'));
 import { ToastProvider } from './app/components/Toast';
 
 // App pages (Lazy loaded)
@@ -67,8 +67,8 @@ function LandingPage() {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Top Header */}
-      <header id="header" className="bg-[#89c39e] text-white py-4 px-2 text-center shadow-md">
-        <h1 className="text-xl md:text-3xl font-black uppercase text-[#e33036] mb-1 tracking-tight drop-shadow-sm">
+      <header id="header" className="bg-[#166534] text-white py-4 px-2 text-center shadow-md">
+        <h1 className="text-xl md:text-3xl font-black uppercase text-[#fef08a] mb-1 tracking-tight drop-shadow-sm">
           ATTENTION:
         </h1>
         <p className="text-lg md:text-2xl font-bold leading-tight max-w-2xl mx-auto">
@@ -96,16 +96,20 @@ function LandingPage() {
         </div>
 
         {/* Logos */}
-        <TrustLogos />
+        <Suspense fallback={<div className="py-6 bg-white min-h-[100px]"></div>}>
+          <TrustLogos />
+        </Suspense>
 
         {/* Comments */}
-        <Comments />
+        <Suspense fallback={<div className="bg-[#89c39e] py-8 min-h-[400px]"></div>}>
+          <Comments />
+        </Suspense>
       </main>
 
       {/* Footer */}
       <footer id="footer">
         {/* Disclaimer Section */}
-        <div className="bg-[#f0f0f0] p-6 md:p-10 text-center text-gray-500 text-[10px] md:text-xs leading-relaxed max-w-5xl mx-auto">
+        <div className="bg-[#f0f0f0] p-6 md:p-10 text-center text-gray-700 text-[10px] md:text-xs leading-relaxed max-w-5xl mx-auto">
           <p className="mb-4">
             Notre vidéo, contenu et matériel sont enregistrés auprès de la CBL et de l'INPI, toute reproduction sera poursuivie. 
             Nous n'avons pas l'intention de diagnostiquer, traiter, guérir ou prévenir toute maladie ou affection. 
@@ -116,7 +120,7 @@ function LandingPage() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="bg-[#75b38b] py-6 px-4 text-center text-white text-sm md:text-base font-medium">
+        <div className="bg-[#2f855a] py-6 px-4 text-center text-white text-sm md:text-base font-medium">
           <p>
             Copyright © {new Date().getFullYear()} <span className="font-black">Vitalite Pure</span> | Tous droits réservés
           </p>

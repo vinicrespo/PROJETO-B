@@ -5,24 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cette présentation sera retirée demain !</title>
     <meta name="description" content="Découvrez cette présentation exclusive. Regardez jusqu'à la fin avant qu'elle ne soit retirée demain !">
-    <!-- Fonts Optimization -->
+    <!-- Preconnects & DNS-Prefetch -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap">
-    <!-- Images Preconnect -->
-    <link rel="preconnect" href="https://images.unsplash.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://scripts.converteai.net" crossorigin>
+    <link rel="preconnect" href="https://cdn.converteai.net" crossorigin>
+    <link rel="preconnect" href="https://cdn.utmify.com.br" crossorigin>
+    <link rel="preconnect" href="https://vt-h-1.b-cdn.net" crossorigin>
+    <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+
+    <link rel="dns-prefetch" href="https://api6.ipify.org">
+    <link rel="dns-prefetch" href="https://license.vturb.com">
+    <link rel="dns-prefetch" href="https://app.kashpay.com.br">
+    <link rel="dns-prefetch" href="https://www.facebook.com">
+    <link rel="dns-prefetch" href="https://images.unsplash.com">
+
+    <!-- Fonts Optimization -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v13/UcC73FwrK3iLTeHuS_fvQtMwCp50KnMa1ZL7W0Q5nw.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap"></noscript>
+
+    <!-- Critical CSS -->
+    <style>
+      body { margin: 0; font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; background-color: #ffffff; }
+      .min-h-screen { min-height: 100vh; }
+      .flex { display: flex; }
+      .flex-col { flex-direction: column; }
+      .text-center { text-align: center; }
+      .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+      .px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+      .bg-\[\#166534\] { background-color: #166534; }
+      .text-white { color: #ffffff; }
+      .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+      .md\:text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+      .font-black { font-weight: 900; }
+      .uppercase { text-transform: uppercase; }
+      .text-\[\#fef08a\] { color: #fef08a; }
+      .mb-1 { margin-bottom: 0.25rem; }
+      .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+      .md\:text-2xl { font-size: 1.5rem; line-height: 2rem; }
+      .font-bold { font-weight: 700; }
+      .max-w-2xl { max-width: 42rem; }
+      .mx-auto { margin-left: auto; margin-right: auto; }
+      .flex-grow { flex-grow: 1; }
+      .items-center { align-items: center; }
+      .pt-6 { padding-top: 1.5rem; }
+      .w-full { width: 100%; }
+      .max-w-4xl { max-width: 56rem; }
+      .mb-8 { margin-bottom: 2rem; }
+      .relative { position: relative; }
+    </style>
+
     <!-- Vturb Optimization -->
     <script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
     <link rel="preload" href="https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/6a08fb50672735d01886848f/v4/player.js" as="script">
     <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
     <link rel="preload" href="https://cdn.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/6a08f9369a5df223bbe310b7/main.m3u8" as="fetch">
-    <link rel="dns-prefetch" href="https://cdn.converteai.net">
-    <link rel="dns-prefetch" href="https://scripts.converteai.net">
-    <link rel="dns-prefetch" href="https://images.converteai.net">
-    <link rel="dns-prefetch" href="https://api.vturb.com.br">
-    <link rel="dns-prefetch" href="https://license.vturb.com">
-    <script src="https://app.kashpay.com.br/scripts/upsell-processor.js"></script>
-    
+    <script src="https://app.kashpay.com.br/scripts/upsell-processor.js" defer></script>
     <!-- UTMify Script -->
     <script
       src="https://cdn.utmify.com.br/scripts/utms/latest.js"
@@ -45,8 +84,8 @@
   <body>
     <div id="root">
       <div class="min-h-screen flex flex-col font-sans">
-        <header class="bg-[#89c39e] text-white py-4 px-2 text-center shadow-md">
-          <h1 class="text-xl md:text-3xl font-black uppercase text-[#e33036] mb-1 tracking-tight drop-shadow-sm">ATTENTION:</h1>
+        <header class="bg-[#166534] text-white py-4 px-2 text-center shadow-md">
+          <h1 class="text-xl md:text-3xl font-black uppercase text-[#fef08a] mb-1 tracking-tight drop-shadow-sm">ATTENTION:</h1>
           <p class="text-lg md:text-2xl font-bold leading-tight max-w-2xl mx-auto">Regardez jusqu'à la fin, cette présentation sera retirée demain !</p>
         </header>
         <main class="flex-grow flex flex-col items-center justify-start pt-6 px-4 md:px-0 bg-white">
