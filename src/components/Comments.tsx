@@ -14,49 +14,49 @@ interface CommentProps {
 const commentsData: CommentProps[] = [
   {
     name: "Valérie Petit",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
-    text: "Si j'avais trouvé cette vidéo plus tôt, je n'aurais pas perdu autant de temps et d'argent à essayer de maigrir !",
+    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=96&h=96&q=70",
+    text: "Si j'avais trouvé cette vídeo plus tôt, je n'aurais pas perdu autant de temps et d'argent à essayer de maigrir !",
     time: "1 min"
   },
   {
     name: "Céline Lefevre",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=96&h=96&q=70",
     text: "Grâce à Dieu, j'ai regardé la vidéo jusqu'au bout, maintenant je comprends pourquoi je n'arrive pas à perdre du poids, je vais commencer dès aujourd'hui. Merci !",
     time: "2 min"
   },
   {
     name: "Colette Dubois",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=96&h=96&q=70",
     text: "Pensaba que mi genética era la culpable de mis constantes subidas y bajadas de peso. ¡Por fin encontré algo que funciona!",
     time: "5 min"
   },
   {
     name: "Léa Rocher",
-    avatar: "https://images.unsplash.com/photo-1546539782-6fc531453083?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
+    avatar: "https://images.unsplash.com/photo-1546539782-6fc531453083?auto=format&fit=crop&w=96&h=96&q=70",
     text: "Moi aussi, je pensais que c'était moi le problème. Heureusement que Amélie a tout expliqué!",
     time: "10 min"
   },
   {
     name: "Amélie Martinet",
-    avatar: "https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
+    avatar: "https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=96&h=96&q=70",
     text: "Comment est-ce que je fais pour regarder la vidéo ? Il suffit de cliquer dessus ?",
     time: "16 min"
   },
   {
     name: "Madeleine Rousseau",
-    avatar: "/madeleine-profile.png",
+    avatar: "/madeleine-profile.webp",
     text: "Il suffit de cliquer sur la vidéo et elle commence.",
     time: "14 min"
   },
   {
     name: "Éloïse Leroux",
-    avatar: "https://images.unsplash.com/photo-1551069613-1904dbdcda11?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
+    avatar: "https://images.unsplash.com/photo-1551069613-1904dbdcda11?auto=format&fit=crop&w=96&h=96&q=70",
     text: "La vidéo est-elle très longue ? Est-ce que quelqu'un peut me le dire ?",
     time: "10 min"
   },
   {
     name: "Simone Allard",
-    avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format?auto=format&fit=crop&q=80&w=96&q=70fit=crop?auto=format&fit=crop&q=80&w=96&q=70q=70?auto=format&fit=crop&q=80&w=96&q=70w=96",
+    avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=96&h=96&q=70",
     text: "Elle convient, j'ai 72 ans, je l'ai utilisée et j'ai perdu 9 kg. Je n'ai plus mal aux genoux, c'est incroyable !",
     time: "1 h"
   }

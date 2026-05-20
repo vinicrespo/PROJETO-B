@@ -10,7 +10,7 @@ export default function TrustLogos() {
         <picture>
           <source srcSet="/trust-logos.webp" type="image/webp" />
           <img 
-            src="/trust-logos.png" 
+            src="/trust-logos.webp" 
             alt="TF1, ABC, NBC, Fox News Logos" 
             width={452}
             height={70}
