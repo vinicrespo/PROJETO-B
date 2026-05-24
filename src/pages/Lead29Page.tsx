@@ -46,7 +46,7 @@ export default function Lead29Page() {
         </div>
 
         {/* Call to Action */}
-        <div className="flex justify-center w-full pt-8 pb-2 bg-white px-4 29lead1">
+        <div className="flex justify-center w-full pt-8 pb-2 bg-white px-4 lead29">
           <a href="https://checkout.kashpay.com.br/checkout/checkout-1779658220097" className="w-full max-w-xl mx-auto bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg shadow-xl text-lg md:text-2xl uppercase transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-95 text-center leading-tight block">
             Je veux perdre 17 kilos en 21 jours
           </a>
