@@ -96,3 +96,7 @@ html {
 .toast-exit {
   animation: toast-out 0.3s ease-in;
 }
+
+.hide {
+  display: none;
+}
