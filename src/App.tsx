@@ -20,6 +20,7 @@ const ThanksPage = lazy(() => import('./pages/ThanksPage'));
 const Lead1Page = lazy(() => import('./pages/Lead1Page'));
 const Lead2Page = lazy(() => import('./pages/Lead2Page'));
 const Lead29Page = lazy(() => import('./pages/Lead29Page'));
+const Lead37Page = lazy(() => import('./pages/Lead37Page'));
 
 const LoginPage = lazy(() => import('./app/pages/LoginPage'));
 const LoadingPage = lazy(() => import('./app/pages/LoadingPage'));
@@ -149,6 +150,9 @@ export default function App() {
 
           {/* Lead 29 VSL page */}
           <Route path="/29lead1" element={<Lead29Page />} />
+
+          {/* Lead 37 VSL page */}
+          <Route path="/37lead1" element={<Lead37Page />} />
           
           {/* Upsell 1 */}
           <Route path="/up1" element={<Up1Page />} />
