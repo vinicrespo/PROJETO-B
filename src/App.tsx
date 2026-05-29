@@ -134,11 +134,14 @@ function LandingPage() {
   );
 }
 
+import { ErrorBoundary } from './components/ErrorBoundary';
+
 export default function App() {
   return (
-    <ToastProvider>
-      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin" /></div>}>
-        <Routes>
+    <ErrorBoundary>
+      <ToastProvider>
+        <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin" /></div>}>
+          <Routes>
           {/* Landing / VSL page */}
           <Route path="/" element={<LandingPage />} />
           
@@ -220,5 +223,6 @@ export default function App() {
         </Routes>
       </Suspense>
     </ToastProvider>
+    </ErrorBoundary>
   );
 }

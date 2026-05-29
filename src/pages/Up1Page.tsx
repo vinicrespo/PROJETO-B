@@ -7,7 +7,7 @@ export default function Up1Page() {
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
       script.id = scriptId;
-      script.src = "https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/6a14f3c6323b27e7029c6220/v4/player.js";
+      script.src = "https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/6a0fa43531bb1f28a5b01b95/v4/player.js";
       script.async = true;
       document.head.appendChild(script);
     }
@@ -44,7 +44,7 @@ export default function Up1Page() {
         <div className="w-full max-w-[400px] mx-auto mt-8">
           {/* Vturb Embed */}
           {/* @ts-ignore */}
-          <vturb-smartplayer id="vid-6a14f3c6323b27e7029c6220" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}></vturb-smartplayer>
+          <vturb-smartplayer id="vid-6a0fa43531bb1f28a5b01b95" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}></vturb-smartplayer>
           
           {/* Progress bar */}
           <div className="mt-4 px-2">
