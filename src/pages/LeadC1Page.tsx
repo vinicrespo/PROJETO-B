@@ -4,7 +4,7 @@ import { Volume2 } from 'lucide-react';
 const TrustLogos = lazy(() => import('../components/TrustLogos'));
 const Comments = lazy(() => import('../components/Comments'));
 
-export default function Lead1Page() {
+export default function LeadC1Page() {
   useEffect(() => {
     const scriptId = 'vturb-player-script-lead1';
     if (!document.getElementById(scriptId)) {
@@ -46,7 +46,7 @@ export default function Lead1Page() {
         </div>
 
         {/* Call to Action */}
-        <div className="flex justify-center w-full pt-8 pb-2 bg-white px-4 lead1">
+        <div className="flex justify-center w-full pt-8 pb-2 bg-white px-4 leadc1">
           <a href="https://checkout.kashpay.com.br/checkout/checkout-1778981145336" className="w-full max-w-xl mx-auto bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg shadow-xl text-lg md:text-2xl uppercase transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-95 text-center leading-tight block">
             Je veux perdre 17 kilos en 21 jours
           </a>

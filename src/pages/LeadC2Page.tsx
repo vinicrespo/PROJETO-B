@@ -4,13 +4,13 @@ import { Volume2 } from 'lucide-react';
 const TrustLogos = lazy(() => import('../components/TrustLogos'));
 const Comments = lazy(() => import('../components/Comments'));
 
-export default function Lead29Page() {
+export default function LeadC2Page() {
   useEffect(() => {
-    const scriptId = 'vturb-player-script-lead29';
+    const scriptId = 'vturb-player-script-lead1';
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
       script.id = scriptId;
-      script.src = "https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/6a13755f9018d03a426996e6/v4/player.js";
+      script.src = "https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/6a0d06290a855e4b57cc3473/v4/player.js";
       script.async = true;
       document.head.appendChild(script);
     }
@@ -33,7 +33,7 @@ export default function Lead29Page() {
         <section id="vsl" className="bg-black py-6 px-2 overflow-hidden">
           <div className="mx-auto w-full max-w-[400px]">
             {/* @ts-ignore */}
-            <vturb-smartplayer id="vid-6a13755f9018d03a426996e6" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}></vturb-smartplayer>
+            <vturb-smartplayer id="vid-6a0d06290a855e4b57cc3473" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}></vturb-smartplayer>
           </div>
         </section>
 
@@ -46,8 +46,8 @@ export default function Lead29Page() {
         </div>
 
         {/* Call to Action */}
-        <div className="flex justify-center w-full pt-8 pb-2 bg-white px-4 lead1-29">
-          <a href="https://checkout.kashpay.com.br/checkout/checkout-1779658220097" className="w-full max-w-xl mx-auto bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg shadow-xl text-lg md:text-2xl uppercase transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-95 text-center leading-tight block">
+        <div className="flex justify-center w-full pt-8 pb-2 bg-white px-4 leadc2">
+          <a href="https://checkout.kashpay.com.br/checkout/checkout-1778981145336" className="w-full max-w-xl mx-auto bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg shadow-xl text-lg md:text-2xl uppercase transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-95 text-center leading-tight block">
             Je veux perdre 17 kilos en 21 jours
           </a>
         </div>

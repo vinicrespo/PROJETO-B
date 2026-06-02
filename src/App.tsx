@@ -17,10 +17,8 @@ const Up2Page = lazy(() => import('./pages/Up2Page'));
 const Up3Page = lazy(() => import('./pages/Up3Page'));
 const Up4Page = lazy(() => import('./pages/Up4Page'));
 const ThanksPage = lazy(() => import('./pages/ThanksPage'));
-const Lead1Page = lazy(() => import('./pages/Lead1Page'));
-const Lead2Page = lazy(() => import('./pages/Lead2Page'));
-const Lead29Page = lazy(() => import('./pages/Lead29Page'));
-const Lead37Page = lazy(() => import('./pages/Lead37Page'));
+const LeadC1Page = lazy(() => import('./pages/LeadC1Page'));
+const LeadC2Page = lazy(() => import('./pages/LeadC2Page'));
 
 const LoginPage = lazy(() => import('./app/pages/LoginPage'));
 const LoadingPage = lazy(() => import('./app/pages/LoadingPage'));
@@ -145,17 +143,11 @@ export default function App() {
           {/* Landing / VSL page */}
           <Route path="/" element={<LandingPage />} />
           
-          {/* Lead 1 VSL page */}
-          <Route path="/19lead1" element={<Lead1Page />} />
+          {/* Lead C1 VSL page */}
+          <Route path="/19leadc1" element={<LeadC1Page />} />
           
-          {/* Lead 2 VSL page */}
-          <Route path="/19lead2" element={<Lead2Page />} />
-
-          {/* Lead 29 VSL page */}
-          <Route path="/29lead1" element={<Lead29Page />} />
-
-          {/* Lead 37 VSL page */}
-          <Route path="/37lead1" element={<Lead37Page />} />
+          {/* Lead C2 VSL page */}
+          <Route path="/19leadc2" element={<LeadC2Page />} />
           
           {/* Upsell 1 */}
           <Route path="/up1" element={<Up1Page />} />
