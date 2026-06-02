@@ -35,14 +35,9 @@ const FessiersPage = lazy(() => import('./app/pages/FessiersPage'));
 const ProfilPage = lazy(() => import('./app/pages/ProfilPage'));
 
 // Détox 10X
-const DetoxPlanPage = lazy(() => import('./app/pages/detox/DetoxPlanPage'));
-const DetoxRituelNuitPage = lazy(() => import('./app/pages/detox/DetoxRituelNuitPage'));
-const DetoxSubstitutionsPage = lazy(() => import('./app/pages/detox/DetoxSubstitutionsPage'));
-const DetoxSelRosePage = lazy(() => import('./app/pages/detox/DetoxSelRosePage'));
-const DetoxLipoMaisonPage = lazy(() => import('./app/pages/detox/DetoxLipoMaisonPage'));
-const DetoxChocolatMinceurPage = lazy(() => import('./app/pages/detox/DetoxChocolatMinceurPage'));
-const DetoxBainEpsomPage = lazy(() => import('./app/pages/detox/DetoxBainEpsomPage'));
-const DetoxRespirationPage = lazy(() => import('./app/pages/detox/DetoxRespirationPage'));
+const Protocole7XPage = lazy(() => import('./app/pages/7x/Protocole7XPage'));
+const ShotJaponaisPage = lazy(() => import('./app/pages/7x/ShotJaponaisPage'));
+const GuideBacteriesPage = lazy(() => import('./app/pages/7x/GuideBacteriesPage'));
 
 // Shot Hormonal
 const HormonalRecettePage = lazy(() => import('./app/pages/hormonal/HormonalRecettePage'));
@@ -180,14 +175,9 @@ export default function App() {
           <Route path="/app/dashboard/profil" element={<ProfilPage />} />
 
           {/* Détox 10X */}
-          <Route path="/app/dashboard/detox/plan" element={<DetoxPlanPage />} />
-          <Route path="/app/dashboard/detox/rituel-nuit" element={<DetoxRituelNuitPage />} />
-          <Route path="/app/dashboard/detox/substitutions" element={<DetoxSubstitutionsPage />} />
-          <Route path="/app/dashboard/detox/sel-rose" element={<DetoxSelRosePage />} />
-          <Route path="/app/dashboard/detox/lipo-maison" element={<DetoxLipoMaisonPage />} />
-          <Route path="/app/dashboard/detox/chocolat-minceur" element={<DetoxChocolatMinceurPage />} />
-          <Route path="/app/dashboard/detox/bain-epsom" element={<DetoxBainEpsomPage />} />
-          <Route path="/app/dashboard/detox/respiration" element={<DetoxRespirationPage />} />
+          <Route path="/app/dashboard/7x/protocole" element={<Protocole7XPage />} />
+          <Route path="/app/dashboard/7x/shot-japonais" element={<ShotJaponaisPage />} />
+          <Route path="/app/dashboard/7x/guide-bacteries" element={<GuideBacteriesPage />} />
 
           {/* Shot Hormonal */}
           <Route path="/app/dashboard/hormonal/recette" element={<HormonalRecettePage />} />
