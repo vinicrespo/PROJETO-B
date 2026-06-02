@@ -6,11 +6,11 @@ const Comments = lazy(() => import('../components/Comments'));
 
 export default function LeadC1Page() {
   useEffect(() => {
-    const scriptId = 'vturb-player-script-lead1';
+    const scriptId = 'vturb-player-script-leadc1';
     if (!document.getElementById(scriptId)) {
       const script = document.createElement("script");
       script.id = scriptId;
-      script.src = "https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/6a0d06290a855e4b57cc3473/v4/player.js";
+      script.src = "https://scripts.converteai.net/d21a9e1d-910e-4254-b2bc-30b12586d2ef/players/6a1f1d2efff7f9fb8062669b/v4/player.js";
       script.async = true;
       document.head.appendChild(script);
     }
@@ -33,7 +33,7 @@ export default function LeadC1Page() {
         <section id="vsl" className="bg-black py-6 px-2 overflow-hidden">
           <div className="mx-auto w-full max-w-[400px]">
             {/* @ts-ignore */}
-            <vturb-smartplayer id="vid-6a0d06290a855e4b57cc3473" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}></vturb-smartplayer>
+            <vturb-smartplayer id="vid-6a1f1d2efff7f9fb8062669b" style={{ display: 'block', margin: '0 auto', width: '100%', maxWidth: '400px' }}></vturb-smartplayer>
           </div>
         </section>
 
@@ -46,7 +46,7 @@ export default function LeadC1Page() {
         </div>
 
         {/* Call to Action */}
-        <div className="flex justify-center w-full pt-8 pb-2 bg-white px-4 leadc1">
+        <div className="flex justify-center w-full pt-8 pb-2 bg-white px-4 LeadC1">
           <a href="https://checkout.kashpay.com.br/checkout/checkout-1778981145336" className="w-full max-w-xl mx-auto bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg shadow-xl text-lg md:text-2xl uppercase transform transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl active:scale-95 text-center leading-tight block">
             Je veux perdre 17 kilos en 21 jours
           </a>
