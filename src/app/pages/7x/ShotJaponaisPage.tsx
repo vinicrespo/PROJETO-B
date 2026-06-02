@@ -1,10 +1,13 @@
 import { Zap, AlertTriangle, CheckCircle, Clock } from 'lucide-react';
-import DashboardLayout from '../../components/DashboardLayout';
+import AppHeader from '../../components/AppHeader';
+import PageWrapper from '../../components/PageWrapper';
 
 export default function ShotJaponaisPage() {
   return (
-    <DashboardLayout>
-      <div className="max-w-4xl mx-auto space-y-8">
+    <div className="min-h-screen stylo-bg">
+      <AppHeader />
+      <PageWrapper>
+        <div className="max-w-4xl mx-auto space-y-8">
         
         {/* Header Section */}
         <div className="bg-gradient-to-r from-[#D4A574] to-[#B88655] rounded-2xl p-8 text-white shadow-lg">
@@ -157,6 +160,7 @@ export default function ShotJaponaisPage() {
         </div>
 
       </div>
-    </DashboardLayout>
+      </PageWrapper>
+    </div>
   );
 }

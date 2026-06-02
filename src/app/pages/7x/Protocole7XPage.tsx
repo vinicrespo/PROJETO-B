@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Microscope, CheckCircle2, Circle, ChevronLeft, ChevronRight } from 'lucide-react';
-import DashboardLayout from '../../components/DashboardLayout';
+import AppHeader from '../../components/AppHeader';
+import PageWrapper from '../../components/PageWrapper';
 
 const DAYS = [
   {
     day: 1,
     title: 'Préparation et activation',
-    mission: 'Préparer l\\'intestin à recevoir les bonnes bactéries',
-    morning: '400ml d\\'eau tiède + jus d\\'1 citron entier + 1 c.à.c de gingembre frais',
+    mission: 'Préparer l\'intestin à recevoir les bonnes bactéries',
+    morning: '400ml d\'eau tiède + jus d\'1 citron entier + 1 c.à.c de gingembre frais',
     breakfast: 'Yaourt nature entier + 1 c.à.s de graines de lin + fruits rouges',
     lunch: 'Soupe miso + riz complet + légumes vapeur',
-    dinner: 'Poisson blanc + épinards sautés à l\\'ail + patate douce',
+    dinner: 'Poisson blanc + épinards sautés à l\'ail + patate douce',
     drink: 'Tisane de fenouil (réduit les ballonnements)',
     avoid: 'Sucre raffiné, gluten, produits laitiers industriels, alcool',
     advice: 'Mâchez chaque bouchée au moins 20 fois — la digestion commence dans la bouche'
@@ -19,25 +20,25 @@ const DAYS = [
     day: 2,
     title: 'Élimination des mauvaises bactéries',
     mission: 'Commencer à purger les bactéries nuisibles',
-    morning: 'Shot d\\'ail frais — 1 gousse d\\'ail écrasée + eau tiède + citron (antibiotique naturel)',
+    morning: 'Shot d\'ail frais — 1 gousse d\'ail écrasée + eau tiède + citron (antibiotique naturel)',
     breakfast: 'Smoothie vert (épinards, banane, kéfir nature, gingembre)',
     lunch: 'Salade de choucroute crue + poulet grillé + quinoa',
-    dinner: 'Bouillon d\\'os maison + légumes de saison',
+    dinner: 'Bouillon d\'os maison + légumes de saison',
     drink: 'Kombucha 200ml',
     priority: 'Ail, oignon, poireau (prébiotiques naturels qui nourrissent les bonnes bactéries)',
     advice: 'Les mauvaises bactéries se nourrissent de sucre — chaque gramme de sucre évité les affame'
   },
   {
     day: 3,
-    title: 'Réduction de l\\'inflammation',
-    mission: 'Calmer l\\'inflammation intestinale créée par les mauvaises bactéries',
-    morning: 'Lait doré (lait d\\'amande + curcuma + poivre noir + miel)',
-    breakfast: 'Porridge d\\'avoine + myrtilles + graines de chia',
+    title: 'Réduction de l\'inflammation',
+    mission: 'Calmer l\'inflammation intestinale créée par les mauvaises bactéries',
+    morning: 'Lait doré (lait d\'amande + curcuma + poivre noir + miel)',
+    breakfast: 'Porridge d\'avoine + myrtilles + graines de chia',
     lunch: 'Curry de légumes au curcuma + lentilles corail',
     dinner: 'Saumon au four + asperges + quinoa',
     drink: 'Infusion curcuma-gingembre',
     priority: 'Curcuma, saumon, myrtilles, noix (Anti-inflammatoires)',
-    advice: 'Le curcuma est 40x plus efficace avec du poivre noir — ne jamais l\\'utiliser sans'
+    advice: 'Le curcuma est 40x plus efficace avec du poivre noir — ne jamais l\'utiliser sans'
   },
   {
     day: 4,
@@ -55,7 +56,7 @@ const DAYS = [
     day: 5,
     title: 'Consolidation',
     mission: 'Ancrer les nouvelles bactéries dans votre intestin',
-    morning: '500ml d\\'eau tiède + 1 c.à.s de vinaigre de cidre (synergie avec le Stylo Maison)',
+    morning: '500ml d\'eau tiède + 1 c.à.s de vinaigre de cidre (synergie avec le Stylo Maison)',
     breakfast: 'Pancakes à la farine de sarrasin + fruits frais + miel cru',
     lunch: 'Salade de légumineuses (pois chiches, lentilles) + légumes grillés + tahini',
     dinner: 'Poulet rôti + ratatouille + riz basmati',
@@ -67,11 +68,11 @@ const DAYS = [
     title: 'Boost métabolique',
     mission: 'Les bonnes bactéries commencent à accélérer votre métabolisme',
     morning: 'Eau citronnée + 1 pincée de cannelle',
-    breakfast: 'Smoothie protéiné (yaourt kéfir + banane + beurre d\\'amande + cannelle)',
+    breakfast: 'Smoothie protéiné (yaourt kéfir + banane + beurre d\'amande + cannelle)',
     lunch: 'Saumon fumé + salade verte + avocats + graines de tournesol',
     dinner: 'Velouté de potiron + graines de courge + pain au levain',
     drink: 'Thé vert matcha',
-    advice: 'Si vous avez moins faim que d\\'habitude, c\\'est normal. Les bonnes bactéries régulent l\\'hormone de la satiété'
+    advice: 'Si vous avez moins faim que d\'habitude, c\'est normal. Les bonnes bactéries régulent l\'hormone de la satiété'
   },
   {
     day: 7,
@@ -79,7 +80,7 @@ const DAYS = [
     mission: 'Évaluer la progression',
     routine: 'Identique au Jour 1 (consolidation)',
     bilan: 'Peser + mesurer tour de taille + noter énergie, sommeil, humeur',
-    questions: 'Dormez-vous mieux ? Êtes-vous moins ballonnée ? Avez-vous moins d\\'envies de sucré ?',
+    questions: 'Dormez-vous mieux ? Êtes-vous moins ballonnée ? Avez-vous moins d\'envies de sucré ?',
     advice: 'Si vous répondez oui à au moins 2 questions, vos bonnes bactéries ont déjà pris le contrôle'
   },
   {
@@ -91,7 +92,7 @@ const DAYS = [
     lunch: 'Quinoa + brocolis + poulet + sauce au yaourt-ail',
     dinner: 'Soupe de légumes fermentés + tofu grillé',
     drink: 'Kombucha',
-    advice: 'Votre corps brûle maintenant davantage de graisses même au repos — c\\'est l\\'effet des bonnes bactéries'
+    advice: 'Votre corps brûle maintenant davantage de graisses même au repos — c\'est l\'effet des bonnes bactéries'
   },
   {
     day: 9,
@@ -101,7 +102,7 @@ const DAYS = [
     breakfast: 'Yaourt fermenté + graines de lin + pomme râpée',
     lunch: 'Wrap au sarrasin + légumes lacto-fermentés + houmous',
     dinner: 'Poisson gras (maquereau, sardines) + légumes verts + riz complet',
-    advice: 'Intégrez 1 aliment fermenté par repas en habitude permanente — c\\'est le secret pour l\\'équilibre'
+    advice: 'Intégrez 1 aliment fermenté par repas en habitude permanente — c\'est le secret pour l\'équilibre'
   },
   {
     day: 10,
@@ -143,8 +144,10 @@ export default function Protocole7XPage() {
   const progressPercentage = (completedDays.length / 10) * 100;
 
   return (
-    <DashboardLayout>
-      <div className="max-w-4xl mx-auto space-y-8">
+    <div className="min-h-screen stylo-bg">
+      <AppHeader />
+      <PageWrapper>
+        <div className="max-w-4xl mx-auto space-y-8">
         {/* Header Section */}
         <div className="bg-gradient-to-r from-[#D4A574] to-[#B88655] rounded-2xl p-8 text-white shadow-lg">
           <div className="flex items-center space-x-4 mb-4">
@@ -340,7 +343,8 @@ export default function Protocole7XPage() {
             </div>
           </div>
         </div>
-      </div>
-    </DashboardLayout>
+        </div>
+      </PageWrapper>
+    </div>
   );
 }

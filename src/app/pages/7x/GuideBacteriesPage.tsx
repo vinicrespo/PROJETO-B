@@ -1,14 +1,15 @@
 import { BookOpen, AlertCircle, Leaf, Sparkles, Calendar } from 'lucide-react';
-import DashboardLayout from '../../components/DashboardLayout';
+import AppHeader from '../../components/AppHeader';
+import PageWrapper from '../../components/PageWrapper';
 
 const DESTRUCTEURS = [
   { nom: 'Ail cru', mecanisme: 'Allicine : antibiotique naturel qui détruit sélectivement les mauvaises bactéries', usage: '1 gousse écrasée à jeun le matin' },
   { nom: 'Gingembre', mecanisme: 'Gingerols : crée un environnement hostile aux bactéries nuisibles', usage: 'En infusion ou râpé sur les plats' },
-  { nom: 'Vinaigre de cidre', mecanisme: 'Acide acétique : acidifie l\\'intestin, tue les bactéries pathogènes', usage: '1 c.à.s dans eau tiède avant les repas' },
+  { nom: 'Vinaigre de cidre', mecanisme: 'Acide acétique : acidifie l\'intestin, tue les bactéries pathogènes', usage: '1 c.à.s dans eau tiède avant les repas' },
   { nom: 'Curcuma', mecanisme: 'Curcumine : anti-bactérien et anti-inflammatoire puissant', usage: 'Toujours avec poivre noir' },
   { nom: 'Huile de noix de coco', mecanisme: 'Acide laurique : détruit les parois des mauvaises bactéries', usage: '1 c.à.s par jour en cuisson' },
   { nom: 'Thym', mecanisme: 'Thymol : antiseptique intestinal naturel', usage: 'En infusion ou en assaisonnement' },
-  { nom: 'Cranberry (canneberge)', mecanisme: 'Proanthocyanidines : empêchent les mauvaises bactéries de s\\'accrocher', usage: 'En jus pur ou baies fraîches' },
+  { nom: 'Cranberry (canneberge)', mecanisme: 'Proanthocyanidines : empêchent les mauvaises bactéries de s\'accrocher', usage: 'En jus pur ou baies fraîches' },
   { nom: 'Citron', mecanisme: 'Acide citrique : alcalinise et nettoie le côlon', usage: 'Jus frais chaque matin' },
   { nom: 'Pamplemousse', mecanisme: 'Extrait de pépins : antibiotique naturel à large spectre', usage: '1/2 pamplemousse par jour' },
   { nom: 'Eau pétillante', mecanisme: 'Le CO2 perturbe les colonies de mauvaises bactéries', usage: 'Remplace les sodas' }
@@ -16,7 +17,7 @@ const DESTRUCTEURS = [
 
 const PROBIOTIQUES = [
   { nom: 'Kéfir', usage: '50 souches de bactéries bénéfiques. 200ml par jour à jeun.' },
-  { nom: 'Yaourt nature entier', usage: 'Lactobacillus vivants. Choisir "ferments vivants" sur l\\'étiquette.' },
+  { nom: 'Yaourt nature entier', usage: 'Lactobacillus vivants. Choisir "ferments vivants" sur l\'étiquette.' },
   { nom: 'Choucroute crue', usage: 'Milliards de lactobacilles par cuillerée. Non pasteurisée obligatoirement.' },
   { nom: 'Kimchi', usage: 'Fermenté coréen, plus diversifié que la choucroute en souches.' },
   { nom: 'Miso', usage: 'Fermenté japonais, riche en enzymes digestives. En soupe, jamais bouilli.' },
@@ -37,8 +38,10 @@ const PREBIOTIQUES = [
 
 export default function GuideBacteriesPage() {
   return (
-    <DashboardLayout>
-      <div className="max-w-4xl mx-auto space-y-8">
+    <div className="min-h-screen stylo-bg">
+      <AppHeader />
+      <PageWrapper>
+        <div className="max-w-4xl mx-auto space-y-8">
         
         {/* Header Section */}
         <div className="bg-gradient-to-r from-[#D4A574] to-[#B88655] rounded-2xl p-8 text-white shadow-lg">
@@ -164,7 +167,8 @@ export default function GuideBacteriesPage() {
           </div>
         </div>
 
-      </div>
-    </DashboardLayout>
+        </div>
+      </PageWrapper>
+    </div>
   );
 }

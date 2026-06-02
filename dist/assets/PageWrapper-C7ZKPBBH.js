@@ -1,1 +1,0 @@
-import{a5 as i,a6 as o}from"./vendor-BqKmfrw3.js";function n({children:a,className:t=""}){return i.jsx(o.div,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},exit:{opacity:0,y:-10},transition:{duration:.4,ease:"easeOut"},className:t,children:a})}export{n as P};
