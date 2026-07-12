@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - SlimTide</title>
+    <title>About — SlimTide</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -15,12 +15,8 @@
 
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">SlimTide</a>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <a href="index.html" class="logo"><span class="logo-mark">🌿</span> SlimTide</a>
+            <div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
             <nav class="nav-links" id="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html" class="active">About</a>
@@ -32,7 +28,7 @@
         </div>
     </header>
 
-    <section class="container mt-4">
+    <section class="container">
         <div class="legal-content">
             <h1>About SlimTide</h1>
 
@@ -50,41 +46,46 @@
             <p>We focus on everyday ingredients you can find at any local market and preparation methods that fit into
                 a busy schedule. The goal is to make home cooking approachable and enjoyable.</p>
 
-            <h2>Get in Touch</h2>
-            <p>Have a question or feedback? We'd love to hear from you at
-                <a href="mailto:viniccrespo@gmail.com">viniccrespo@gmail.com</a>.</p>
-
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="footer-logo">SlimTide</div>
-            <div class="footer-links">
-                <a href="terms.html">Terms of Use</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="refund.html">Refund Policy</a>
-                <a href="support.html">Support</a>
-                <a href="about.html">About</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">🌿 SlimTide</div>
+                    <p>A digital collection of simple, wholesome recipes for balanced everyday cooking.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>Product</h5>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Support</h5>
+                        <a href="support.html">Help Center</a>
+                        <a href="refund.html">Refund Policy</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Legal</h5>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </div>
+                </div>
             </div>
             <div class="footer-disclaimer">
                 SlimTide is a digital collection of culinary recipes provided for general informational and cooking
                 purposes only. It is not intended as medical, nutritional, or dietary advice.
             </div>
-            <div class="footer-bottom">
-                <p>VINICIUS CRESPO — CPF: 49662131850</p>
-                <p>SAO PAULO, BRAZIL</p>
-                <p>Support email: viniccrespo@gmail.com</p>
-            </div>
+            <div class="footer-bottom">© 2026 SlimTide. All rights reserved.</div>
         </div>
     </footer>
 
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
     </script>
 </body>
 

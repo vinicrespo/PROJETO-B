@@ -4,149 +4,264 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlimTide - Healthy Cooking Recipes</title>
+    <title>SlimTide — Healthy Cooking Recipes for Everyday Meals</title>
     <meta name="description" content="SlimTide is a digital collection of simple, wholesome recipes to help you cook balanced meals at home.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- Header -->
     <header>
         <div class="container nav-container">
-            <a href="index.html" class="logo">SlimTide</a>
+            <a href="index.html" class="logo"><span class="logo-mark">🌿</span> SlimTide</a>
             <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
             <nav class="nav-links" id="nav-links">
                 <a href="index.html" class="active">Home</a>
-                <a href="about.html">About</a>
-                <a href="support.html">Support</a>
-                <a href="refund.html">Refund Policy</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Use</a>
+                <a href="#recipes">Recipes</a>
+                <a href="#how">How it works</a>
+                <a href="#faq">FAQ</a>
+                <a href="#pricing" class="btn-nav">Get Access</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero -->
     <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">Wholesome recipes for everyday cooking</h1>
-            <p class="hero-subtitle">SlimTide is a digital recipe collection built around simple, balanced meals.
-                Fresh ingredients, clear steps, and ideas you can actually cook at home.</p>
-            <a href="#pricing" class="btn">Get the Recipe Collection</a>
-            <div class="hero-features">
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    Instant digital access
-                </span>
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    Easy-to-follow steps
-                </span>
-                <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    Read on any device
-                </span>
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <span class="eyebrow">🌱 Simple &amp; wholesome</span>
+                <h1 class="hero-title">Cook <em>balanced meals</em> without the guesswork</h1>
+                <p class="hero-subtitle">SlimTide is a digital recipe collection built around fresh ingredients and
+                    clear, step-by-step directions — real food you can actually make at home.</p>
+                <div class="hero-actions">
+                    <a href="#pricing" class="btn">Get the Recipe Collection</a>
+                    <a href="#recipes" class="btn btn-outline">Browse Categories</a>
+                </div>
+                <div class="hero-features">
+                    <span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        Instant digital access
+                    </span>
+                    <span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        Read on any device
+                    </span>
+                    <span>
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                        30-day guarantee
+                    </span>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-plate">
+                        🥗
+                        <div class="float-tag tag-1"><span class="dot"></span> Fresh ingredients</div>
+                        <div class="float-tag tag-2"><span class="dot"></span> Under 30 min</div>
+                    </div>
+                    <div class="hero-card-meta">
+                        <strong>Mediterranean Bowl</strong>
+                        <span>Lunch · Easy</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Trust strip -->
+    <div class="trust-strip">
+        <div class="container trust-inner">
+            <div class="trust-item">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                Instant delivery
+            </div>
+            <div class="trust-item">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Secure checkout
+            </div>
+            <div class="trust-item">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                One-time payment
+            </div>
+            <div class="trust-item">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                Lifetime updates
+            </div>
+        </div>
+    </div>
+
     <!-- Features -->
     <section>
         <div class="container">
-            <h2 class="section-title">What SlimTide is about</h2>
-            <p class="section-desc">A practical library of recipes focused on fresh, everyday ingredients and
-                straightforward preparation.</p>
+            <div class="section-head">
+                <span class="section-tag">Why SlimTide</span>
+                <h2 class="section-title">Everything you need to cook with confidence</h2>
+                <p class="section-desc">A practical library focused on fresh, everyday ingredients and
+                    straightforward preparation.</p>
+            </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🥗</div>
-                    <h3>Fresh &amp; Simple</h3>
+                    <h3>Fresh &amp; simple</h3>
                     <p>Recipes built around vegetables, whole grains, and everyday ingredients you can find at any
                         local market.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⏱️</div>
-                    <h3>Clear Instructions</h3>
+                    <div class="feature-icon">📋</div>
+                    <h3>Clear instructions</h3>
                     <p>Every recipe includes an ingredient list and step-by-step directions written in plain
                         language.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📱</div>
-                    <h3>Cook Anywhere</h3>
+                    <h3>Cook anywhere</h3>
                     <p>Access your collection from your phone, tablet, or computer — no app or printing required.</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗓️</div>
+                    <h3>Weekly meal ideas</h3>
+                    <p>Suggestions to help you plan and organize balanced meals throughout the week.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Time-friendly</h3>
+                    <p>Recipes designed to fit a busy schedule, many ready in 30 minutes or less.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌿</div>
+                    <h3>Wholesome by design</h3>
+                    <p>A focus on real, unprocessed ingredients for meals the whole family can enjoy.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- What's Included -->
-    <section class="bg-light">
+    <!-- Categories -->
+    <section id="recipes" class="bg-light">
         <div class="container">
-            <h2 class="section-title">What's included</h2>
-            <p class="section-desc">Here's what you receive after your purchase.</p>
-            <div class="included-list">
-                <div class="included-item">
-                    <span class="included-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </span>
-                    <div class="included-content">
-                        <h4>A curated recipe collection</h4>
-                        <p>A digital library of breakfast, lunch, dinner, and snack recipes organized by category.</p>
-                    </div>
+            <div class="section-head">
+                <span class="section-tag">The Collection</span>
+                <h2 class="section-title">Recipes for every part of the day</h2>
+                <p class="section-desc">Organized by category so you always know where to look.</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-emoji">🍳</div>
+                    <h4>Breakfast</h4>
+                    <span>Bright, energizing starts</span>
                 </div>
-                <div class="included-item">
-                    <span class="included-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </span>
-                    <div class="included-content">
-                        <h4>Ingredient lists &amp; prep steps</h4>
-                        <p>Each recipe includes a clear ingredient list and easy-to-follow preparation steps.</p>
-                    </div>
+                <div class="category-card">
+                    <div class="category-emoji">🥙</div>
+                    <h4>Lunch</h4>
+                    <span>Light &amp; satisfying</span>
                 </div>
-                <div class="included-item">
-                    <span class="included-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </span>
-                    <div class="included-content">
-                        <h4>Weekly meal ideas</h4>
-                        <p>Suggestions to help you plan and organize your meals throughout the week.</p>
-                    </div>
+                <div class="category-card">
+                    <div class="category-emoji">🍲</div>
+                    <h4>Dinner</h4>
+                    <span>Wholesome mains</span>
                 </div>
-                <div class="included-item">
-                    <span class="included-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
-                    </span>
-                    <div class="included-content">
-                        <h4>Instant digital delivery</h4>
-                        <p>Access details are sent to your email right after your purchase is confirmed.</p>
+                <div class="category-card">
+                    <div class="category-emoji">🥤</div>
+                    <h4>Snacks &amp; Sides</h4>
+                    <span>Simple in-between bites</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's included (split) -->
+    <section>
+        <div class="container split">
+            <div class="split-visual">🍽️</div>
+            <div>
+                <span class="section-tag">What's included</span>
+                <h2 class="section-title" style="text-align:left;">A complete, ready-to-cook library</h2>
+                <div class="included-list" style="margin-top:1.75rem;">
+                    <div class="included-item">
+                        <span class="included-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></span>
+                        <div class="included-content">
+                            <h4>A curated recipe collection</h4>
+                            <p>Breakfast, lunch, dinner, and snack recipes organized by category.</p>
+                        </div>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></span>
+                        <div class="included-content">
+                            <h4>Ingredient lists &amp; prep steps</h4>
+                            <p>Each recipe includes a clear ingredient list and easy-to-follow directions.</p>
+                        </div>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></span>
+                        <div class="included-content">
+                            <h4>Weekly meal ideas</h4>
+                            <p>Plan and organize your meals throughout the week with ease.</p>
+                        </div>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-icon"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg></span>
+                        <div class="included-content">
+                            <h4>Instant digital delivery</h4>
+                            <p>Access details sent to your email right after your purchase is confirmed.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing / CTA -->
+    <!-- How it works -->
+    <section id="how" class="bg-light">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-tag">How it works</span>
+                <h2 class="section-title">From checkout to cooking in minutes</h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-num"></div>
+                    <h4>Get instant access</h4>
+                    <p>Complete your secure checkout and receive your access details by email.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num"></div>
+                    <h4>Browse the collection</h4>
+                    <p>Explore recipes by category on any device — phone, tablet, or computer.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num"></div>
+                    <h4>Start cooking</h4>
+                    <p>Follow the clear steps and enjoy balanced, home-cooked meals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA banner -->
     <section id="pricing">
         <div class="container">
-            <h2 class="section-title">Get started with SlimTide</h2>
-            <p class="section-desc">A one-time purchase for lifetime access to the digital recipe collection.</p>
-            <div class="text-center">
+            <div class="cta-banner">
+                <h2>Start cooking with SlimTide today</h2>
+                <p>A one-time purchase for lifetime access to the complete digital recipe collection.</p>
                 <a href="#" class="btn">Get the Recipe Collection</a>
+                <div class="cta-note">Secure checkout · Instant access · 30-day satisfaction guarantee</div>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="bg-light">
+    <section id="faq">
         <div class="container">
-            <h2 class="section-title">Frequently asked questions</h2>
+            <div class="section-head">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Frequently asked questions</h2>
+            </div>
             <div class="faq-list">
                 <div class="faq-item">
                     <h4>How do I receive the recipes?</h4>
@@ -160,7 +275,7 @@
                 </div>
                 <div class="faq-item">
                     <h4>Is this a physical book?</h4>
-                    <p>No. SlimTide is a fully digital product that you can read on any device with a web browser.</p>
+                    <p>No. SlimTide is a fully digital product you can read on any device with a web browser.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Can I get a refund?</h4>
@@ -173,13 +288,29 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-logo">SlimTide</div>
-            <div class="footer-links">
-                <a href="terms.html">Terms of Use</a>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="refund.html">Refund Policy</a>
-                <a href="support.html">Support</a>
-                <a href="about.html">About</a>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">🌿 SlimTide</div>
+                    <p>A digital collection of simple, wholesome recipes for balanced everyday cooking.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>Product</h5>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="#recipes">Recipes</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Support</h5>
+                        <a href="support.html">Help Center</a>
+                        <a href="refund.html">Refund Policy</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Legal</h5>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </div>
+                </div>
             </div>
             <div class="footer-disclaimer">
                 SlimTide is a digital collection of culinary recipes provided for general informational and cooking
@@ -187,21 +318,15 @@
                 qualified healthcare professional regarding your individual dietary needs or any food allergies.
             </div>
             <div class="footer-bottom">
-                <p>VINICIUS CRESPO — CPF: 49662131850</p>
-                <p>SAO PAULO, BRAZIL</p>
-                <p>Support email: viniccrespo@gmail.com</p>
+                © 2026 SlimTide. All rights reserved.
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
     <script>
         const mobileMenu = document.getElementById('mobile-menu');
         const navLinks = document.getElementById('nav-links');
-
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
     </script>
 </body>
 
