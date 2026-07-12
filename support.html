@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - SlimTide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">SlimTide</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="support.html" class="active">Support</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="container mt-4">
+        <div class="legal-content">
+            <h1>Support</h1>
+
+            <h2>We're Here to Help</h2>
+            <p>If you have questions about your purchase, accessing your recipe collection, or anything else, our
+                support team is happy to assist you.</p>
+
+            <h2>Email Support</h2>
+            <p>You can reach us at <a href="mailto:viniccrespo@gmail.com">viniccrespo@gmail.com</a>. We aim to respond
+                to all inquiries within 48 business hours.</p>
+
+            <h2>Common Topics</h2>
+            <ul>
+                <li>Accessing your recipe collection after purchase</li>
+                <li>Questions about billing or your order</li>
+                <li>Refund requests (see our <a href="refund.html">Refund Policy</a>)</li>
+                <li>General questions about the product</li>
+            </ul>
+
+            <h2>Business Information</h2>
+            <p>VINICIUS CRESPO — CPF: 49662131850<br>SAO PAULO, BRAZIL</p>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">SlimTide</div>
+            <div class="footer-links">
+                <a href="terms.html">Terms of Use</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="support.html">Support</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="footer-disclaimer">
+                SlimTide is a digital collection of culinary recipes provided for general informational and cooking
+                purposes only. It is not intended as medical, nutritional, or dietary advice.
+            </div>
+            <div class="footer-bottom">
+                <p>VINICIUS CRESPO — CPF: 49662131850</p>
+                <p>SAO PAULO, BRAZIL</p>
+                <p>Support email: viniccrespo@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
