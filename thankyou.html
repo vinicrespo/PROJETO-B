@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Your Purchase — SlimTide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .thankyou {
+            min-height: calc(100vh - 76px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(180deg, var(--secondary-bg) 0%, #ffffff 100%);
+            padding: 4rem 2rem;
+        }
+
+        .thankyou-card {
+            max-width: 560px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            padding: 3.5rem 3rem;
+        }
+
+        .thankyou-badge {
+            width: 84px;
+            height: 84px;
+            margin: 0 auto 1.75rem;
+            border-radius: 50%;
+            background: var(--accent-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thankyou-badge svg {
+            width: 42px;
+            height: 42px;
+            color: var(--leaf-green);
+        }
+
+        .thankyou-card h1 {
+            font-family: var(--font-display);
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--dark-green);
+            letter-spacing: -0.5px;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+        }
+
+        .thankyou-card p {
+            color: var(--text-muted);
+            font-size: 1.08rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .thankyou-note {
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 1.1rem 1.25rem;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .thankyou-note strong {
+            color: var(--dark-green);
+        }
+
+        .thankyou-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 560px) {
+            .thankyou-card { padding: 2.5rem 1.75rem; }
+            .thankyou-card h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><span class="logo-mark">🌿</span> SlimTide</a>
+            <div class="menu-toggle" id="mobile-menu"><span></span><span></span><span></span></div>
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="support.html">Support</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="thankyou">
+        <div class="thankyou-card">
+            <div class="thankyou-badge">
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h1>Thank you for your purchase!</h1>
+            <p>Your order has been confirmed and your SlimTide recipe collection is on its way.</p>
+            <div class="thankyou-note">
+                <strong>Check your email 📩</strong><br>
+                We've sent your access details to the email address used at checkout. If you don't see it within a few
+                minutes, please check your spam or promotions folder.
+            </div>
+            <div class="thankyou-actions">
+                <a href="index.html" class="btn">Back to Home</a>
+                <a href="support.html" class="btn btn-outline">Need Help?</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">🌿 SlimTide</div>
+                    <p>A digital collection of simple, wholesome recipes for balanced everyday cooking.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h5>Product</h5>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Support</h5>
+                        <a href="support.html">Help Center</a>
+                        <a href="refund.html">Refund Policy</a>
+                    </div>
+                    <div class="footer-col">
+                        <h5>Legal</h5>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-disclaimer">
+                SlimTide is a digital collection of culinary recipes provided for general informational and cooking
+                purposes only. It is not intended as medical, nutritional, or dietary advice.
+            </div>
+            <div class="footer-bottom">© 2026 SlimTide. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        mobileMenu.addEventListener('click', () => navLinks.classList.toggle('active'));
+    </script>
+</body>
+
+</html>
